@@ -1,0 +1,138 @@
+
+body, html {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Reem Kufi', sans-serif;
+  background-color: #fffffc;
+
+}
+
+#navbar {
+  margin: 0 auto;
+  width: 100%;
+  margin: 10px 0px 15px 45%;
+}
+
+
+.menu-item {
+  font-size: 15px;
+  display: inline-block;
+  margin: 20px 10px 0px 100px;
+  cursor: pointer;
+}
+
+.link-item {
+  display: inline-block;
+  margin: 0px 10px 0px 35px;
+  cursor: pointer;
+}
+
+
+#intro {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 50px;
+  letter-spacing: 2px;
+  font-weight: 550;
+  color: #88C6ED;
+}
+
+#description {
+  font-family: 'Open Sans', sans-serif;
+  width: 55%;
+}
+
+
+/* .page-container {
+  position: relative;
+  text-align: center;
+  width: 800px;
+  margin: 0 auto;
+  display: inline-block;
+  border-radius: 5px;
+  background-color: #fff9f9;
+}
+
+.background-container {
+  background-color: #fff9f9;
+}
+ */
+
+#graphics img:nth-child(1) {
+  margin: 8% 0% -32% 50%;
+  position: relative;
+  object-fit: contain;
+  height: 100%;
+  width: 60%;
+}
+
+#graphics img:nth-child(2) {
+  margin: -20% 0% 12% 95%;
+  position: relative;
+  object-fit: cover;
+  height: 100%;
+  width: 14.5%;
+}
+
+#graphics img:nth-child(3) {
+  margin: -32% 0% 35% 60%;
+  position: relative;
+  object-fit: cover;
+  height: 90%;
+  width: 18%;
+}
+
+#graphics img:nth-child(4) {
+  margin: -35% 0% 10% 5%;
+  position: relative;
+  object-fit: contain;
+  height: 90%;
+  width: 45%;
+}
+
+#graphics img:nth-child(5) {
+  margin: -10% 0% 5% -2%;
+  position: relative;
+  object-fit: contain;
+  height: 90%;
+  width: 17%;
+}
+
+
+a {
+  color: #4e4d4d;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #EB5260;
+}
+
+a.text-links {
+  font-family: 'Reem Kufu', sans-serif;
+  color: #ea3333;
+  text-decoration: none;
+}
+
+a.text-links:hover {
+  color: #EB5260;
+}
+
+#footer {
+  color: #4e4d4d;
+  width: 100%;
+  text-align: center;
+  font-size: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
