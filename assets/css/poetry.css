@@ -1,0 +1,23 @@
+body, html {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Reem Kufi', sans-serif;
+  background-color: #fffffc;
+
+}
+
+#container {
+	margin-top: 20px;
+}
+
+#opener {
+  font-family: 'Open Sans', sans-serif;
+  width: 100%;
+  text-align: center;
+}
+
+#poems {
+  font-family: 'Open Sans', sans-serif;
+  width: 100%;
+}
+
