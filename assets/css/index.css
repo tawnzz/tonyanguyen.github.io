@@ -26,9 +26,6 @@ body, html {
   padding-right: 5px;
 }
 
-.menu-item:hover {
-  border: 2px solid #4e4d4d;
-}
 
 .link-item {
   display: inline-block;
@@ -38,7 +35,6 @@ body, html {
 
 
 #intro {
-  cursor: pointer;
   position: relative;
   text-align: center;
   font-size: 40px;
@@ -53,7 +49,7 @@ body, html {
   border-right: .15em;
   white-space: nowrap;
   margin: 0 auto;
-  animation: type 5s steps(60, end); 
+  animation: type 8s steps(60, end); 
 }
 
 span{
@@ -92,7 +88,7 @@ img:hover {
 }
 
 
-#graphics img:nth-child(1) {
+/*#graphics img:nth-child(1) {
   margin: 8% 0% -32% 50%;
   position: relative;
   object-fit: contain;
@@ -130,27 +126,70 @@ img:hover {
   object-fit: contain;
   height: 90%;
   width: 17%;
+}*/
+
+/*experimental*/
+
+.img-laptop {
+  margin: 8% 0% 0% 50%;
+  position: relative;
+  object-fit: contain;
+  height: 100%;
+  width: 60%;
 }
 
-#purple {
-  background:;
+#img-purple {
+  color: #ffeefa;
 }
 
-#brown {
-  background:;
+.img-coffee {
+  margin: -53% 0% 13% 95%;
+  position: relative;
+  object-fit: cover;
+  height: 100%;
+  width: 14.5%;
 }
 
-#pink {
-  background:;
+#img-brown {
+  color: #fbe5ca;
 }
 
-#green {
-  background:;
+.img-camera {
+  margin: -33% 0% 40% -9%;
+  position: relative;
+  object-fit: cover;
+  height: 90%;
+  width: 18%;
 }
 
-#yellow {
-  background:;
+#img-blue {
+  color: #ebf9ff;
 }
+
+.img-notebooks {
+  margin: -44% 0% 9% 7%;
+  position: relative;
+  object-fit: contain;
+  height: 90%;
+  width: 45%;
+}
+
+#img-green {
+  color: #faffef;
+}
+
+.img-glasses {
+  margin: -15% 0% 0% -4%;
+  position: relative;
+  object-fit: contain;
+  height: 90%;
+  width: 17%;
+}
+
+#img-yellow {
+  color: #fffce1;
+}
+/*experimental*/
 
 #link {
   text-align: center;

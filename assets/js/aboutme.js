@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
     $('.menu-item').mouseenter(function () {
         $(this).css({
             outline: "0px solid transparent"

@@ -13,6 +13,7 @@ body, html {
   margin-left: 30%;
 }
 
+
 .menu-item {
   font-size: 15px;
   display: inline-block;
@@ -25,9 +26,6 @@ body, html {
   padding-right: 5px;
 }
 
-.menu-item:hover {
-  border: 2px solid #4e4d4d;
-}
 
 
 #intro {
@@ -56,14 +54,98 @@ body, html {
   margin-bottom: 15px;
 }
 
-.work-title {
+/*work titles & des*/
+.work-title1 {
+  display: inline-block;
+  cursor: pointer;
   font-style: 60px;
   font-weight: 200px;
+  color: #88C6ED;
 }
+
+.work-des1 {
+  display: none;
+  margin: 0 auto;
+  width: 55%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+}
+
+.work-title2 {
+  display: inline-block;
+  cursor: pointer;
+  font-style: 60px;
+  font-weight: 200px;
+  color: #88C6ED;
+}
+
+.work-des2 {
+  display: none;
+  margin: 0 auto;
+  width: 55%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+}
+
+.work-title3 {
+  display: inline-block;
+  cursor: pointer;
+  font-style: 60px;
+  font-weight: 200px;
+  color: #88C6ED;
+}
+
+.work-des3 {
+  display: none;
+  margin: 0 auto;
+  width: 55%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+}
+
+.work-title4 {
+  display: inline-block;
+  cursor: pointer;
+  font-style: 60px;
+  font-weight: 200px;
+  color: #88C6ED;
+}
+
+.work-des4 {
+  display: none;
+  margin: 0 auto;
+  width: 55%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+}
+
+.work-title1:hover {
+  color: #EB5260;
+}
+
+.work-title2:hover {
+  color: #EB5260;
+}
+
+.work-title3:hover {
+  color: #EB5260;
+}
+
+.work-title4:hover {
+  color: #EB5260;
+}
+/*worktitles&des*/
+
 
 .work-text {
   font-family: 'Open Sans', sans-serif;
   font-size: 12px;
+  font-style: italic;
+}
+
+.work-date {
+  color: #4e4d4d;
+  font-size: 13px;
 }
 
 .sticky {
@@ -71,14 +153,17 @@ body, html {
 }
 
 .description {
+  margin: 0 auto;
+  width: 35%;
   font-family: 'Open Sans', sans-serif;
-  font size: 12px;
+  font-size: 12px;
 }
+
 
 #skills, #languages {
+  cursor: pointer;
   margin-bottom: 15px;
 }
-
 
 a {
   color: #4e4d4d;
@@ -105,11 +190,6 @@ a.text-links:hover {
   text-align: center;
   font-size: 10px;
 }
-
-
-
-
-
 
 
 
