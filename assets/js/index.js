@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	
-	$("#graphics").fadeIn();
+	$("#description").fadeIn(200);
 
 	$(".menu-item").hover();
 	

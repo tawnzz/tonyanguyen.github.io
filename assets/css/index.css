@@ -3,7 +3,7 @@ body, html {
   max-width: 800px;
   margin: 0 auto;
   font-family: 'Reem Kufi', sans-serif;
-  background-color: #fffffc;
+  background: #fffffc;
 
 }
 
@@ -19,6 +19,15 @@ body, html {
   display: inline-block;
   margin: 20px 55px 0px 0px;
   cursor: pointer;
+  border: 2px solid transparent;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.menu-item:hover {
+  border: 2px solid #4e4d4d;
 }
 
 .link-item {
@@ -69,9 +78,18 @@ span{
   width: 50%
 }
 
-c {
-
+img{
+  opacity: 0.7;
+  filter: alpha(opacity=50);
+  -webkit-transition: all .45s ease-in-out; 
 }
+
+img:hover {
+  opacity: 1.0;
+  filter: alpha(opacity 100);
+  -webkit-transform: scale(1.03);
+}
+
 
 #graphics img:nth-child(1) {
   margin: 8% 0% -32% 50%;
@@ -111,6 +129,26 @@ c {
   object-fit: contain;
   height: 90%;
   width: 17%;
+}
+
+#purple {
+  background:;
+}
+
+#brown {
+  background:;
+}
+
+#pink {
+  background:;
+}
+
+#green {
+  background:;
+}
+
+#yellow {
+  background:;
 }
 
 #link {
