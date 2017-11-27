@@ -38,6 +38,7 @@ body, html {
 
 
 #intro {
+  cursor: pointer;
   position: relative;
   text-align: center;
   font-size: 40px;
