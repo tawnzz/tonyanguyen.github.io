@@ -29,33 +29,49 @@ body, html {
 
 
 #intro {
-  font-size: 50px;
+  position: relative;
+  text-align: center;
+  font-size: 40px;
   letter-spacing: 2px;
-  font-weight: 550;
-  padding: 10px;
   color: #88C6ED;
 }
 
-#description {
-  font-family: 'Open Sans', sans-serif;
-  width: 55%;
-}
 
-
-/* .page-container {
-  position: relative;
-  text-align: center;
-  width: 800px;
+/*animation intro*/
+#intro{
+  overflow: hidden;
+  border-right: .15em;
+  white-space: nowrap;
   margin: 0 auto;
-  display: inline-block;
-  border-radius: 5px;
-  background-color: #fff9f9;
+  animation: type 5s steps(60, end); 
 }
 
-.background-container {
-  background-color: #fff9f9;
+span{
+  animation: blink 1s infinite;
 }
- */
+
+@keyframes type{ 
+  from { width: 0; } 
+  to { width: 100% }
+} 
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: black }
+}
+
+/*animation intro end*/
+
+#description {
+  margin: -6% 0px 0px 25%;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  width: 50%
+}
+
+c {
+
+}
 
 #graphics img:nth-child(1) {
   margin: 8% 0% -32% 50%;
@@ -74,7 +90,7 @@ body, html {
 }
 
 #graphics img:nth-child(3) {
-  margin: -32% 0% 35% 60%;
+  margin: -32% 0% 38% -8%;
   position: relative;
   object-fit: cover;
   height: 90%;
@@ -82,7 +98,7 @@ body, html {
 }
 
 #graphics img:nth-child(4) {
-  margin: -35% 0% 10% 5%;
+  margin: -40% 0% 6% -3%;
   position: relative;
   object-fit: contain;
   height: 90%;
@@ -90,11 +106,21 @@ body, html {
 }
 
 #graphics img:nth-child(5) {
-  margin: -10% 0% 5% -2%;
+  margin: 0% 0% 5% -55%;
   position: relative;
   object-fit: contain;
   height: 90%;
   width: 17%;
+}
+
+#link {
+  text-align: center;
+  margin-top: -7px;
+  font-size: 10px;
+}
+
+#link:hover {
+  color: #EB5260;
 }
 
 
@@ -123,8 +149,6 @@ a.text-links:hover {
   text-align: center;
   font-size: 10px;
 }
-
-
 
 
 
