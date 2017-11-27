@@ -2,7 +2,7 @@
 body, html {
   max-width: 800px;
   margin: 0 auto;
-  font-family: 'Reem Kufi', sans-serif;
+  font-family: 'Raleway', sans-serif;
   background-color: #fffffc;
 
 }
@@ -175,7 +175,7 @@ a:hover {
 }
 
 a.text-links {
-  font-family: 'Reem Kufu', sans-serif;
+  font-family: 'Raleway', sans-serif;
   color: #ea3333;
   text-decoration: none;
 }
