@@ -1,19 +1,76 @@
-.container {
-  position: relative;
-  width: 100%;
+#top-bar {
+
 }
 
-div {
-  display: block;
+#header {
+
 }
 
-.content {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
+#navigation {
+
 }
+
+
+#page-container {
+
+}
+
+.slider-view {
+
+}
+
+#project-link{
+
+}
+
+.slider {
+
+}
+
+.slider-project-name js-show" {
+
+}
+
+#window {
+
+}
+
+.slider-controls {
+
+}
+
+.slider-controls-number {
+
+}
+
+.slider-controls-arrow {
+
+}
+
+.slider-controls-next {
+
+}
+
+.main-slider {
+
+}
+
+.slidy-slide {
+
+}
+
+.slider-object {
+
+}
+
+#bottom {
+
+}
+
+.footer {
+
+}
+
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
