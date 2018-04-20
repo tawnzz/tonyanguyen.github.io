@@ -1,48 +1,19 @@
-div, li {
-  font-family: 'Work Sans', sans-serif;
-  color: #444449;
-  font-size: 20px;
-  line-height: 150%;
+.container {
+  position: relative;
+  width: 100%;
 }
 
-a, span {
-  text-decoration: none;
-  color: #19F2E7;
+div {
+  display: block;
 }
 
-.header {
-    color: #19F2E7;
+.content {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
 }
-
-#all-text {
-  margin-top: 150px;
-  margin-left: 150px;
-  margin-right: 150px;
-}
-
-#top-li {
-  margin-top: 10px;
-}
-
-#bottom-li {
-  margin-bottom: 10px;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-span:hover {
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-#byebye{
-  margin-top: 70px;
-  margin-bottom: 100px;
-
-}
-
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
