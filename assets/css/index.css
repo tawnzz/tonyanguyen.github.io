@@ -1,106 +1,14 @@
 
 
 body {
-  font-family: 'Karla', sans-serif;
+  font-family: 'Roboto Mono', monospace;
   color: #7b7b7b;
-  font-size: 50px;
-  margin: auto 0;
 }
 
 div {
   display: block;
 }
 
-
-
-#navbar {
-  display: inline-block;
-    width: 100%;
-    background-color: white;
-    height: 60px;
-    position: fixed;
-    opacity: .9;
-    z-index: 50;
-}
-
-.menu-item {
-  float: left;
-  display: inline-block;
-  position: relative;
-  margin-left: 20px;
-}
-
-
-
-a {
-    position: relative;
-    text-decoration: none;
-    color: #FF6B56;
-}
-
-
-#page-container {
-  text-align: center;
-  padding: 50px;
-
-}
-
-.slider-view {
-
-}
-
-#project-link{
-
-}
-
-.slider {
-
-}
-
-.slider-project-name js-show" {
-
-}
-
-#window {
-
-}
-
-.slider-controls {
-
-}
-
-.slider-controls-number {
-
-}
-
-.slider-controls-arrow {
-
-}
-
-.slider-controls-next {
-
-}
-
-.main-slider {
-
-}
-
-.slidy-slide {
-
-}
-
-.slider-object {
-
-}
-
-#bottom {
-
-}
-
-.footer {
-  text-align: center;
-
-}
 
 
 /* Smartphones (portrait and landscape) ----------- */
