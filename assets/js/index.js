@@ -1,9 +1,17 @@
 $(document).ready(function() {
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "100%";
-    }
 
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-    }
+    $(function() {
+        //page title
+        var pageTitle = $("title").text();
+
+        //change page title!
+        $(window).blur(function() {
+            $("title").text("😔 Come back! ");
+        });
+
+        //change back on focus
+        $(window).focus(function() {
+          $("title").text(pageTitle);
+        });
+    });
 })

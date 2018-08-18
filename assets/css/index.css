@@ -2,11 +2,120 @@
 
 body {
   font-family: 'Roboto Mono', monospace;
-  color: #7b7b7b;
 }
 
-div {
+/*page container*/
+
+.border-wrapper .default .border {
+    z-index: 9999;
+    background-color: #2a64f8;
+}
+
+.border.top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform-origin: top left;
+}
+
+.border.horizontal {
+    width: 100%;
+    height: 10px;
+}
+
+.border {
+    display: block;
+    will-change: auto;
+}
+
+.container {
+  margin-top: 25px;
+  margin: 0 auto;
+  background-color: white;
+  height: 90%;
+  width: 90%;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 25px;
+}
+
+/*menu and header*/
+.top-bar {
   display: block;
+  width: 100%;
+}
+
+.header {
+  float: left;
+
+}
+.navmenu {
+  float: right;
+
+}
+
+/*pop-out nav*/
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    text-align:center;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+
+}
+
+.sidenav a:hover{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/*content spacing*/
+
+.content {
+  margin-top: 100px;
+}
+
+.item {
+  margin-top: 15px;
+}
+
+/*things I believe apply to me! hehe*/
+.tagline {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 900;
+}
+
+/*social media footer*/
+.footer {
+  margin: 0 auto;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }
 
 
