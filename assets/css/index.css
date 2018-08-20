@@ -11,7 +11,7 @@ element.style {
 
 .border-wrapper .default .border {
     z-index: 9999;
-    background-color: #EA2B1F;
+    background-color: #EFA00B;
 }
 
 .border.top {
@@ -78,6 +78,7 @@ element.style {
 }
 
 .header {
+  position: fixed;
   float: left;
 
 }
@@ -131,23 +132,29 @@ element.style {
   margin-top: 35px;
 }
 
-.item {
+/*.item {
   margin-top: 15px;
-}
+}*/
 
 /*things I believe apply to me! hehe*/
 .tagline {
   font-family: 'Playfair Display', serif;
-  font-size: calc(80px + .5vw);
+  font-size: 8vw;
   font-style: italic;
   font-weight: 900;
-  color: #5EB1BF;
+  color: #496DDB;
   line-height: 1.1;
 }
 
 /*social media footer*/
-.footer {
+.footer, a {
+  width: 50%;
+  text-align: center;
+  bottom: 0;
+  font-size: 2.7vw;
+  color: black;
   margin: 0 auto;
+  text-decoration: none;
 }
 
 @media screen and (max-height: 450px) {
