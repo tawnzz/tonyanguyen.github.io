@@ -134,16 +134,12 @@ element.style {
 .content {
   margin-top: 20px;
 }
-/*
-.item {
-  margin-top: 15px;
-}*/
 
 /*things I believe apply to me! hehe*/
 .tagline {
 
   font-family: 'Playfair Display', serif;
-  font-size: 10vw;
+  font-size: 64px;
   font-style: italic;
   font-weight: 900;
   color: #496DDB;
@@ -152,14 +148,15 @@ element.style {
 
 
 .description {
-  width: 80%;
-  padding-bottom: 15vh;
+  padding-top: 50px;
+  padding-bottom: 100px;
 }
 
 /*projects*/
 .flex-container {
   padding: 0;
   margin: 0 auto;
+  justify-content: space-around;
   list-style: none;
   -ms-box-orient: horizontal;
   display: -webkit-box;
@@ -169,6 +166,10 @@ element.style {
   display: -webkit-flex;
   display: flex;
 }
+
+/*.flex-item: {
+  flex-grow: 1;
+}*/
 
 /*top layer*/
 .proj-img {
@@ -185,8 +186,7 @@ element.style {
 .proj {
   text-align: center;
   border: 1px solid #496DDB;
-  margin: 0 auto;
-  margin: 25px;
+  margin: 20px;
   cursor: pointer;
   position: relative;
   text-decoration: none;
