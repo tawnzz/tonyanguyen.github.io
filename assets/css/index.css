@@ -175,27 +175,34 @@ element.style {
   position: relative;
   right: 12px;
   bottom: 12px;
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   background-color: white;
-  border: 1px red solid;
+  border: 1px #496DDB solid;
 }
 
 /*bottom layer*/
 .proj {
   text-align: center;
-  border: 1px solid red;
+  border: 1px solid #496DDB;
   margin: 0 auto;
   margin: 25px;
-  background-color: white;
   cursor: pointer;
   position: relative;
   text-decoration: none;
   z-index: 10;
+  background: linear-gradient(to right, white 50%, #496DDB 50%);
+  background-size: 200% 100%;
+  background-position: left bottom;
+  transition: all 1s ease;
 }
 
 .proj:hover {
-  background-color: red;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  background-color: #496DDB;
+  background-position: right bottom;
 }
 
 .wrap    { 
