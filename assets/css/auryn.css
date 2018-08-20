@@ -11,7 +11,7 @@ element.style {
 
 .border-wrapper .default .border {
     z-index: 9999;
-    background-color: #EFA00B;
+    background-color: #6F2DBD;
 }
 
 .border.top {
@@ -60,6 +60,7 @@ element.style {
 .container {
   width: 100%;
 }
+
 .page-contents {
   margin: 0 auto;
   background-color: white;
@@ -81,6 +82,7 @@ element.style {
 }
 
 .header {
+  text-decoration: none;
   position: fixed;
   float: left;
 
@@ -134,81 +136,29 @@ element.style {
 .content {
   margin-top: 20px;
 }
-/*
-.item {
-  margin-top: 15px;
-}*/
 
-/*things I believe apply to me! hehe*/
-.tagline {
-
-  font-family: 'Playfair Display', serif;
+.title {
+  text-align: center;
   font-size: 10vw;
-  font-style: italic;
   font-weight: 900;
-  color: #496DDB;
   line-height: 1.1;
 }
 
 
 .description {
+  font-family: Roboto, sans-serif;
   width: 80%;
+  margin: 0 auto;
   padding-bottom: 15vh;
 }
 
-/*projects*/
-.flex-container {
-  padding: 0;
-  margin: 0 auto;
-  list-style: none;
-  -ms-box-orient: horizontal;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -moz-flex;
-  display: -webkit-flex;
-  display: flex;
-}
-
-/*top layer*/
-.proj-img {
-  position: relative;
-  right: 12px;
-  bottom: 12px;
-  width: 200px;
-  height: 200px;
-  background-color: white;
-  border: 1px red solid;
-}
-
-/*bottom layer*/
-.proj {
-  text-align: center;
-  border: 1px solid red;
-  margin: 0 auto;
-  margin: 25px;
-  background-color: white;
-  cursor: pointer;
-  position: relative;
-  text-decoration: none;
-  z-index: 10;
-}
-
-.proj:hover {
-  background-color: red;
-}
-
-.wrap    { 
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-} 
-
-.columns-item {
-  margin: 0 auto;
-  display: inline-block;
-  width: calc(50% - (1.5rem *2));
-  margin: 1.5rem;
-  vertical-align: top;
+/*header*/
+.heading {
+  font-family: 'Roboto Mono', monospace;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 900px;
 }
 
 
