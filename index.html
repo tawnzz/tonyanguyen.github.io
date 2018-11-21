@@ -9,6 +9,9 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,700italic,900italic" media="all">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 		<link rel="stylesheet" href="assets/css/index.css">
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/julianshapiro/velocity/master/velocity.min.js">
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
 
 	</head>
 
@@ -24,11 +27,15 @@
 	        <div class="border left vertical" style="transform: matrix(1, 0, 0, 1, 0, 0);">
 	        </div>
 		</div>
+
 	</div>
 	<div class="container">
 		<div class="page-contents">
 			<div class="top-bar">
+
+
 				<div id="mySidenav" class="sidenav">
+					<div class="name"> Tonya Nguyen</div>
 				  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 				  <a href="index.html">home</a>
 				  <a href="projects.html">work</a>
@@ -39,30 +46,55 @@
 			<div class="header">
 		 		Tonya Nguyen
 		 	</div>
-			<div class="navmenu" style="cursor:pointer" onclick="openNav()"> &#9776;</div>
+				<div class="navmenu" style="cursor:pointer" onclick="openNav()"> &#9776;
+				
+				</div>
 			</div>
 			 
 			 <div class="content">
-			 	<div class="landing-box">
-			 		<div class="tagline">
-						<p class="tag" style="margin-left: -0.1em;">
-							<span> Designer </span> </p>
-						<p class="tag">
-							<span> Thinker </span>
-						</p>
-						<p class="tag" style="margin-left: 0.2em;">
-							<span> Human </span>
-						</p>
-			 		</div>
+				
+				<div class="landing-box">
 
-				 
+					<div class="tag">
+		
+						<span class="tagline" style="display: inline-block;transform: matrix(1, 0, 0, 1, 0, 0);">
+							<font class="clear" style="vertical-align: inherit;">
+								<font style="vertical-align: inherit;"> Tonya</font>
+							</font>
+						</span>									 
+					
+						<br>
+						<span class="tagline" style="display: inline-block;transform: matrix(1, 0, 0, 1, 0, 0);">
+							<font style="vertical-align: inherit;">
+								<font class="clear" style="vertical-align: inherit;">Nguyen </font>
+							</font>
+						</span>
+				
+						<br>
+						
+						<!-- <span class="tagline" style="display: inline-block;transform: matrix(1, 0, 0, 1, 0, 0);">
+							<font class="clear" style="vertical-align: inherit;">
+								<font style="vertical-align: inherit;">human. </font>
+							</font>
+						</span> -->
 
-				 	<div class="row description">
-				 		<div class="col-xs-12 col-md-12 col-lg-12">
-				 			Xin chao! I'm Tonya, a 20 year old aspiring product designer with a blazin' determination to tinker and create! Captivated by culture and tech, I'm currently curating my own studies in human computer interaction and data science at UC Berkeley. 
-				 		</div>
-				 	</div>
-				 </div>
+					</div>
+
+					<div class="row description">
+						<div class="col-xs-12 col-md-12 col-lg-12">
+							<p>Third year undergraduate researcher and interaction designer at <a href="https://www.berkeley.edu/"> UC Berkeley</a>, with a blazin determination to tinker and create! </p>
+
+							<p>I'm fortunate enough to be curating my own studies and directing my own research in Human Computer Interaction and Critical Theory.</p>
+							
+							<p>As a researcher, I explore how users behave and interact with alternative interfaces. I strive to develop a framework for critical, reflective design. Currently, I'm working in the <a href="http://bid.berkeley.edu/" >Berkeley Institute of Design.</a> </p>
+							
+						
+							
+						</div>
+					</div>
+				</div>
+
+			 	
 
 			 	<!-- this took so long!!!! omg -->
 			 	<ul class="flex-container wrap">
@@ -158,16 +190,41 @@
 
 
 </body>
+<link rel="stylesheet" href="css/section-scroll.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.section-scroll.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script type="text/javascript" src="assets/js/index.js"></script>
-<script>
-function openNav() {
-    document.getElementById("mySidenav").style.width = "100%";
-}
+<script type="text/javascript" src="js/paper-full.js"></script>
+<!-- Define inlined PaperScript associate it with myCanvas -->
+<script type="text/paperscript" canvas="myCanvas">
+	var circle = new paper.Path.Circle(view.center, 50);
 
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
+	function onMouseMove(event) {
+		var circle = new Path.Circle({
+			center: event.middlePoint,
+			radius: 100
+		});
+		circle.fillColor = {
+			hue: event.count*1.5,
+			saturation: 1,
+			brightness: 1
+		}
+
+		if (project.activeLayer.children.length > 70) {
+			project.activeLayer.children[0].remove();
+		}
+	}
+</script>
+<script>
+	function openNav() {
+		document.getElementById("mySidenav").style.width = "100%";
+	}
+
+	function closeNav() {
+		document.getElementById("mySidenav").style.width = "0";
+	}
 </script>
 
 

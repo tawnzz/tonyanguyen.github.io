@@ -1,17 +1,107 @@
 
 
 body {
-  font-family: 'Roboto Mono', monospace;
+  /* font-family: 'Roboto Mono', monospace; */
+  font-family: 'Karla', monospace;
 }
 
 /*page container*/
+
+.cd-nav-trigger {
+  top: 18px;
+  right: 5%;
+  height: 44px;
+  width: 44px;
+  z-index: 5;
+  /* image replacement */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+.cd-overlay-nav, .cd-overlay-content {
+  /* containers of the 2 main rounded backgrounds - these containers are used to position the rounded bgs behind the menu icon */
+  position: fixed;
+  top: 18px;
+  right: 5%;
+  height: 4px;
+  width: 4px;
+  transform: translateX(-20px) translateY(20px);
+}
+
+.cd-overlay-nav span, .cd-overlay-content span {
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
+  will-change: transform;
+  transform: scale(0);
+}
+
+.cd-nav-trigger .cd-icon {
+  /* icon created in CSS */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  transform: translateX(-50%) translateY(-50%);
+  display: inline-block;
+  width: 18px;
+  height: 3px;
+  background-color: #ffffff;
+  z-index: 10;
+}
+
+.cd-nav-trigger .cd-icon::before, .cd-nav-trigger .cd-icon:after {
+  /* upper and lower lines of the menu icon */
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  transition: transform .3s;
+}
+
+.cd-nav-trigger .cd-icon::before {
+  transform: translateY(-6px) rotate(0deg);
+}
+
+.cd-nav-trigger .cd-icon::after {
+  transform: translateY(6px) rotate(0deg);
+}
+
+.cd-nav-trigger.close-nav .cd-icon {
+  /* user clicks on the .cd-nav-trigger element - transform the icon */
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.cd-nav-trigger.close-nav .cd-icon::before, .cd-nav-trigger.close-nav .cd-icon::after {
+  background-color: white;
+}
+
+.cd-nav-trigger.close-nav .cd-icon::before {
+  transform: translateY(0) rotate(45deg);
+}
+
+.cd-nav-trigger.close-nav .cd-icon::after {
+  transform: translateY(0) rotate(-45deg);
+}
+
+
+
 element.style {
     transform: matrix(1, 0, 0, 1, 0, 0);
 }
 
+.white {
+  z-index: 9999;
+  background-color: #fff;
+}
+
 .border-wrapper .default .border {
     z-index: 9999;
-    background-color: #EFA00B;
+    background-color: #496DDB;
 }
 
 .border.top {
@@ -72,8 +162,8 @@ element.style {
 .top-bar {
   margin: 0 auto;
   background-color: white;
-  width: 90%;
-  padding: 2.0em 0;
+  width: 100%;
+  padding: 0.5em 0;
   position: relative;
   max-width: 1200px;
 }
@@ -90,28 +180,40 @@ element.style {
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1;
+    z-index: 999999;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: #496DDB;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
-    text-align:center;
+    text-align: center;
+}
+
+.name {
+  padding: 8px 8px 8px 32px;
+  margin-bottom: 5%;
+  color: #ffffff;
+  font-size: 45px;
+  position: relative;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 900;
 }
 
 .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: #ffffff;
     display: block;
+    position: relative;
     transition: 0.3s;
 
 }
 
 .sidenav a:hover{
-    color: #f1f1f1;
+    text-decoration: underline;
 }
 
 .sidenav .closebtn {
@@ -125,17 +227,19 @@ element.style {
 /*content spacing*/
 
 .content {
+  padding-top: 3%;
+  margin: 0 auto;
   position: relative;
   height: 100%;
-  width: 95%;
+  width: 80%;
 }
 
 .landing-box {
   position: relative;
   margin: 0 auto;
   width: 90%;
-  height: 100vh;
   max-width: 1200px;
+  padding: 0 0 5em 0;
 }
 
 
@@ -143,32 +247,58 @@ element.style {
 /*things I believe apply to me! hehe*/
 .tagline {
 /*  display: inline-block;*/
+  font-size: 110px;
   position: relative;
   font-family: 'Playfair Display', serif;
-  font-size: 96px;
   font-style: italic;
   font-weight: 900;
   color: #496DDB;
-  line-height: 8%;
 }
 
-/*.tag span{
+.tag {
+  padding: 2em 0 4em 0;
+}
+.tag span{
+  line-height: 100%;
   position: relative;
   border-bottom: 1px solid white;
 }
 
-.tag span:before {
+.clear:hover, .tag span:hover{
+  opacity: 0;
+}
+
+
+.tag span:hover::after, .tag span:focus::after {
+   transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  background-color: #496DDB;
+  background-position: right bottom;
+}
+
+
+.tag span::after {
   content: '';
   position: absolute;
-  top: 84%;
+  top: 95%;
+  margin-left: 2%;
   width: 100%;
   height: 1px;
+  z-index: -10;
   background-color: #496DDB;
-}*/
+  background: linear-gradient(to right, #496DDB 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: left bottom;
+  transition: all 1s ease;
+
+}
+
 
 .description {
-  font-size: 20px;
-  line-height: 135%;
+  width: 85%;
+  font-size: 16px;
+  line-height: 150%;
 }
 
 /*projects*/
@@ -286,8 +416,4 @@ element.style {
   }
 
 }
-
-
-
-
 
