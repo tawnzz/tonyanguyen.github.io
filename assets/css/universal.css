@@ -1,0 +1,44 @@
+@font-face {
+    font-family: RomanaBTBold;
+    src: url(/RomanaBoldBT.ttf);
+    }
+    
+    @font-face {
+    font-family: RomanaBT;
+    src: url(/RomanaBT.ttf);
+    }
+    
+    @font-face {
+    font-family: RomanaBTRoman;
+    src: url(/RomanaBTRoman.ttf);
+    }
+    
+    @font-face {
+    font-family: WorkSans-Regular;
+    src: url(/WorkSans-Regular.tf);
+    }
+
+    @font-face {
+        font-family: WorkSans-Bold;
+        src: url(/WorkSans-Bold.tf);
+        }
+    
+    @font-face {
+        font-family: WorkSans-Black;
+        src: url(/WorkSans-Black.tf);
+        }
+    
+    @font-face {
+        font-family: WorkSans-SemiBold;
+        src: url(/WorkSans-SemiBold.tf);
+        }
+
+
+    p {
+        font-family: WorkSans-Regular;
+    }
+
+    h1, strong {
+        font-family: RomanaBTBold, Helvetica, Arial, sans-serif;
+        }
+        

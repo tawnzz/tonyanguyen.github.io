@@ -2,7 +2,7 @@
 
 body {
   /* font-family: 'Roboto Mono', monospace; */
-  font-family: 'Karla', monospace;
+  font-family: 'Work Sans', sans-serif;
 }
 
 /*page container*/
@@ -169,7 +169,16 @@ element.style {
 }
 
 .header {
-  float: left;
+  width: 100%;
+  white-space: nowrap;
+  display: inline-block;
+  font-size: 18px;
+  font-family: 
+}
+
+.moving {
+  margin-left: 7px;
+  margin-right: 7px;
 }
 .navmenu {
   float: right;
@@ -196,7 +205,6 @@ element.style {
   color: #ffffff;
   font-size: 45px;
   position: relative;
-  font-family: 'Playfair Display', serif;
   font-style: italic;
   font-weight: 900;
 }
@@ -242,17 +250,30 @@ element.style {
   padding: 0 0 5em 0;
 }
 
+/* styling stuff */
+.brightred {
+  color: #E83434;
+}
+
+.green {
+  color: #20D825;
+}
+
+.blue {
+  color: #026CFC;
+}
+
+
 
 
 /*things I believe apply to me! hehe*/
 .tagline {
 /*  display: inline-block;*/
-  font-size: 110px;
+  font-size: 86px;
   position: relative;
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
+  font-family: 'Work Sans', sans-serif;
   font-weight: 900;
-  color: #496DDB;
+  color: rgb(25, 26, 30);
 }
 
 .tag {
@@ -273,7 +294,7 @@ element.style {
    transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
-  background-color: #496DDB;
+  background-color: rgb(25, 26, 30);
   background-position: right bottom;
 }
 
@@ -286,8 +307,8 @@ element.style {
   width: 100%;
   height: 1px;
   z-index: -10;
-  background-color: #496DDB;
-  background: linear-gradient(to right, #496DDB 50%, white 50%);
+  background-color: rgb(25, 26, 30);
+  background: linear-gradient(to right, rgb(25, 26, 30) 50%, white 50%);
   background-size: 200% 100%;
   background-position: left bottom;
   transition: all 1s ease;
@@ -299,6 +320,11 @@ element.style {
   width: 85%;
   font-size: 16px;
   line-height: 150%;
+}
+
+.description-link {
+  text-decoration: underline;
+  tex
 }
 
 /*projects*/
@@ -373,7 +399,7 @@ element.style {
   margin-top: 50px;
   text-align: center;
   bottom: 0;
-  color: black;
+  color: #496DDB;
   margin: 0 auto;
   text-decoration: none;
 }
