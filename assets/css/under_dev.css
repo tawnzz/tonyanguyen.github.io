@@ -68,38 +68,6 @@ element.style {
 	will-change: auto;
 }
 
-.scroll {
-	/* the outer div */
-	background: #fcfcfc;
-	font-family: 'WorkSans-ExtraLight';
-	font-size: 2.2em;
-	position: relative;
-	left: 0%;
-	width: 99.9%;
-	max-height: 45px;
-	overflow: hidden;
-	cursor: pointer;
-}
-
-ul.list {
-	position: relative;
-	display: inline-block;
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
-
-ul.list.cloned {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-}
-
-ul.list li {
-	float: left;
-	padding-left: 20px;
-}
-
 .content {
 	width: 70%;
 	margin: 0 auto;
@@ -109,6 +77,7 @@ ul.list li {
 
 .container {
 	background: #fcfcfc;
+	padding-top: 1%;
 }
 
 .landing {
@@ -117,9 +86,9 @@ ul.list li {
 	margin: 0 auto;
 }
 
-/* .description {
-	max-width: 650px; 
-}*/
+.description {
+	/* max-width: 650px; */
+}
 
 /* styling stuff */
 .red {
@@ -157,6 +126,74 @@ ul.list li {
 	font-weight: 700;
 }
 
+/* .tag {
+	padding: 2em 0 4em 0;
+}
+.tag span {
+	line-height: 100%;
+	position: relative;
+	border-bottom: 1px solid white;
+}
+
+.clear:hover,
+.tag span:hover {
+	opacity: 0.7;
+}
+
+.tag span:hover::after,
+.tag span:focus::after {
+	transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	background-color: rgb(25, 26, 30);
+	background-position: right bottom;
+}
+
+.tag span::after {
+	content: '';
+	position: absolute;
+	top: 95%;
+	margin-left: 2%;
+	width: 100%;
+	height: 1px;
+	z-index: -10;
+	background-color: rgb(25, 26, 30);
+	background: linear-gradient(to right, rgb(25, 26, 30) 50%, white 50%);
+	background-size: 200% 100%;
+	background-position: left bottom;
+	transition: all 1s ease;
+} */
+
+/*projects*/
+.flex-container {
+	padding-top: 8%;
+	padding-bottom: 10%;
+	/* padding: 0; */
+	margin: 0 auto;
+	justify-content: space-around;
+	list-style: none;
+	-ms-box-orient: horizontal;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: flex;
+}
+
+.wrap {
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.project-item {
+	margin: 0 auto;
+	display: inline-block;
+	width: calc(50% - (1.5rem *2));
+	margin: 1.5rem;
+	vertical-align: top;
+}
+
 a {
 	text-decoration: none;
 	color: black;
@@ -165,6 +202,19 @@ a {
 
 a:hover {
 	opacity: 0.2;
+}
+
+.scroll {
+	/* the outer div */
+	background: #fcfcfc;
+	font-family: 'WorkSans-ExtraLight';
+	font-size: 2.2em;
+	position: relative;
+	left: 0%;
+	width: 99.9%;
+	max-height: 45px;
+	overflow: hidden;
+	cursor: pointer;
 }
 
 .downArrow {
@@ -243,7 +293,6 @@ a:hover {
 }
 
 #me {
-	/* box-shadow: 5px 10px 18px #c9c9c9; */
 	position: sticky;
 	margin: 0 0 0 50vw;
 	width: 32vw;
@@ -251,69 +300,36 @@ a:hover {
 	max-width: 500px;
 }
 
-/*projects*/
-.flex-container {
-	padding-top: 8%;
-	padding-bottom: 10%;
-	margin: 0 auto;
-	justify-content: space-around;
-	list-style: none;
-	-ms-box-orient: horizontal;
-	display: -webkit-box;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: -moz-flex;
-	display: -webkit-flex;
-	display: flex;
+/*social media footer*/
+.footer {
+	background: #fcfcfc;
+	text-align: center;
+	margin-bottom: 50px;
+	width: 100%;
 }
 
-.wrap {
-	-webkit-flex-wrap: wrap;
-	flex-wrap: wrap;
-}
-
-/* positioning of items */
-.project-item {
-	display: block;
-	font-size: 1rem;
-	margin: 1.5rem;
-	/* vertical-align: top; */
-	width: auto;
-}
-
-/* Box Positioning */
 .ProjBox {
 	cursor: pointer;
 	position: relative;
 	text-decoration: none;
 }
-
-/* Content */
 .ProjBox-content {
-	/* needs to be block or won't show */
 	display: block;
 	height: 100%;
-	text-decoration: none;
-	width: 83%;
-	z-index: 3;
-	/* padding from left and top */
-	padding-left: 1.5em;
-	padding-bottom: 1.5em;
-	padding-top: 0.2em;
+	padding: 2em;
 	position: relative;
+	text-decoration: none;
+	width: 100%;
+	z-index: 3;
 }
-
-/* Border & Outline */
 .ProjBox:after,
 .ProjBox:before {
-	height: 100%;
-	width: 100%;
 	border: 1px solid #323232;
 	display: block;
+	height: 100%;
+	width: 100%;
 }
-
 .ProjBox:after {
-	/* pseudo-element, top layer */
 	content: " ";
 	left: 0;
 	position: absolute;
@@ -322,13 +338,13 @@ a:hover {
 	z-index: 1;
 }
 .ProjBox:before {
-	background-size: 0 0;
-	content: " ";
-	left: 13px;
-	position: absolute;
-	top: 13px;
 	background-position: 100% 100%;
 	background-repeat: no-repeat;
+	background-size: 0 0;
+	content: " ";
+	left: 5px;
+	position: absolute;
+	top: 5px;
 	transition: background-size 500ms -200ms;
 }
 @media (min-width: 750px) {
@@ -337,8 +353,6 @@ a:hover {
 		top: 10px;
 	}
 }
-
-/* holy ;u; took forever */
 .ProjBox-img {
 	background: transparent center no-repeat;
 	background-size: cover;
@@ -353,19 +367,15 @@ a:hover {
 	width: 100%;
 	z-index: 2;
 }
-
-/* image shows up w/ opacity */
+.ProjBox:focus .ProjBox-img,
 .ProjBox:hover .ProjBox-img {
 	opacity: .15;
 	transition-delay: 0ms;
 	visibility: visible;
 }
-
 .ProjBox:active .ProjBox-img {
 	opacity: .3;
 }
-
-/* transition background size */
 .ProjBox:focus:before,
 .ProjBox:hover:before {
 	background-size: 100% 100%;
@@ -374,30 +384,36 @@ a:hover {
 .ProjBox::after {
 	background: #f6f6f6;
 }
-
-/* border color */
 .ProjBox::after,
 .ProjBox::before {
-	border-color: #a03dda;
-	border-radius: 2px;
+	border-color: #3ecc77;
 }
-
-/* transition color */
 .ProjBox::before {
-	background-image: linear-gradient(40deg, #ffde00 10%, #ec2974 40%, #a03dda 90%);
+	background-image: linear-gradient(0deg, #3ecc77 0%, #3ecc77 100%);
 }
-
-/* content color */
 .ProjBox-content {
 	color: #fff;
 }
-
-/* top layer */
-
+.ProjBox-tag,
+.ProjBox-link {
+	color: #fff;
+}
 .ProjBox:after {
-	background: #fffdfd;
+	background: #f6f6f6;
 }
 
+.ProjBox::before,
+.ProjBox::before {
+	background-image: linear-gradient(0deg, #3ecc77 0%, #3ecc77 100%);
+}
+
+.project-item {
+	display: block;
+	font-size: 1rem;
+	margin: 1.5rem;
+	vertical-align: top;
+	width: auto;
+}
 @media (min-width: 750px) {
 	.project-item {
 		display: inline-block;
@@ -411,16 +427,4 @@ a:hover {
 		width: 28%;
 		width: calc(33.3333% - ((1.5rem + .1rem) * 2));
 	}
-}
-
-/*social media footer*/
-.footer {
-	font-size: 0.8em;
-	position: fixed;
-	bottom: 0px;
-	color: white;
-	background-color: #0617af;
-	text-align: center;
-	width: 100%;
-	z-index: 99999999999;
 }
