@@ -22,8 +22,8 @@ element.style {
 
 .border-wrapper .default .border {
 	z-index: 9999;
-	background-color: #ffffff;
-	box-shadow: 0 4px 8px 0 rgba(160, 160, 160, 0.1), 0 6px 20px 0 rgba(160, 160, 160, 0.1);
+	background-color: #003cf8;
+	box-shadow: 0 4px 8px 0 rgba(180, 180, 180, 0.1), 0 6px 20px 0 rgba(180, 180, 180, 0.1);
 }
 
 .border.top {
@@ -99,13 +99,6 @@ ul.list.cloned {
 ul.list li {
 	float: left;
 	padding-left: 20px;
-}
-
-.aboutme {
-	width: 90%;
-	margin-right: 5em;
-	margin-top: 3em;
-	margin-bottom: 3em;
 }
 
 .row {
@@ -224,8 +217,8 @@ a:hover {
 	font-size: 0.8em;
 	position: fixed;
 	bottom: 0px;
-	color: #000000;
-	background-color: #ffffff;
+	color: #ffffff;
+	background-color: #003cf8;
 	text-align: center;
 	width: 100%;
 	z-index: 99999999999;
