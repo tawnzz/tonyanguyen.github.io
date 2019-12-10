@@ -22,7 +22,7 @@ element.style {
 
 .border-wrapper .default .border {
 	z-index: 9999;
-	background-color: #ffffff;
+	background-color: #003cf8;
 	box-shadow: 0 4px 8px 0 rgba(180, 180, 180, 0.1), 0 6px 20px 0 rgba(180, 180, 180, 0.1);
 }
 
@@ -446,8 +446,8 @@ a:hover {
 	font-size: 0.8em;
 	position: fixed;
 	bottom: 0px;
-	color: black;
-	background-color: #ffffff;
+	color: #fff;
+	background-color: #003cf8;
 	text-align: center;
 	width: 100%;
 	z-index: 99999999999;

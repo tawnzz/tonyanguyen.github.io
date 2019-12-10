@@ -22,7 +22,7 @@ element.style {
 
 .border-wrapper .default .border {
 	z-index: 9999;
-	background-color: #ffffff;
+	background-color: #003cf8;
 	box-shadow: 0 4px 8px 0 rgba(180, 180, 180, 0.1), 0 6px 20px 0 rgba(180, 180, 180, 0.1);
 }
 
@@ -101,27 +101,77 @@ ul.list li {
 	padding-left: 20px;
 }
 
-.content {
-	width: 70%;
-	margin: 0 auto;
-	margin: 0 auto;
-	position: relative;
-	margin-bottom: 4em;
+.aboutme {
+	width: 90%;
+	margin-right: 5em;
+	margin-top: 3em;
+	margin-bottom: 3em;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0 2px;
+}
+
+.column {
+	flex: 33%;
+	max-width: 90%;
+	padding: 0 2px;
 }
 
 .container {
-	background: #ffffff;
+	position: relative;
 }
 
-.landing {
-	width: 70%;
-	padding-top: 7%;
-	margin: 0 auto;
+.container-left {
+	margin-left: 4%;
 }
 
-.description {
-	margin: 0 auto;
-	padding-top: 1em;
+@media (min-width: 576px) {
+	.container {
+		max-width: 540px;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.column {
+		flex: 100%;
+		max-width: 100%;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.column {
+		flex: 100%;
+		max-width: 100%;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.column {
+		flex: 100%;
+		max-width: 100%;
+	}
+}
+
+.my-img {
+	width: 80%;
+	padding-top: 2em;
+	padding-left: 20%;
+	margin-right: 8em;
+	/* height: 500px;
+	margin-top: 1em; */
+	margin-bottom: 35px;
+}
+
+.text {
+	position: relative;
+	background-color: none;
+	text-align: left;
+	padding-left: 35px;
+	padding-right: 20px;
+	padding-bottom: 35px;
 }
 
 /* styling stuff */
@@ -152,9 +202,7 @@ ul.list li {
 	color: #026cfc;
 }
 
-/*things I believe apply to me! hehe*/
 .tagline {
-	text-align: center;
 	font-size: 2em;
 	position: relative;
 	font-family: 'Work Sans', sans-serif;
@@ -176,8 +224,8 @@ a:hover {
 	font-size: 0.8em;
 	position: fixed;
 	bottom: 0px;
-	color: black;
-	background-color: #ffffff;
+	color: #ffffff;
+	background-color: #003cf8;
 	text-align: center;
 	width: 100%;
 	z-index: 99999999999;
