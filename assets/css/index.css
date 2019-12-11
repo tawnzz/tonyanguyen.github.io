@@ -6,8 +6,10 @@ h3,
 h4,
 h5,
 .tagline {
-	font-family: 'AvenirNextLTPro-Regular', sans-serif;
+	font-family: 'WorkSans-Regular';
 	color: #1d1d1d;
+	line-height: 1.5;
+	font-weight: 300;
 }
 
 /*page container*/
@@ -72,7 +74,8 @@ element.style {
 .scroll {
 	/* the outer div */
 	background: #ffffff;
-	font-family: 'WorkSans-ExtraLight';
+	font-family: 'WorkSans-Light';
+	font-weight: 100;
 	font-size: 1.5em;
 	position: relative;
 	left: 0%;
@@ -102,7 +105,7 @@ ul.list li {
 }
 
 .content {
-	width: 70%;
+	width: 80%;
 	margin: 0 auto;
 	margin: 0 auto;
 	position: relative;
@@ -114,7 +117,7 @@ ul.list li {
 
 .landing {
 	width: 70%;
-	padding-top: 7%;
+	padding-top: 4em;
 	margin: 0 auto;
 }
 
@@ -144,7 +147,7 @@ ul.list li {
 }
 
 .bold {
-	font-family: 'AvenirNextLTPro-Medium', sans-serif;
+	font-family: 'WorkSans-Medium';
 }
 .blue {
 	color: #026cfc;
@@ -154,7 +157,7 @@ ul.list li {
 .tagline {
 	font-size: 3.75em;
 	position: relative;
-	font-family: 'Work Sans', sans-serif;
+	font-family: 'WorkSans-Medium';
 	font-weight: 700;
 }
 
