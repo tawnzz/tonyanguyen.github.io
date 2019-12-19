@@ -23,7 +23,6 @@ element.style {
 .border-wrapper .default .border {
 	z-index: 9999;
 	background-color: #ffffff;
-	box-shadow: 0 4px 8px 0 rgba(180, 180, 180, 0.1), 0 6px 20px 0 rgba(180, 180, 180, 0.1);
 }
 
 .border.top {
@@ -31,6 +30,7 @@ element.style {
 	top: 0;
 	left: 0;
 	transform-origin: top left;
+	background-image: linear-gradient(40deg, #ff6db6 10%, #ffad6b 50%, #b754f0 90%);
 }
 
 .border.right {
@@ -38,6 +38,7 @@ element.style {
 	top: 0;
 	right: 0;
 	transform-origin: top right;
+	background-image: linear-gradient(40deg, #ff6db6 10%, #ffad6b 50%, #b754f0 90%);
 }
 
 .border.left {
@@ -45,6 +46,7 @@ element.style {
 	top: 0;
 	left: 0;
 	transform-origin: top left;
+	background-image: linear-gradient(140deg, #ff6db6 10%, #ffad6b 50%, #b754f0 90%);
 }
 
 .border.bottom {
@@ -52,6 +54,7 @@ element.style {
 	bottom: 0;
 	left: 0;
 	transform-origin: top left;
+	background-image: linear-gradient(40deg, #b754f0 10%, #ffad6b 50%, #ff6db6 90%);
 }
 
 .border.horizontal {
@@ -107,6 +110,11 @@ ul.list li {
 	padding: 0 2px;
 }
 
+.title-column {
+	flex: 33%;
+	max-width: 100%;
+}
+
 .column {
 	flex: 33%;
 	max-width: 90%;
@@ -148,23 +156,23 @@ ul.list li {
 	}
 }
 
+.img-descrip {
+	margin-bottom: 35px;
+	font-size: .7em;
+}
+
 .my-img {
 	width: 80%;
 	padding-top: 2em;
 	padding-left: 20%;
 	margin-right: 8em;
-	/* height: 500px;
-	margin-top: 1em; */
 	margin-bottom: 35px;
 }
 
-.text {
+.text-block {
 	position: relative;
 	background-color: none;
 	text-align: left;
-	padding-left: 35px;
-	padding-right: 20px;
-	padding-bottom: 35px;
 }
 
 /* styling stuff */
@@ -193,13 +201,6 @@ ul.list li {
 }
 .blue {
 	color: #026cfc;
-}
-
-.tagline {
-	font-size: 2em;
-	position: relative;
-	font-family: 'AvenirNextLTPro-Regular', sans-serif;
-	font-weight: 700;
 }
 
 a {
