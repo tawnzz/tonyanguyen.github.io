@@ -7,6 +7,7 @@ h4,
 h5,
 .tagline {
 	font-family: 'AvenirNextLTPro-Regular', sans-serif;
+	src: url("assets/fonts/WorkSans-Regular.ttf");
 	color: #1d1d1d;
 }
 
@@ -23,6 +24,7 @@ element.style {
 .border-wrapper .default .border {
 	z-index: 9999;
 	background-color: #ffffff;
+	box-shadow: 0 4px 8px 0 rgba(95, 123, 146, 0.685), 0 6px 20px 0 rgba(138, 138, 138, 0.2);
 }
 
 .border.top {
@@ -30,7 +32,7 @@ element.style {
 	top: 0;
 	left: 0;
 	transform-origin: top left;
-	background-image: linear-gradient(40deg, #ff6db6 10%, #ffad6b 50%, #b754f0 90%);
+	background-image: linear-gradient(40deg, #b8fff6 10%, #6be9ff 50%, #2b80ff 90%);
 }
 
 .border.right {
@@ -38,7 +40,7 @@ element.style {
 	top: 0;
 	right: 0;
 	transform-origin: top right;
-	background-image: linear-gradient(40deg, #ff6db6 10%, #ffad6b 50%, #b754f0 90%);
+	background-image: linear-gradient(40deg, #b8fff6 10%, #6be9ff 50%, #2b80ff 90%);
 }
 
 .border.left {
@@ -46,7 +48,7 @@ element.style {
 	top: 0;
 	left: 0;
 	transform-origin: top left;
-	background-image: linear-gradient(140deg, #ff6db6 10%, #ffad6b 50%, #b754f0 90%);
+	background-image: linear-gradient(140deg, #b8fff6 10%, #6be9ff 50%, #2b80ff 90%);
 }
 
 .border.bottom {
@@ -54,7 +56,7 @@ element.style {
 	bottom: 0;
 	left: 0;
 	transform-origin: top left;
-	background-image: linear-gradient(40deg, #b754f0 10%, #ffad6b 50%, #ff6db6 90%);
+	background-image: linear-gradient(40deg, #2b80ff 10%, #6be9ff 50%, #b8fff6 90%);
 }
 
 .border.horizontal {

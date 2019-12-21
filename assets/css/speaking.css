@@ -6,10 +6,9 @@ h3,
 h4,
 h5,
 .tagline {
-	font-family: 'WorkSans-Regular';
+	font-family: 'AvenirNextLTPro-Regular', sans-serif;
 	src: url("assets/fonts/WorkSans-Regular.ttf");
 	color: #1d1d1d;
-	line-height: 1.5;
 }
 
 /*page container*/
@@ -25,7 +24,7 @@ element.style {
 .border-wrapper .default .border {
 	z-index: 9999;
 	background-color: #ffffff;
-	box-shadow: 0 4px 8px 0 rgba(160, 160, 160, 0.1), 0 6px 20px 0 rgba(160, 160, 160, 0.1);
+	box-shadow: 0 4px 8px 0 rgba(143, 80, 117, 0.685), 0 6px 20px 0 rgba(138, 138, 138, 0.2);
 }
 
 .border.top {
@@ -33,6 +32,7 @@ element.style {
 	top: 0;
 	left: 0;
 	transform-origin: top left;
+	background-image: linear-gradient(40deg, #ff6db6 10%, #ffad6b 50%, #b754f0 90%);
 }
 
 .border.right {
@@ -40,6 +40,7 @@ element.style {
 	top: 0;
 	right: 0;
 	transform-origin: top right;
+	background-image: linear-gradient(40deg, #ff6db6 10%, #ffad6b 50%, #b754f0 90%);
 }
 
 .border.left {
@@ -47,6 +48,7 @@ element.style {
 	top: 0;
 	left: 0;
 	transform-origin: top left;
+	background-image: linear-gradient(140deg, #ff6db6 10%, #ffad6b 50%, #b754f0 90%);
 }
 
 .border.bottom {
@@ -54,6 +56,7 @@ element.style {
 	bottom: 0;
 	left: 0;
 	transform-origin: top left;
+	background-image: linear-gradient(40deg, #b754f0 10%, #ffad6b 50%, #ff6db6 90%);
 }
 
 .border.horizontal {
@@ -103,17 +106,15 @@ ul.list li {
 	padding-left: 20px;
 }
 
-.aboutme {
-	width: 90%;
-	margin-right: 5em;
-	margin-top: 4em;
-	margin-bottom: 3em;
-}
-
 .row {
 	display: flex;
 	flex-wrap: wrap;
 	padding: 0 2px;
+}
+
+.title-column {
+	flex: 33%;
+	max-width: 100%;
 }
 
 .column {
@@ -157,30 +158,23 @@ ul.list li {
 	}
 }
 
+.img-descrip {
+	margin-bottom: 35px;
+	font-size: .7em;
+}
+
 .my-img {
 	width: 80%;
 	padding-top: 2em;
 	padding-left: 20%;
 	margin-right: 8em;
-	/* height: 500px;
-	margin-top: 1em; */
-}
-
-.img-descrip {
-	width: 80%;
-	padding-top: 1%;
-	padding-left: 20%;
 	margin-bottom: 35px;
-	font-size: .7em;
 }
 
-.text {
+.text-block {
 	position: relative;
 	background-color: none;
 	text-align: left;
-	padding-left: 35px;
-	padding-right: 20px;
-	padding-bottom: 35px;
 }
 
 /* styling stuff */
@@ -205,18 +199,10 @@ ul.list li {
 }
 
 .bold {
-	font-family: 'AvenirNextLTPro-Medium', sans-serif;
+	font-weight: 600;
 }
-
 .blue {
 	color: #026cfc;
-}
-
-.tagline {
-	font-size: 1.75em;
-	position: relative;
-	font-family: 'WorkSans-Regular';
-	font-weight: 700;
 }
 
 a {
@@ -234,7 +220,7 @@ a:hover {
 	font-size: 0.8em;
 	position: fixed;
 	bottom: 0px;
-	color: #000000;
+	color: black;
 	background-color: #ffffff;
 	text-align: center;
 	width: 100%;

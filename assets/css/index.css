@@ -7,6 +7,7 @@ h4,
 h5,
 .tagline {
 	font-family: 'WorkSans-Regular';
+	src: url("assets/fonts/WorkSans-Regular.ttf");
 	color: #1d1d1d;
 	line-height: 1.5;
 	font-weight: 300;
@@ -25,7 +26,7 @@ element.style {
 .border-wrapper .default .border {
 	z-index: 9999;
 	background-color: #ffffff;
-	box-shadow: 0 4px 8px 0 rgba(160, 160, 160, 0.1), 0 6px 20px 0 rgba(160, 160, 160, 0.1);
+	box-shadow: 0 4px 8px 0 rgba(105, 105, 105, 0.2), 0 6px 20px 0 rgba(138, 138, 138, 0.2);
 }
 
 .border.top {
