@@ -7,8 +7,13 @@ h4,
 h5,
 .tagline {
 	font-family: 'AvenirNextLTPro-Regular', sans-serif;
-	src: url("/Users/tonyanguyen/tonyanguyen.github.io/assets/fonts/WorkSans-Light.ttf");
+	src: url("/Users/tonyanguyen/tonyanguyen.github.io/assets/fonts/AvenirNextLTPro-Regular.ttf");
 	color: #1d1d1d;
+}
+
+@font-face {
+	font-family: 'AvenirNextLTPro-Regular', sans-serif;
+	src: url("/Users/tonyanguyen/tonyanguyen.github.io/assets/fonts/AvenirNextLTPro-Regular.ttf");
 }
 
 /*page container*/

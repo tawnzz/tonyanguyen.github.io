@@ -1,3 +1,33 @@
+@font-face {
+	font-family: WorkSans-Regular;
+	src: url('assets/fonts/WorkSans-Regular.ttf');
+}
+
+@font-face {
+	font-family: WorkSans-Bold;
+	src: url('assets/fonts/WorkSans-Bold.ttf');
+}
+
+@font-face {
+	font-family: WorkSans-Black;
+	src: url('assets/fonts/WorkSans-Black.ttf');
+}
+
+@font-face {
+	font-family: WorkSans-SemiBold;
+	src: url('assets/fonts/WorkSans-SemiBold.ttf');
+}
+
+@font-face {
+	font-family: WorkSans-Light;
+	src: url('assets/fonts/WorkSans-Light.ttf');
+}
+
+@font-face {
+	font-family: AvenirNextLTPro-Regular;
+	src: url('assets/fonts/AvenirNextLTPro-Regular.ttf');
+}
+
 body,
 p,
 h1,
@@ -7,8 +37,7 @@ h4,
 h5,
 .tagline {
 	font-family: 'WorkSans-Regular';
-	src: url("/Users/tonyanguyen/tonyanguyen.github.io/assets/fonts/WorkSans-Light.ttf");
-	color: #1d1d1d;
+	color: rgb(26, 26, 26);
 	line-height: 1.5;
 }
 
@@ -205,23 +234,24 @@ ul.list li {
 }
 
 .bold {
-	font-family: 'AvenirNextLTPro-Medium', sans-serif;
+	font-family: 'WorkSans-Medium', sans-serif;
 }
 
 .blue {
 	color: #026cfc;
 }
 
+/*things I believe apply to me! hehe*/
 .tagline {
-	font-size: 1.75em;
+	color: rgb(26, 26, 26);
+	font-size: 3.75em;
 	position: relative;
-	font-family: 'WorkSans-Regular';
 	font-weight: 700;
 }
 
 a {
 	text-decoration: none;
-	color: black;
+	color: rgb(26, 26, 26);
 	transition: .4s;
 }
 
