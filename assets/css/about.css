@@ -4,6 +4,11 @@
 }
 
 @font-face {
+	font-family: WorkSans-ExtraLight;
+	src: url('/assets/fonts/WorkSans-ExtraLight.ttf');
+}
+
+@font-face {
 	font-family: WorkSans-Regular;
 	src: url('/assets/fonts/WorkSans-Regular.ttf');
 }
