@@ -18,6 +18,16 @@
 	src: url('/assets/fonts/WorkSans-Light.ttf');
 }
 
+@font-face {
+	font-family: RomanaBT;
+	src: url('/Users/tonyanguyen/tonyanguyen.github.io/RomanaBT.ttf');
+}
+
+@font-face {
+	font-family: RomanaBTRoman;
+	src: url('/Users/tonyanguyen/tonyanguyen.github.io/RomanaBT.ttf');
+}
+
 body,
 p,
 h1,
@@ -52,16 +62,25 @@ element.style {
 	flex-wrap: wrap;
 }
 
+.intro {
+	width: 100%;
+}
+
+.work {
+	margin-top: 5em;
+	width: 100%;
+}
+
 .row {
 	margin: 0 auto;
-	width: 90%;
+	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
 
 .left {
-	width: 45%;
+	width: 42%;
 	margin-left: 0;
 }
 
@@ -125,7 +144,7 @@ element.style {
 	line-height: 1.5;
 	font-size: 3.75em;
 	position: relative;
-	font-weight: 500;
+	font-weight: 700;
 }
 
 a {
