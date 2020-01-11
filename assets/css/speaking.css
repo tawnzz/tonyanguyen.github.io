@@ -1,3 +1,23 @@
+@font-face {
+	font-family: WorkSans-SemiBold;
+	src: url('/assets/fonts/WorkSans-SemiBold.ttf');
+}
+
+@font-face {
+	font-family: WorkSans-Regular;
+	src: url('/assets/fonts/WorkSans-Regular.ttf');
+}
+
+@font-face {
+	font-family: WorkSans-Medium;
+	src: url('/assets/fonts/WorkSans-Medium.ttf');
+}
+
+@font-face {
+	font-family: WorkSans-Light;
+	src: url('/assets/fonts/WorkSans-Light.ttf');
+}
+
 body,
 p,
 h1,
@@ -6,14 +26,10 @@ h3,
 h4,
 h5,
 .tagline {
-	font-family: 'AvenirNextLTPro-Regular', sans-serif;
-	src: url("/Users/tonyanguyen/tonyanguyen.github.io/assets/fonts/AvenirNextLTPro-Regular.ttf");
+	font-family: 'WorkSans-Regular';
 	color: #1d1d1d;
-}
-
-@font-face {
-	font-family: 'AvenirNextLTPro-Regular', sans-serif;
-	src: url("/Users/tonyanguyen/tonyanguyen.github.io/assets/fonts/AvenirNextLTPro-Regular.ttf");
+	line-height: 1.5;
+	font-weight: 300;
 }
 
 /*page container*/
