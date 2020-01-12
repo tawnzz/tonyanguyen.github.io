@@ -52,11 +52,13 @@ element.style {
 	z-index: 9999;
 }
 
-/* .container {
-	background: #ffffff;
-} */
+.container {
+	background: #fffffe;
+	padding-bottom: 3em;
+}
 
 .intro {
+	background: #fffcfb;
 	padding-top: 8%;
 	width: 100%;
 	height: 90%;
@@ -64,15 +66,23 @@ element.style {
 
 .research {
 	/* color: rgb(255, 248, 240); */
-	background: #fff5f5;
+	background: #ffe2e2;
 	padding-top: 6%;
 	margin-bottom: 6%;
 	height: 90%;
-	filter: drop-shadow(0 0 0.75rem rgb(247, 233, 233));
+	filter: drop-shadow(0 0 0.75rem #e9bfbf);
 }
 
 .project {
 	height: 100%;
+}
+
+.emoji2 {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 90%;
 }
 
 .work {
@@ -99,7 +109,7 @@ element.style {
 
 .floaty {
 	float: right;
-	padding-top: 5.25em;
+	padding-top: 2.75em;
 }
 
 .center {
@@ -192,7 +202,7 @@ element.style {
 /* intro block on the right */
 .block-content1 {
 	/* width: 90%; */
-	padding-top: 30px;
+	/* padding-top: 30px; */
 	line-height: 1.87;
 }
 
@@ -311,9 +321,13 @@ element.style {
 	color: rgb(255, 248, 240);
 }
 
+.gray {
+	color: rgb(70, 70, 70);
+}
+
 .bold {
 	font-family: 'Nunito Sans', sans-serif;
-	font-weight: 400;
+	font-weight: 300;
 }
 .blue {
 	color: #026cfc;

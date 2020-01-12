@@ -4,11 +4,6 @@
 }
 
 @font-face {
-	font-family: WorkSans-ExtraLight;
-	src: url('/assets/fonts/WorkSans-ExtraLight.ttf');
-}
-
-@font-face {
 	font-family: WorkSans-Regular;
 	src: url('/assets/fonts/WorkSans-Regular.ttf');
 }
@@ -23,6 +18,16 @@
 	src: url('/assets/fonts/WorkSans-Light.ttf');
 }
 
+@font-face {
+	font-family: RomanaBT;
+	src: url('/Users/tonyanguyen/tonyanguyen.github.io/RomanaBT.ttf');
+}
+
+@font-face {
+	font-family: RomanaBTRoman;
+	src: url('/Users/tonyanguyen/tonyanguyen.github.io/RomanaBT.ttf');
+}
+
 body,
 p,
 h1,
@@ -30,11 +35,11 @@ h2,
 h3,
 h4,
 h5,
-.tagline {
-	font-family: 'WorkSans-Regular';
+hr {
+	font-family: 'Nunito Sans', sans-serif;
 	color: #1d1d1d;
-	line-height: 1.5;
-	font-weight: 300;
+	line-height: 1.75;
+	font-weight: 200;
 }
 
 /*page container*/
@@ -47,165 +52,72 @@ element.style {
 	z-index: 9999;
 }
 
-.border-wrapper .default .border {
-	z-index: 9999;
-	background-color: #ffffff;
-	box-shadow: 0 4px 8px 0 rgba(160, 160, 160, 0.1), 0 6px 20px 0 rgba(160, 160, 160, 0.1);
-}
+/* .container {
+	background: #fff3f3;
+} */
 
-.border.top {
-	position: fixed;
-	top: 0;
-	left: 0;
-	transform-origin: top left;
-}
-
-.border.right {
-	position: fixed;
-	top: 0;
-	right: 0;
-	transform-origin: top right;
-}
-
-.border.left {
-	position: fixed;
-	top: 0;
-	left: 0;
-	transform-origin: top left;
-}
-
-.border.bottom {
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	transform-origin: top left;
-}
-
-.border.horizontal {
-	width: 100%;
-	height: 10px;
-}
-
-.border.vertical {
-	width: 10px;
-	height: 100%;
-}
-
-.border {
-	display: block;
-	will-change: auto;
-}
-
-.scroll {
-	/* the outer div */
-	background: #ffffff;
-	font-family: 'WorkSans-Light';
-	font-size: 1.5em;
-	position: relative;
-	left: 0%;
-	width: 99.9%;
-	max-height: 45px;
-	overflow: hidden;
-	cursor: pointer;
-}
-
-ul.list {
-	position: relative;
-	display: inline-block;
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
-
-ul.list.cloned {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-}
-
-ul.list li {
-	float: left;
-	padding-left: 20px;
-}
-
-.aboutme {
-	width: 90%;
-	margin-right: 5em;
-	margin-top: 4em;
-	margin-bottom: 3em;
+.about {
+	margin: 0 auto;
+	width: 80%;
+	padding-top: 35px;
+	padding-bottom: 35px;
 }
 
 .row {
 	display: flex;
 	flex-wrap: wrap;
-	padding: 0 2px;
+	padding-top: 35px;
 }
 
-.column {
-	flex: 33%;
-	max-width: 90%;
-	padding: 0 2px;
+.left {
+	width: 40%;
 }
 
-.container {
-	position: relative;
+.right {
+	width: 60%;
 }
 
-.container-left {
-	margin-left: 4%;
-}
-
-@media (min-width: 576px) {
-	.container {
-		max-width: 540px;
-	}
-}
-
-@media screen and (max-width: 1000px) {
-	.column {
-		flex: 100%;
-		max-width: 100%;
-	}
-}
-
-@media screen and (max-width: 1000px) {
-	.column {
-		flex: 100%;
-		max-width: 100%;
-	}
-}
-
-@media screen and (max-width: 600px) {
-	.column {
-		flex: 100%;
-		max-width: 100%;
-	}
+.des {
+	font-size: 0.75em;
 }
 
 .my-img {
-	width: 80%;
-	padding-top: 2em;
-	padding-left: 20%;
-	margin-right: 8em;
-	/* height: 500px;
-	margin-top: 1em; */
+	position: fixed;
+	width: 500px;
+	bottom: 0;
+	padding-top: 4em;
+	z-index: -20;
 }
 
-.img-descrip {
-	width: 80%;
-	padding-top: 1%;
-	padding-left: 20%;
-	margin-bottom: 35px;
-	font-size: .7em;
+@media screen and (max-width: 800px) {
+	.left {
+		width: 100%;
+	}
+	.right {
+		width: 100%;
+	}
+	.center {
+		width: 100%;
+	}
+	.about {
+		z-index: 100;
+		height: 100%;
+		padding-bottom: 20px;
+	}
+	.my-img {
+		z-index: -20;
+		position: sticky;
+		width: 500px;
+	}
 }
 
-.text {
-	position: relative;
-	background-color: none;
-	text-align: left;
-	padding-left: 35px;
-	padding-right: 20px;
-	padding-bottom: 35px;
+/* headers :) */
+.tiny-content {
+	letter-spacing: .05em;
+	display: block;
+	font-size: 1.5rem;
+	font-weight: 600;
+	margin-bottom: 1em;
 }
 
 /* styling stuff */
@@ -217,6 +129,9 @@ ul.list li {
 	color: rgb(233, 115, 207);
 }
 
+.peach {
+	color: #ff5b76;
+}
 .green {
 	color: #20d825;
 }
@@ -229,17 +144,25 @@ ul.list li {
 	color: rgb(233, 127, 6);
 }
 
-.bold {
-	font-family: 'WorkSans-Medium', sans-serif;
+.white {
+	color: rgb(255, 248, 240);
 }
 
+.gray {
+	color: rgb(70, 70, 70);
+}
+
+.bold {
+	font-family: 'Nunito Sans', sans-serif;
+	font-weight: 300;
+}
 .blue {
 	color: #026cfc;
 }
 
 /*things I believe apply to me! hehe*/
 .tagline {
-	color: rgb(26, 26, 26);
+	line-height: 1.5;
 	font-size: 3.75em;
 	position: relative;
 	font-weight: 700;
@@ -247,22 +170,10 @@ ul.list li {
 
 a {
 	text-decoration: none;
-	color: rgb(26, 26, 26);
+	color: black;
 	transition: .4s;
 }
 
 a:hover {
 	opacity: 0.2;
-}
-
-/*social media footer*/
-.footer {
-	font-size: 0.8em;
-	position: fixed;
-	bottom: 0px;
-	color: #000000;
-	background-color: #ffffff;
-	text-align: center;
-	width: 100%;
-	z-index: 99999999999;
 }

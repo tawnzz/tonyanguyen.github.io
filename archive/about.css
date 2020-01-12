@@ -1,0 +1,268 @@
+@font-face {
+	font-family: WorkSans-SemiBold;
+	src: url('/assets/fonts/WorkSans-SemiBold.ttf');
+}
+
+@font-face {
+	font-family: WorkSans-ExtraLight;
+	src: url('/assets/fonts/WorkSans-ExtraLight.ttf');
+}
+
+@font-face {
+	font-family: WorkSans-Regular;
+	src: url('/assets/fonts/WorkSans-Regular.ttf');
+}
+
+@font-face {
+	font-family: WorkSans-Medium;
+	src: url('/assets/fonts/WorkSans-Medium.ttf');
+}
+
+@font-face {
+	font-family: WorkSans-Light;
+	src: url('/assets/fonts/WorkSans-Light.ttf');
+}
+
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+.tagline {
+	font-family: 'WorkSans-Regular';
+	color: #1d1d1d;
+	line-height: 1.5;
+	font-weight: 300;
+}
+
+/*page container*/
+
+element.style {
+	transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+.white {
+	z-index: 9999;
+}
+
+.border-wrapper .default .border {
+	z-index: 9999;
+	background-color: #ffffff;
+	box-shadow: 0 4px 8px 0 rgba(160, 160, 160, 0.1), 0 6px 20px 0 rgba(160, 160, 160, 0.1);
+}
+
+.border.top {
+	position: fixed;
+	top: 0;
+	left: 0;
+	transform-origin: top left;
+}
+
+.border.right {
+	position: fixed;
+	top: 0;
+	right: 0;
+	transform-origin: top right;
+}
+
+.border.left {
+	position: fixed;
+	top: 0;
+	left: 0;
+	transform-origin: top left;
+}
+
+.border.bottom {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	transform-origin: top left;
+}
+
+.border.horizontal {
+	width: 100%;
+	height: 10px;
+}
+
+.border.vertical {
+	width: 10px;
+	height: 100%;
+}
+
+.border {
+	display: block;
+	will-change: auto;
+}
+
+.scroll {
+	/* the outer div */
+	background: #ffffff;
+	font-family: 'WorkSans-Light';
+	font-size: 1.5em;
+	position: relative;
+	left: 0%;
+	width: 99.9%;
+	max-height: 45px;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+ul.list {
+	position: relative;
+	display: inline-block;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+ul.list.cloned {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+ul.list li {
+	float: left;
+	padding-left: 20px;
+}
+
+.aboutme {
+	width: 90%;
+	margin-right: 5em;
+	margin-top: 4em;
+	margin-bottom: 3em;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0 2px;
+}
+
+.column {
+	flex: 33%;
+	max-width: 90%;
+	padding: 0 2px;
+}
+
+.container {
+	position: relative;
+}
+
+.container-left {
+	margin-left: 4%;
+}
+
+@media (min-width: 576px) {
+	.container {
+		max-width: 540px;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.column {
+		flex: 100%;
+		max-width: 100%;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.column {
+		flex: 100%;
+		max-width: 100%;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.column {
+		flex: 100%;
+		max-width: 100%;
+	}
+}
+
+.my-img {
+	width: 80%;
+	padding-top: 2em;
+	padding-left: 20%;
+	margin-right: 8em;
+	/* height: 500px;
+	margin-top: 1em; */
+}
+
+.img-descrip {
+	width: 80%;
+	padding-top: 1%;
+	padding-left: 20%;
+	margin-bottom: 35px;
+	font-size: .7em;
+}
+
+.text {
+	position: relative;
+	background-color: none;
+	text-align: left;
+	padding-left: 35px;
+	padding-right: 20px;
+	padding-bottom: 35px;
+}
+
+/* styling stuff */
+.red {
+	color: #e83434;
+}
+
+.pink {
+	color: rgb(233, 115, 207);
+}
+
+.green {
+	color: #20d825;
+}
+
+.golden {
+	color: #ecb709;
+}
+
+.orange {
+	color: rgb(233, 127, 6);
+}
+
+.bold {
+	font-family: 'WorkSans-Medium', sans-serif;
+}
+
+.blue {
+	color: #026cfc;
+}
+
+/*things I believe apply to me! hehe*/
+.tagline {
+	color: rgb(26, 26, 26);
+	font-size: 3.75em;
+	position: relative;
+	font-weight: 700;
+}
+
+a {
+	text-decoration: none;
+	color: rgb(26, 26, 26);
+	transition: .4s;
+}
+
+a:hover {
+	opacity: 0.2;
+}
+
+/*social media footer*/
+.footer {
+	font-size: 0.8em;
+	position: fixed;
+	bottom: 0px;
+	color: #000000;
+	background-color: #ffffff;
+	text-align: center;
+	width: 100%;
+	z-index: 99999999999;
+}
