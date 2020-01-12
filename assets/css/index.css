@@ -77,14 +77,6 @@ element.style {
 	height: 100%;
 }
 
-.emoji2 {
-	padding-top: 20px;
-	padding-bottom: 20px;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	width: 90%;
-}
-
 .work {
 	width: 100%;
 }
@@ -144,6 +136,41 @@ element.style {
 	padding-bottom: 2em;
 }
 
+.emoji2 {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	/* margin-top: 20px; */
+	/* margin-bottom: 20px; */
+	width: 100%;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.emoji-img {
+	width: 30%;
+}
+
+.research-content {
+	width: 70%;
+}
+
+.img {
+	margin: 0 auto;
+	display: block;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.center-img {
+	width: 70%;
+	margin: 0 auto;
+}
+
+.derive {
+	width: 150px;
+}
+
 @media screen and (max-width: 800px) {
 	.left {
 		width: 100%;
@@ -159,8 +186,8 @@ element.style {
 		padding-bottom: 40px;
 	}
 	.research {
-		height: 100%;
-		padding-bottom: 40px;
+		height: fit-content;
+		margin-bottom: 40px;
 	}
 	.project {
 		height: 100%;
@@ -168,19 +195,36 @@ element.style {
 	}
 	.block-content {
 		width: 100%;
-		line-height: 1.87;
 	}
 	.block-content1 {
 		width: 100%;
-		line-height: 1.87;
 	}
 	.block-content2 {
 		width: 100%;
-		line-height: 1.87;
 	}
 	.floaty {
 		float: left;
 		padding-top: 0;
+	}
+
+	.emoji2 {
+		width: 100%;
+	}
+
+	.emoji-img {
+		width: 100%;
+		margin: 0 auto;
+		padding-bottom: 4em;
+	}
+
+	.research-content {
+		margin: 0 auto;
+		width: 100%;
+	}
+	.research-art1 {
+		width: 100%;
+		margin-right: 0;
+		padding-bottom: 3em;
 	}
 }
 
