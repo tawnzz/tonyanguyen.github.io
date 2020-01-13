@@ -59,14 +59,15 @@ element.style {
 
 .intro {
 	background: #fffcfb;
-	padding-top: 8%;
 	height: 100%;
+	padding-top: 8%;
 }
 
 .research {
 	/* color: rgb(255, 248, 240); */
 	background: #ffe2e2;
 	padding-top: 6%;
+	/* padding-bottom: 8%; */
 	/* height: 100%; */
 	filter: drop-shadow(0 0 0.75rem #e9bfbf);
 }
