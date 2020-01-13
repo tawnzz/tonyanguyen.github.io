@@ -52,15 +52,25 @@ element.style {
 	z-index: 9999;
 }
 
-/* .container {
-	background: #fff9f9;
-} */
+.container {
+	margin: 0;
+}
 
 .about {
 	margin: 0 auto;
-	width: 80%;
-	padding-top: 35px;
-	padding-bottom: 35px;
+	padding-right: 8%;
+	padding-left: 6%;
+}
+
+.bye {
+	position: sticky;
+	padding-top: 4%;
+	padding-left: 6%;
+	width: 100%;
+	display: block;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
 }
 
 .row {
@@ -78,11 +88,53 @@ element.style {
 }
 
 .my-img {
+	visibility: visible;
 	position: fixed;
 	width: 500px;
 	bottom: 0;
 	padding-top: 4em;
 	/* z-index: -20; */
+}
+
+#alaska-img {
+	display: none;
+	width: 400px;
+}
+
+#dog-img {
+	display: none;
+
+	width: 400px;
+}
+
+#train-img {
+	display: none;
+
+	width: 400px;
+}
+
+#cal-img {
+	display: none;
+
+	width: 400px;
+}
+
+#plate-img {
+	display: none;
+
+	width: 400px;
+}
+
+#my-art {
+	display: none;
+
+	width: 400px;
+}
+
+#plant-img {
+	display: none;
+
+	width: 400px;
 }
 
 @media screen and (max-width: 800px) {
@@ -96,7 +148,7 @@ element.style {
 		width: 100%;
 	}
 	.about {
-		display: block;
+		padding-top: 8%;
 	}
 	.my-img {
 		width: 100%;
@@ -106,6 +158,11 @@ element.style {
 	}
 	.row {
 		padding: 0;
+	}
+
+	.bye {
+		background: white;
+		padding-bottom: 4%;
 	}
 }
 
@@ -124,6 +181,10 @@ element.style {
 
 .pink {
 	color: rgb(233, 115, 207);
+}
+
+.purple {
+	color: rgb(170, 115, 233);
 }
 
 .peach {

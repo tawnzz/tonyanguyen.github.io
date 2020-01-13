@@ -20,24 +20,35 @@
 </head>
 
 <body style="margin: 0px;">
+    <a class="peach bye" href="index.html">⟵ ✌🏼peace out</a>
     <div class="container">
         
         
         <div class="about">
-            <a class="peach" href="index.html">⟵ ✌🏼peace out</a>
+
             <div class="row">
                 <div class="column left">
-                   <br>
+                    <div class="hidden-img" style="display: flex; flex-wrap: wrap; 	position: sticky;
+	top: 30%;">
+                        <img id="alaska-img" src="assets/img/alaska.jpg"></img>
+                        <img id="dog-img" src="assets/img/dog_person.jpeg"></img>
+                        <img id="train-img" src="assets/img/train.jpg"></img>
+                        <img id="cal-img" src="assets/img/gobears.jpeg"></img>
+                        <img id="plate-img" src="assets/img/plating.jpeg"></img>
+                        <img id="my-art" src="assets/img/my_art.jpg"></img>
+                        <img id="plant-img" src="assets/img/plant.jpeg"></img>
+                    </div>
+                   
                 </div>
  
                     <div class="column right" style="background-color: white;">
                         <div>✨✨✨ Heyo, my name's Tonya! [tawn-ya] ✨✨✨
                         </div>
-                        <p> I'm a fourth year student in human-computer interaction and critical theory at 💛🐻UC Berkeley. 
+                        <p> I'm a fourth year student in human-computer interaction and critical theory at <a class="berk golden">💛🐻UC Berkeley</a>. 
                         From computer science, design, politics, social theory, to even art, I've always had eclectic interests. Through HCI, I found an outlet to combine my varying interests. 👩🏻‍💻As a result, I decided to my own interdisciplinary research program / major (hohoho, stay tuned for my thesis)!
                         </p>
                         <p>
-                        🛠️I'm a maker! I enjoy creating digital art and building tangible + digital interfaces (websites, wearables, and anything that has LEDs). Recently, my interests have also turned to 🎨painting and 🍣plating food.
+                        🛠️I'm a maker! I enjoy creating <a class="purple art">digital art</a> and building tangible + digital interfaces (websites, wearables, and anything that has LEDs). Recently, my interests have also turned to 🎨painting and 🍣<a class="peach plate">plating food</a>.
                         </p>
                         <p>Beyond that, I'm curious about how systems design and interaction design can help us tackle societal hurdles. While turning a critical eye towards technological processes and artifacts, I want to further my understanding of how sociotechnical systems shape the world, build accessible systems, and create ethical solutions. My undergraduate research endeavors have enabled me to chip away at the deeper, personal questions that I have regarding design, computing systems, and sociotechnical assemblages –– and I'm 💪🏻determined to keep at it.
                         </p>
@@ -46,20 +57,17 @@
                             ✨Fun facts about me:
                             <ul>
                                 <li>I'm currently documenting my family's story about how the Vietnam War changed their lives.</li>
-                                <li>I love the ⛰<a class="green" href="assets/img/alaska.jpg" target="_blank">outdoors</a>.</li>
+                                <li>I love the ⛰<a class="green alaska" href="assets/img/alaska.jpg" target="_blank">outdoors</a>.</li>
                                 <li>Sometimes I write poems.</li>
-                                <li>I'm a 🐶<a class="blue" href="assets/img/dog_person.jpeg" target="_blank">dog person</a>. </li>
+                                <li>I'm a 🐶<a class="blue dog" href="assets/img/dog_person.jpeg" target="_blank">dog person</a>. </li>
                                 <li>I've been casually 🏋 powerlifting since my sophomore year of high school. </li>
                                 <li>I'm a proud first generation college student.</li>
                                 <li>I have a slight obsession with 🍫 dark chocolate. When I feel that it's okay to splurge, my
                                     choice is always <a class="orange" href="https://tcho.com/collections/eating" target="_blank">TCHO</a>.
                                 </li>
-                                <li>I enjoy traveling on 🚞<a class="pink" href="assets/img/train.jpg" target="_blank">trains</a>.
+                                <li>I enjoy traveling on 🚞<a class="pink train" href="assets/img/train.jpg" target="_blank">trains</a>.
                                 <li>I can make some killer 🍲Vietnamese food.</li>
-                                <li>I have an interest in skincare! My favorite brand is <a class="green"
-                                        href="https://deciem.com/?lang=en&region=US" target="_blank">Deciem</a> because they incorporate
-                                    science
-                                    and beauty!
+                                <li>I'm a budding <a class="plant green">plant mom</a>!
                                 </li>
                                 <li>My favorite podcast is <a class="golden" href="https://www.alieward.com/ologies" target="_blank">Ologies
                                     </a>by Alie Ward.
@@ -116,5 +124,78 @@
 <script type="text/javascript" src="js/paper-full.js"></script>
 <script type="text/javascript" src="assets/js/index.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
-
+<script>
+    $('document').ready(function () {
+            $('.alaska').on({
+                'mouseover': function () {
+                    $(".my-img").css('visibility', 'hidden');
+                    $("#alaska-img").css('display', 'block');
+                },
+                mouseout: function () {
+                    $("#alaska-img").css('display', 'none');
+                    $(".my-img").css('visibility', 'visible');
+                },
+            });
+            $('.dog').on({
+                'mouseover': function () {
+                    $(".my-img").css('visibility', 'hidden');
+                    $("#dog-img").css('display', 'block');
+                },
+                mouseout: function () {
+                    $("#dog-img").css('display', 'none');
+                    $(".my-img").css('visibility', 'visible');
+                },
+             });
+             $('.train').on({
+                'mouseover': function () {
+                    $(".my-img").css('visibility', 'hidden');
+                    $("#train-img").css('display', 'block');
+                },
+                mouseout: function () {
+                    $("#train-img").css('display', 'none');
+                    $(".my-img").css('visibility', 'visible');
+                },
+            });
+            $('.berk').on({
+                'mouseover': function () {
+                    $(".my-img").css('visibility', 'hidden');
+                    $("#cal-img").css('display', 'block');
+                },
+                mouseout: function () {
+                    $("#cal-img").css('display', 'none');
+                    $(".my-img").css('visibility', 'visible');
+                },
+             });
+             $('.art').on({
+                'mouseover': function () {
+                    $(".my-img").css('visibility', 'hidden');
+                    $("#my-art").css('display', 'block');
+                },
+                mouseout: function () {
+                    $("#my-art").css('display', 'none');
+                    $(".my-img").css('visibility', 'visible');
+                },
+            });
+            $('.plate').on({
+                'mouseover': function () {
+                    $(".my-img").css('visibility', 'hidden');
+                    $("#plate-img").css('display', 'block');
+                },
+                mouseout: function () {
+                    $("#plate-img").css('display', 'none');
+                    $(".my-img").css('visibility', 'visible');
+                },
+            });
+            $('.plant').on({
+                'mouseover': function () {
+                    $(".my-img").css('visibility', 'hidden');
+                    $("#plant-img").css('display', 'block');
+                },
+                mouseout: function () {
+                    $("#plant-img").css('display', 'none');
+                    $(".my-img").css('visibility', 'visible');
+                },
+            });
+        });
+</script>
 </html>
