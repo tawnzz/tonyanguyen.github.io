@@ -63,6 +63,7 @@ element.style {
 }
 
 .bye {
+	z-index: 9999999;
 	position: sticky;
 	padding-top: 4%;
 	padding-left: 6%;
