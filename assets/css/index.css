@@ -60,21 +60,20 @@ element.style {
 .intro {
 	background: #fffcfb;
 	padding-top: 8%;
-	width: 100%;
-	height: 90%;
+	height: 100%;
 }
 
 .research {
 	/* color: rgb(255, 248, 240); */
 	background: #ffe2e2;
 	padding-top: 6%;
-	margin-bottom: 6%;
-	height: 90%;
+	/* height: 100%; */
 	filter: drop-shadow(0 0 0.75rem #e9bfbf);
 }
 
 .project {
-	height: 100%;
+	padding-top: 6%;
+	/* height: 100%; */
 }
 
 .work {
@@ -127,7 +126,8 @@ element.style {
 .research-art1 {
 	width: 100%;
 	margin-right: 0;
-	padding-bottom: 2em;
+	padding-top: 1em;
+	padding-bottom: 2.0em;
 }
 
 .proj {
@@ -137,8 +137,8 @@ element.style {
 }
 
 .emoji2 {
-	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-top: 30px;
+	padding-bottom: 35px;
 	/* margin-top: 20px; */
 	/* margin-bottom: 20px; */
 	width: 100%;
@@ -370,7 +370,7 @@ element.style {
 }
 
 .gray {
-	color: rgb(70, 70, 70);
+	color: rgb(255, 122, 122);
 }
 
 .bold {
@@ -384,7 +384,7 @@ element.style {
 /*things I believe apply to me! hehe*/
 .tagline {
 	line-height: 1.5;
-	font-size: 3.75em;
+	font-size: 4.75em;
 	position: relative;
 	font-weight: 700;
 }
