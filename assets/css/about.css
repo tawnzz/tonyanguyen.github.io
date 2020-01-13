@@ -62,12 +62,15 @@ element.style {
 	padding-left: 6%;
 }
 
+.about div {
+	opacity: 0;
+}
+
 .bye {
 	z-index: 9999999;
 	position: sticky;
 	padding-top: 4%;
 	padding-left: 6%;
-	width: 100%;
 	display: block;
 	position: -webkit-sticky;
 	position: sticky;
@@ -89,12 +92,13 @@ element.style {
 }
 
 .my-img {
+	opacity: 0;
 	visibility: visible;
 	position: fixed;
 	width: 500px;
 	bottom: 0;
 	padding-top: 4em;
-	/* z-index: -20; */
+	z-index: -20;
 }
 
 #alaska-img {

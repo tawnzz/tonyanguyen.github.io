@@ -17,6 +17,8 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Alegreya:400,500,700,800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=EB+Garamond:400,500,600,700|Lora&display=swap" rel="stylesheet">
+
+
 </head>
 
 <body style="margin: 0px;">
@@ -41,8 +43,8 @@
                    
                 </div>
  
-                    <div class="column right" style="background-color: white;">
-                        <div>✨✨✨ Heyo, my name's Tonya! [tawn-ya] ✨✨✨
+                    <div class="column right">
+                        <div>✨✨✨ Heyo, my name's <a class="peach tonya">Tonya!</a> [tawn-ya] ✨✨✨
                         </div>
                         <p> I'm a fourth year student in human-computer interaction and critical theory at <a class="berk golden">💛🐻UC Berkeley</a>. 
                         From computer science, design, politics, social theory, to even art, I've always had eclectic interests. Through HCI, I found an outlet to combine my varying interests. 👩🏻‍💻As a result, I decided to my own interdisciplinary research program / major (hohoho, stay tuned for my thesis)!
@@ -125,75 +127,89 @@
 <script type="text/javascript" src="assets/js/index.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 <script>
+    window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+    }
+</script>
+<script>
+    $(".my-img").animate({ "opacity": "1" }, 700);
+    $(".about div").animate({ "opacity": "1" }, 1000);
+</script>
+<script>
     $('document').ready(function () {
+            $('.tonya').on({
+                'mouseover': function () {
+                    $(".my-img").delay(100).fadeIn();
+                },
+            });
             $('.alaska').on({
                 'mouseover': function () {
-                    $(".my-img").css('visibility', 'hidden');
-                    $("#alaska-img").css('display', 'block');
+                    $(".my-img").delay(100).fadeOut();
+                    $("#alaska-img").delay(700).fadeIn();
                 },
                 mouseout: function () {
-                    $("#alaska-img").css('display', 'none');
-                    $(".my-img").css('visibility', 'visible');
+                    $("#alaska-img").delay(100).fadeOut();
+                    
                 },
             });
             $('.dog').on({
                 'mouseover': function () {
-                    $(".my-img").css('visibility', 'hidden');
-                    $("#dog-img").css('display', 'block');
+                    $(".my-img").delay(100).fadeOut();
+                    $("#dog-img").delay(700).fadeIn();
                 },
                 mouseout: function () {
-                    $("#dog-img").css('display', 'none');
-                    $(".my-img").css('visibility', 'visible');
+                    $("#dog-img").delay(100).fadeOut();
+                    
                 },
              });
              $('.train').on({
                 'mouseover': function () {
-                    $(".my-img").css('visibility', 'hidden');
-                    $("#train-img").css('display', 'block');
+                    $(".my-img").delay(100).fadeOut();
+                    $("#train-img").delay(700).fadeIn();
                 },
                 mouseout: function () {
-                    $("#train-img").css('display', 'none');
-                    $(".my-img").css('visibility', 'visible');
+                    $("#train-img").delay(100).fadeOut();
+                    
                 },
             });
             $('.berk').on({
                 'mouseover': function () {
-                    $(".my-img").css('visibility', 'hidden');
-                    $("#cal-img").css('display', 'block');
+                    $(".my-img").delay(100).fadeOut();
+                    $("#cal-img").delay(700).fadeIn();
                 },
                 mouseout: function () {
-                    $("#cal-img").css('display', 'none');
-                    $(".my-img").css('visibility', 'visible');
+                    $("#cal-img").delay(100).fadeOut();
+                    
                 },
              });
              $('.art').on({
                 'mouseover': function () {
-                    $(".my-img").css('visibility', 'hidden');
-                    $("#my-art").css('display', 'block');
+                    $(".my-img").delay(100).fadeOut();
+                    $("#my-art").delay(700).fadeIn();
                 },
                 mouseout: function () {
-                    $("#my-art").css('display', 'none');
-                    $(".my-img").css('visibility', 'visible');
+                    $("#my-art").delay(100).fadeOut();
+                    
                 },
             });
             $('.plate').on({
                 'mouseover': function () {
-                    $(".my-img").css('visibility', 'hidden');
-                    $("#plate-img").css('display', 'block');
+                    $(".my-img").delay(100).fadeOut();
+                    $("#plate-img").delay(700).fadeIn();
                 },
                 mouseout: function () {
-                    $("#plate-img").css('display', 'none');
-                    $(".my-img").css('visibility', 'visible');
+                    $("#plate-img").delay(100).fadeOut();
+                    
                 },
             });
             $('.plant').on({
                 'mouseover': function () {
-                    $(".my-img").css('visibility', 'hidden');
-                    $("#plant-img").css('display', 'block');
+                    $(".my-img").delay(100).fadeOut();
+                    $("#plant-img").delay(700).fadeIn();
                 },
                 mouseout: function () {
-                    $("#plant-img").css('display', 'none');
-                    $(".my-img").css('visibility', 'visible');
+                    $("#plant-img").delay(100).fadeOut();
+                    
                 },
             });
         });

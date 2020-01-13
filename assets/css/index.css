@@ -28,6 +28,15 @@
 	src: url('/Users/tonyanguyen/tonyanguyen.github.io/RomanaBT.ttf');
 }
 
+html.sr .reveal {
+	visibility: hidden;
+}
+
+html {
+	scroll-behavior: smooth;
+	transition-duration: 1000;
+}
+
 body,
 p,
 h1,
@@ -63,11 +72,15 @@ element.style {
 	padding-top: 8%;
 }
 
-.research {
+.intro div {
+	opacity: 0;
+}
+
+#research {
 	/* color: rgb(255, 248, 240); */
 	background: #ffe2e2;
 	padding-top: 6%;
-	/* padding-bottom: 8%; */
+	padding-bottom: 2%;
 	/* height: 100%; */
 	filter: drop-shadow(0 0 0.75rem #e9bfbf);
 }
@@ -267,8 +280,8 @@ element.style {
 }
 
 .downArrow {
+	opacity: 0;
 	width: 10%;
-	font-family: Verdana, Tahoma, sans-serif;
 	font-size: 2.5em;
 	position: relative;
 }
@@ -381,6 +394,10 @@ element.style {
 }
 .blue {
 	color: #026cfc;
+}
+
+.fade {
+	opacity: 1;
 }
 
 /*things I believe apply to me! hehe*/
