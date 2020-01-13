@@ -183,15 +183,16 @@ element.style {
 		width: 100%;
 	}
 	.intro {
-		height: 100%;
+		height: fit-content;
 		padding-bottom: 40px;
 	}
 	.research {
 		height: fit-content;
-		margin-bottom: 40px;
+		padding-top: 40px;
+		padding-bottom: 40px;
 	}
 	.project {
-		height: 100%;
+		height: fit-content;
 		padding-top: 40px;
 	}
 	.block-content {
