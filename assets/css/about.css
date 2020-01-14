@@ -39,7 +39,8 @@ hr {
 	font-family: 'Nunito Sans', sans-serif;
 	color: #1d1d1d;
 	line-height: 1.75;
-	font-weight: 200;
+	background: #fefaf0;
+	font-weight: 300;
 }
 
 /*page container*/
@@ -189,7 +190,7 @@ element.style {
 
 .bold {
 	font-family: 'Nunito Sans', sans-serif;
-	font-weight: 300;
+	font-weight: 400;
 }
 .blue {
 	color: #026cfc;

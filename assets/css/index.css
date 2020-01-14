@@ -43,7 +43,7 @@ hr {
 	font-family: 'Nunito Sans', sans-serif;
 	color: #1d1d1d;
 	line-height: 1.75;
-	font-weight: 200;
+	font-weight: 300;
 }
 
 /*page container*/
@@ -57,12 +57,12 @@ element.style {
 }
 
 .container {
-	background: #fffffe;
+	background: #fffefd;
 	padding-bottom: 3em;
 }
 
 .intro {
-	background: #fffcfb;
+	background: #fefaf0;
 	height: 100%;
 	padding-top: 8%;
 }
@@ -73,11 +73,11 @@ element.style {
 
 #research {
 	/* color: rgb(255, 248, 240); */
-	background: #ffe2e2;
+	background: #ffe8f8;
 	padding-top: 6%;
 	padding-bottom: 2%;
 	/* height: 100%; */
-	filter: drop-shadow(0 0 0.75rem #e9bfbf);
+	filter: drop-shadow(0 0 0.75rem rgb(253, 221, 243));
 }
 
 .project {
@@ -353,11 +353,11 @@ element.style {
 }
 
 .pink {
-	color: rgb(216, 30, 176);
+	color: rgb(243, 28, 161);
 }
 
 .purple {
-	color: rgb(101, 18, 196);
+	color: rgb(146, 18, 196);
 }
 
 .peach {
@@ -380,15 +380,15 @@ element.style {
 }
 
 .gray {
-	color: rgb(223, 59, 59);
+	color: #fd1877;
 }
 
 .bold {
 	font-family: 'Nunito Sans', sans-serif;
-	font-weight: 300;
+	font-weight: 400;
 }
 .blue {
-	color: #026cfc;
+	color: #0277fc;
 }
 
 .fade {
