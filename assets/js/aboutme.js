@@ -1,16 +1,120 @@
-$(document).ready(function() {
+$('document').ready(function() {
+	$('.tonya').on({
+		mouseover: function() {
+			$('#hover-img').fadeOut(300);
+			$('.my-img').fadeIn(200);
+		}
+	});
 
-    $('.menu-item').mouseenter(function () {
-        $(this).css({
-            outline: "0px solid transparent"
-        }).animate({
-            outlineWidth: '4px',
-            outlineColor: '#f37736'
-        }, 550);
-    }).mouseleave(function () {
-        $(this).animate({
-            outlineWidth: '0px',
-            outlineColor: '#037736'
-        }, 560);
-    });    
-})
+	$('.alaska').on({
+        mouseover: function () {
+            if ($('#hover-img').attr('src') == 'assets/img/alaska.jpg') { 
+                return;
+            } else {
+                // current img
+			$('#hover-img').css('display', 'none');
+			// my img
+			$('.my-img').delay(100).fadeOut();
+			// switch attr
+			$('#hover-img').attr('src', 'assets/img/alaska.jpg');
+			$('#hover-img').fadeIn(900);
+            }
+		}
+	});
+
+	$('.dog').on({
+        mouseover: function () {
+             if ($('#hover-img').attr('src') == 'assets/img/dog_person.jpeg') { 
+                return;
+            } else {
+               // current img
+			$('#hover-img').css('display', 'none');
+			// my img
+			$('.my-img').delay(100).fadeOut();
+			// switch attr
+			$('#hover-img').attr('src', 'assets/img/dog_person.jpeg');
+			$('#hover-img').fadeIn(900);
+             }
+		}
+	});
+
+	$('.train').on({
+		mouseover: function () {
+             if ($('#hover-img').attr('src') == 'assets/img/train.jpg') { 
+                return;
+            } else {
+               // current img
+			$('#hover-img').css('display', 'none');
+			// my img
+			$('.my-img').delay(100).fadeOut();
+			// switch attr
+			$('#hover-img').attr('src', 'assets/img/train.jpg');
+			$('#hover-img').fadeIn(900);
+             }
+		}
+	});
+
+	$('.berk').on({
+		mouseover: function () {
+             if ($('#hover-img').attr('src') == 'assets/img/gobears.jpeg') { 
+                return;
+            } else {
+               // current img
+			$('#hover-img').css('display', 'none');
+			// my img
+			$('.my-img').delay(100).fadeOut();
+			// switch attr
+			$('#hover-img').attr('src', 'assets/img/gobears.jpeg');
+			$('#hover-img').fadeIn(900);
+             }
+		}
+	});
+
+	$('.art').on({
+		mouseover: function () {
+             if ($('#hover-img').attr('src') == 'assets/img/my_art.jpg') { 
+                return;
+            } else {
+               // current img
+			$('#hover-img').css('display', 'none');
+			// my img
+			$('.my-img').delay(100).fadeOut();
+			// switch attr
+			$('#hover-img').attr('src', 'assets/img/my_art.jpg');
+			$('#hover-img').fadeIn(900);
+             }
+		}
+	});
+
+	$('.plate').on({
+		mouseover: function () {
+             if ($('#hover-img').attr('src') == 'assets/img/plating.jpeg') { 
+                return;
+            } else {
+               // current img
+			$('#hover-img').css('display', 'none');
+			// my img
+			$('.my-img').delay(100).fadeOut();
+			// switch attr
+			$('#hover-img').attr('src', 'assets/img/plating.jpeg');
+			$('#hover-img').fadeIn(900);
+             }
+		}
+	});
+
+	$('.plant').on({
+		mouseover: function () {
+             if ($('#hover-img').attr('src') == 'assets/img/plant.jpeg') { 
+                return;
+            } else {
+               // current img
+			$('#hover-img').css('display', 'none');
+			// my img
+			$('.my-img').delay(100).fadeOut();
+			// switch attr
+			$('#hover-img').attr('src', 'assets/img/plant.jpeg');
+			$('#hover-img').fadeIn(900);
+             }
+		}
+	});
+});

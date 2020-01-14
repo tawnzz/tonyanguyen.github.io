@@ -3,7 +3,6 @@
 <head>
     <title>Tonya Nguyen</title>
     <link rel="shortcut icon" type="image/png" href="assets/img/girl.ico" />
-    <link rel="shortcut icon" type="image/png" href="assets/img/girl.ico" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
         integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <meta charset="UTF-8">
@@ -11,12 +10,12 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
         integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/about.css">
-    <link rel="stylesheet" href="https://raw.githubusercontent.com/julianshapiro/velocity/master/velocity.min.js">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,200i,300,300i,400&display=swap&subset=vietnamese"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Alegreya:400,500,700,800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=EB+Garamond:400,500,600,700|Lora&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="animate.min.css">
 
 
 </head>
@@ -30,15 +29,15 @@
 
             <div class="row">
                 <div class="column left">
-                    <div class="hidden-img" style="display: flex; flex-wrap: wrap; 	position: sticky;
-	top: 30%;">
-                        <img id="alaska-img" src="assets/img/alaska.jpg"></img>
+                    <div class="hidden-img" style="position: sticky; top: 25%;">
+                        <img id="hover-img" src="">
+                        <!-- <img id="alaska-img" src="assets/img/alaska.jpg"></img>
                         <img id="dog-img" src="assets/img/dog_person.jpeg"></img>
                         <img id="train-img" src="assets/img/train.jpg"></img>
                         <img id="cal-img" src="assets/img/gobears.jpeg"></img>
                         <img id="plate-img" src="assets/img/plating.jpeg"></img>
                         <img id="my-art" src="assets/img/my_art.jpg"></img>
-                        <img id="plant-img" src="assets/img/plant.jpeg"></img>
+                        <img id="plant-img" src="assets/img/plant.jpeg"></img> -->
                     </div>
                    
                 </div>
@@ -101,30 +100,12 @@
             </div>
         </div>
     </div>
-    
-
-
-
-
-    
-
-
-
-
-
-   
-
-
-
 
 </body>
-<link rel="stylesheet" href="css/section-scroll.css">
 <script src="js/jquery.min.js"></script>
-<script src="js/jquery.section-scroll.js"></script>
 <script src="js/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/paper-full.js"></script>
-<script type="text/javascript" src="assets/js/index.js"></script>
+<script type="text/javascript" src="assets/js/aboutme.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 <script>
     window.onbeforeunload = function () {
@@ -134,84 +115,5 @@
 <script>
     $(".my-img").animate({ "opacity": "1" }, 300);
     $(".about div").animate({ "opacity": "1" }, 800);
-</script>
-<script>
-    $('document').ready(function () {
-            $('.tonya').on({
-                'mouseover': function () {
-                    $(".my-img").delay(100).fadeIn();
-                },
-            });
-            $('.alaska').on({
-                'mouseover': function () {
-                    $(".my-img").delay(100).fadeOut();
-                    $("#alaska-img").delay(700).fadeIn();
-                },
-                mouseout: function () {
-                    $("#alaska-img").fadeOut();
-                    
-                },
-            });
-            $('.dog').on({
-                'mouseover': function () {
-                    $(".my-img").delay(100).fadeOut();
-                    $("#dog-img").delay(700).fadeIn();
-                },
-                mouseout: function () {
-                    $("#dog-img").fadeOut();
-                    
-                },
-             });
-             $('.train').on({
-                'mouseover': function () {
-                    $(".my-img").delay(100).fadeOut();
-                    $("#train-img").delay(700).fadeIn();
-                },
-                mouseout: function () {
-                    $("#train-img").fadeOut();
-                    
-                },
-            });
-            $('.berk').on({
-                'mouseover': function () {
-                    $(".my-img").delay(100).fadeOut();
-                    $("#cal-img").delay(700).fadeIn();
-                },
-                mouseout: function () {
-                    $("#cal-img").fadeOut();
-                    
-                },
-             });
-             $('.art').on({
-                'mouseover': function () {
-                    $(".my-img").delay(100).fadeOut();
-                    $("#my-art").delay(700).fadeIn();
-                },
-                mouseout: function () {
-                    $("#my-art").fadeOut();
-                    
-                },
-            });
-            $('.plate').on({
-                'mouseover': function () {
-                    $(".my-img").delay(100).fadeOut();
-                    $("#plate-img").delay(700).fadeIn();
-                },
-                mouseout: function () {
-                    $("#plate-img").fadeOut();
-                    
-                },
-            });
-            $('.plant').on({
-                'mouseover': function () {
-                    $(".my-img").delay(100).fadeOut();
-                    $("#plant-img").delay(700).fadeIn();
-                },
-                mouseout: function () {
-                    $("#plant-img").fadeOut();
-                    
-                },
-            });
-        });
 </script>
 </html>

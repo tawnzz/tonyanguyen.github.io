@@ -101,45 +101,9 @@ element.style {
 	z-index: -20;
 }
 
-#alaska-img {
+#hover-img {
 	display: none;
-	width: 400px;
-}
-
-#dog-img {
-	display: none;
-
-	width: 400px;
-}
-
-#train-img {
-	display: none;
-
-	width: 400px;
-}
-
-#cal-img {
-	display: none;
-
-	width: 400px;
-}
-
-#plate-img {
-	display: none;
-
-	width: 400px;
-}
-
-#my-art {
-	display: none;
-
-	width: 400px;
-}
-
-#plant-img {
-	display: none;
-
-	width: 400px;
+	width: 90%;
 }
 
 @media screen and (max-width: 800px) {
