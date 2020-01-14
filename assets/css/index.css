@@ -28,13 +28,8 @@
 	src: url('/Users/tonyanguyen/tonyanguyen.github.io/RomanaBT.ttf');
 }
 
-html.sr .reveal {
-	visibility: hidden;
-}
-
 html {
 	scroll-behavior: smooth;
-	transition-duration: 1000;
 }
 
 body,
@@ -415,12 +410,10 @@ a {
 	font-weight: 300;
 }
 
-a:hover  {
+a:hover {
 	opacity: 0.5;
 }
 
 a:focus {
-  opacity: 0.5;
+	opacity: 0.5;
 }
-
-
