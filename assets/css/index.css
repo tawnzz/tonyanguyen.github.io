@@ -414,6 +414,12 @@ a {
 	transition: .4s;
 }
 
-a:hover {
+a:hover  {
 	opacity: 0.5;
 }
+
+a:focus {
+  opacity: 0.5;
+}
+
+

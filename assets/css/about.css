@@ -91,6 +91,15 @@ element.style {
 	width: 60%;
 }
 
+.hidden-img {
+	position: sticky;
+	position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+	 top: 25%;
+}
+
 .my-img {
 	opacity: 0;
 	visibility: visible;
@@ -204,3 +213,8 @@ a {
 a:hover {
 	opacity: 0.5;
 }
+
+a:focus {
+  opacity: 0.5;
+}
+
