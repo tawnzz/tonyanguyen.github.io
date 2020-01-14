@@ -20,9 +20,6 @@
     <link href="https://fonts.googleapis.com/css?family=EB+Garamond:400,500,600,700|Lora&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/scrollreveal"></script>
 <script src="https://unpkg.com/scrollreveal@4"></script>
-<script>
-    ScrollReveal({ duration: 600 })
-</script>
 </head>
 
 <body style="margin: 0;">
@@ -103,11 +100,11 @@
         <div id="research">
             <div class="row">
                 <div class="column">
-                    <div class="center" style="margin: 0 auto;">
-                        <div class="reveal tiny-content" style="text-align: left;">
+                    <div class="reveal center" style="margin: 0 auto;">
+                        <div class="tiny-content" style="text-align: left;">
                             <div>Publications & Research</div>
                         </div>
-                        <div class="reveal block-content2">
+                        <div class="block-content2">
                             <div>As an 👩‍💻undergraduate, I worked on projects focusing on creating systems to improve
                                 team viability within
                                 crowdworker
@@ -123,8 +120,8 @@
                         </div>
                     </div>
                     <div style="padding-top: 2em;"></div>
-                    <div class="center">
-                        <div class="reveal research-art1">
+                    <div class="reveal center">
+                        <div class="research-art1">
 
 
                             <div class="emoji" style="display: flex; flexwrap: wrap;">
@@ -144,7 +141,7 @@
 
                             </div>
                         </div>
-                        <div class="reveal research-art1">
+                        <div class="research-art1">
 
 
                             <div class="emoji" style="display: flex; flexwrap: wrap;">
@@ -167,7 +164,7 @@
 
                             </div>
                         </div>
-                        <div class="reveal research-art1">
+                        <div class="research-art1">
 
                             <div class="emoji" style="display: flex; flexwrap: wrap;">
                                 <div style="font-size: 3.2em;">💖</div>
@@ -197,21 +194,21 @@
         <div class="project">
             <div class="row">
                 <div class="column">
-                    <div class="center" style="margin: 0 auto;">
-                        <div class="reveal tiny-content" style="text-align: left;">
+                    <div class="reveal center" style="margin: 0 auto;">
+                        <div class="tiny-content" style="text-align: left;">
                             Projects
                         </div>
-                        <div class="reveal block-content2">
+                        <div class="block-content2">
                             <p>I really like making things and imagining 🔮 new possibilities for how people can
                                 interact with
                                 the world. Feel free to take a look at my projects!</p>
                         </div>
                     </div>
                     <div style="padding-top: 2em;"></div>
-                    <div class="center">
+                    <div class="reveal center">
 
 
-                        <div class="reveal emoji2">
+                        <div class="emoji2">
                             <div class="emoji-img"><img style="max-width: 86%; margin: 0 auto;" src="assets/img/calm.io.png"></div>
                             <div class="research-content">
                                 <div class="category" style="text-align: left;">Wearable, Critical Making 2019</div>
@@ -227,7 +224,7 @@
 
                         </div>
 
-                        <div class="reveal emoji2">
+                        <div class="emoji2">
 
                             <div class="emoji-img">
                                 <div class="center-img">
@@ -261,7 +258,7 @@
 
                         </div>
 
-                        <div class="reveal emoji2">
+                        <div class="emoji2">
                             <div class="emoji-img">
                                 <div class="center-img">
                                     <img style=" max-width: 100%;" src="assets/img/bns.jpg">
@@ -286,7 +283,7 @@
 
                         </div>
 
-                        <div class="reveal emoji2">
+                        <div class="emoji2">
                             <div class="emoji-img">
                                 <div class="center-img1">
                                     <img style="max-width: 80%;" src="assets/img/derive.gif">
@@ -335,15 +332,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 <script src="https://unpkg.com/scrollreveal"></script>
 <script>
-    window.onbeforeunload = function () {
-            window.scrollTo(0, 0);
-        }
+    $(document).ready(function () {
+        $(this).scrollTop(0);
+    });</script>
+<script>
+    $(".intro div").animate({ "opacity": "1" }, 300);
 </script>
 <script>
-    $(".intro div").animate({ "opacity": "1" }, 1000);
-</script>
-<script>
-    ScrollReveal().reveal('.reveal', { easing: 'cubic-bezier(0.5, 0, 0, 1)'});
+    ScrollReveal().reveal('.reveal', { duration: 600 });
 </script>
 
 </html>
