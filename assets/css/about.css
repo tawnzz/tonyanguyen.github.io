@@ -73,7 +73,6 @@ element.style {
 	padding-left: 6%;
 	display: block;
 	position: -webkit-sticky;
-	position: sticky;
 	top: 0;
 }
 
@@ -94,10 +93,10 @@ element.style {
 .hidden-img {
 	position: sticky;
 	position: -webkit-sticky;
-  position: -moz-sticky;
-  position: -ms-sticky;
-  position: -o-sticky;
-	 top: 25%;
+	position: -moz-sticky;
+	position: -ms-sticky;
+	position: -o-sticky;
+	top: 25%;
 }
 
 .my-img {
@@ -215,6 +214,5 @@ a:hover {
 }
 
 a:focus {
-  opacity: 0.5;
+	opacity: 0.5;
 }
-
