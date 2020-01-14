@@ -148,8 +148,6 @@ element.style {
 .emoji2 {
 	padding-top: 30px;
 	padding-bottom: 35px;
-	/* margin-top: 20px; */
-	/* margin-bottom: 20px; */
 	width: 100%;
 	margin: 0 auto;
 	display: flex;
@@ -157,11 +155,15 @@ element.style {
 }
 
 .emoji-img {
-	width: 30%;
+	width: 40%;
 }
 
 .research-content {
 	width: 100%;
+}
+
+.proj-content {
+	width: 60%;
 }
 
 .img {
@@ -235,6 +237,10 @@ element.style {
 		width: 100%;
 		margin-right: 0;
 		padding-bottom: 3em;
+	}
+	.proj-content {
+		width: 100%;
+		font-size: 1.1em;
 	}
 }
 
