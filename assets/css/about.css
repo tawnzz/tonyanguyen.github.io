@@ -1,33 +1,3 @@
-@font-face {
-	font-family: WorkSans-SemiBold;
-	src: url('/assets/fonts/WorkSans-SemiBold.ttf');
-}
-
-@font-face {
-	font-family: WorkSans-Regular;
-	src: url('/assets/fonts/WorkSans-Regular.ttf');
-}
-
-@font-face {
-	font-family: WorkSans-Medium;
-	src: url('/assets/fonts/WorkSans-Medium.ttf');
-}
-
-@font-face {
-	font-family: WorkSans-Light;
-	src: url('/assets/fonts/WorkSans-Light.ttf');
-}
-
-@font-face {
-	font-family: RomanaBT;
-	src: url('/Users/tonyanguyen/tonyanguyen.github.io/RomanaBT.ttf');
-}
-
-@font-face {
-	font-family: RomanaBTRoman;
-	src: url('/Users/tonyanguyen/tonyanguyen.github.io/RomanaBT.ttf');
-}
-
 body,
 p,
 h1,
@@ -130,7 +100,6 @@ element.style {
 	}
 	.my-img {
 		width: 100%;
-		display: block;
 		padding: 0;
 		position: sticky;
 	}
@@ -139,8 +108,15 @@ element.style {
 	}
 
 	.bye {
-		background: white;
+		background: #fefaf0;
 		padding-bottom: 4%;
+	}
+
+	#hover-img {
+		width: 80%;
+		top: 0;
+		position: fixed;
+		padding-bottom: 100%;
 	}
 }
 
