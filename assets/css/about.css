@@ -154,26 +154,26 @@ element.style {
 
 /* styling stuff */
 .red {
-	color: #e83434;
+	color: #e70000;
 }
 
 .pink {
-	color: rgb(233, 115, 207);
+	color: rgb(216, 30, 176);
 }
 
 .purple {
-	color: rgb(170, 115, 233);
+	color: rgb(101, 18, 196);
 }
 
 .peach {
-	color: #ff5b76;
+	color: #fd1864;
 }
 .green {
-	color: #20d825;
+	color: #05cc0b;
 }
 
 .golden {
-	color: #ecb709;
+	color: #f1b100;
 }
 
 .orange {
@@ -185,7 +185,7 @@ element.style {
 }
 
 .gray {
-	color: rgb(70, 70, 70);
+	color: rgb(223, 59, 59);
 }
 
 .bold {
