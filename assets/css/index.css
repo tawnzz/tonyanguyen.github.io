@@ -304,6 +304,10 @@ a:focus {
 }
 
 @media screen and (max-width: 800px) {
+	.section-header {
+		font-size: 3em;
+	}
+
 	.center {
 		width: 100%;
 	}
@@ -311,10 +315,23 @@ a:focus {
 		width: 100%;
 	}
 
+	.row {
+		width: 90%;
+		display: block;
+	}
+
+	.column {
+		width: 100%;
+	}
+
 	.project-img {
 		width: 100%;
-		margin: 0 auto;
-		padding-bottom: 4em;
+		padding-bottom: 50px;
+	}
+
+	.project-img:hover {
+		width: 100%;
+		padding-bottom: 50px;
 	}
 
 	.research-content {
