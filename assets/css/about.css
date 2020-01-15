@@ -13,8 +13,6 @@ hr {
 	font-weight: 300;
 }
 
-/*page container*/
-
 element.style {
 	transform: matrix(1, 0, 0, 1, 0, 0);
 }
