@@ -72,15 +72,13 @@ hr {
 }
 
 .row {
-	margin: 0 auto;
-	width: 80%;
 	display: flex;
 	flex-wrap: wrap;
 }
 
 /* keeps the margins */
 .center {
-	width: 90%;
+	width: 70%;
 	margin: 0 auto;
 }
 
@@ -309,14 +307,13 @@ a:focus {
 	}
 
 	.center {
-		width: 100%;
+		width: 90%;
 	}
 	.emoji2 {
 		width: 100%;
 	}
 
 	.row {
-		width: 90%;
 		display: block;
 	}
 
