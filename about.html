@@ -21,14 +21,17 @@
 </head>
 
 <body style="margin: 0px;">
+    <!-- Go back tab -->
     <div class="bye">
         <a class="peach" href="https://www.tonyanguyen.com/">⟵ ✌🏼peace out</a>
     </div>
+    <!-- container for all the content-->
   
     <div class="container">
         
         
         <div class="about">
+            <!-- Img of me / on hovers-->
 
             <div class="row">
                 <div class="column left">
@@ -38,6 +41,7 @@
                     </div>
                    
                 </div>
+                <!-- About Me Text -->
  
                     <div class="column right about-text">
                         <div>✨✨✨ Heyo, my name's <a href="https://www.tonyanguyen.com/about" class="peach tonya">Tonya!</a> [tawn-ya] ✨✨✨
@@ -88,6 +92,8 @@
             </div>
 
          </div>
+
+         <!-- my img -->
         <div class="row">
             <div class="column left">
                 <img class="my-img" src="assets/img/t1.png">
@@ -98,7 +104,7 @@
         </div>
 
         <!-- The Modal/Lightbox -->
-        <div id="myModal" class="modal">
+        <div id="myModal" class="modal" onclick="closeModal2()">
             <span class="close cursor" onclick="closeModal()">&times;</span>
             <div class="modal-content">
         
@@ -151,49 +157,7 @@
 <script src="js/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script type="text/javascript" src="assets/js/aboutme.js"></script>
+<script type="text/javascript" src="assets/js/lightbox.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
-<script>
-    window.onbeforeunload = function () {
-        window.scrollTo(0, 0);
-    }
-</script>
-<script>
-    $(".my-img").animate({ "opacity": "1" }, 300);
-    $(".about div").animate({ "opacity": "1" }, 800);
-</script>
-<script>
-    // Open the Modal
-    function openModal() {
-    document.getElementById("myModal").style.display = "block";
-    }
 
-    // Close the Modal
-    function closeModal() {
-    document.getElementById("myModal").style.display = "none";
-    }
-
-    var slideIndex = 1;
-    showSlides(slideIndex);
-
-    // Next/previous controls
-    function plusSlides(n) {
-    showSlides(slideIndex += n);
-    }
-
-    // Thumbnail image controls
-    function currentSlide(n) {
-    showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("demo");
-    var captionText = document.getElementById("caption");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex=slides.length} for (i=0; i < slides.length; i++) { slides[i].style.display="none" ; } for (i=0; i
-        < dots.length; i++) { dots[i].className=dots[i].className.replace(" active", "" ); }
-        slides[slideIndex-1].style.display="block" ; dots[slideIndex-1].className +=" active" ;
-        captionText.innerHTML=dots[slideIndex-1].alt; } 
-</script>
 </html>

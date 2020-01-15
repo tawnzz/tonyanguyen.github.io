@@ -1,4 +1,9 @@
 $('document').ready(function() {
+	$('.my-img').animate({ opacity: '1' }, 300);
+	$('.about div').animate({ opacity: '1' }, 800);
+	window.onbeforeunload = function() {
+		window.scrollTo(0, 0);
+	};
 	var $window = $(window);
 	var windowSize = $window.width();
 	console.log(windowSize);

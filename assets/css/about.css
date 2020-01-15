@@ -87,6 +87,7 @@ element.style {
 #hover-img {
 	display: none;
 	width: 90%;
+	filter: drop-shadow(0rem 0rem 0.75rem rgb(243, 233, 218));
 }
 
 .tiny-content {
@@ -187,9 +188,9 @@ a:focus {
 	width: 550px;
 }
 
-.mySlides {
+/* .mySlides {
 	filter: drop-shadow(0.2rem 0.2rem 0.75rem #ada287);
-}
+} */
 
 /* The Close Button */
 .close {

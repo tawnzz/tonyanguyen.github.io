@@ -1,4 +1,5 @@
-$(document).ready(function() {
+$(document).ready(function () {
+	$(".intro div").animate({ "opacity": "1" }, 300);
 	$(function() {
 		var $scroll = $('.scroll');
 		var $list = $scroll.find('ul.list');
