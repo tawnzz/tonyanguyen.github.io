@@ -48,15 +48,6 @@ hr {
 }
 
 /*page container*/
-
-element.style {
-	transform: matrix(1, 0, 0, 1, 0, 0);
-}
-
-.white {
-	z-index: 9999;
-}
-
 .container {
 	background: #fffffe;
 	padding-bottom: 3em;
@@ -64,13 +55,9 @@ element.style {
 
 .intro {
 	background: #fffffe;
-	padding-top: 5%;
+	padding-top: 8%;
 	padding-bottom: 15%;
 }
-/* 
-.intro div {
-	opacity: 0;
-} */
 
 #research {
 	/* color: rgb(255, 248, 240); */
@@ -82,11 +69,6 @@ element.style {
 
 .project {
 	padding-top: 5%;
-	padding-bottom: 5%;
-}
-
-.work {
-	width: 100%;
 }
 
 .row {
@@ -94,73 +76,43 @@ element.style {
 	width: 80%;
 	display: flex;
 	flex-wrap: wrap;
-	padding-bottom: 35px;
 }
 
-.left {
-	width: 50%;
-	margin-left: 0;
-}
-
-.right {
-	width: 50%;
-	margin-right: 0;
-}
-
-.floaty {
-	float: right;
-	padding-top: 2.75em;
-}
-
+/* keeps the margins */
 .center {
 	width: 90%;
 	margin: 0 auto;
 }
 
-.work-proj {
-	margin: 0;
-	padding: 0;
-	background: #fff;
-	overflow: hidden;
-	visibility: visible;
-	opacity: 1;
-	transition: opacity 0.6s cubic-bezier(0.5, 0, 0, 1) 0.1s;
-}
-
-.work-proj-img {
-	overflow: hidden;
-	position: relative;
-}
-
+/* research articles */
 .research-art1 {
-	width: 100%;
-	margin-right: 0;
 	padding-top: 1em;
 	padding-bottom: 1em;
 }
 
-.proj {
-	width: 100%;
-	margin-right: 0;
-	padding-top: 3em;
-	padding-bottom: 2em;
-}
-
-.emoji2 {
-	padding-top: 30px;
-	padding-bottom: 35px;
+.project {
+	padding-top: 2em;
+	padding-bottom: 3em;
 	width: 100%;
 	margin: 0 auto;
 	display: flex;
 	flex-wrap: wrap;
 }
 
-.emoji-img {
+.project-img {
 	width: 40%;
+	transition: transform .2s;
+}
+
+.project-img:hover {
+	width: 40%;
+	-ms-transform: scale(1.1); /* IE 9 */
+	-webkit-transform: scale(1.1); /* Safari 3-8 */
+	transform: scale(1.1);
 }
 
 .research-content {
-	width: 100%;
+	padding-left: 30px;
 }
 
 .proj-content {
@@ -191,12 +143,13 @@ element.style {
 	width: 150px;
 }
 
-/* headers :) */
+/* headers: tagline, research, projects */
 .section-header {
 	font-size: 4em;
 	font-weight: 600;
 }
 
+/* proj and research category */
 .category {
 	letter-spacing: .05em;
 	display: block;
@@ -205,6 +158,7 @@ element.style {
 	margin-bottom: 0.55em;
 }
 
+/* down arrow bounce*/
 .arrow {
 	color: rgb(48, 48, 48);
 }
@@ -329,7 +283,6 @@ element.style {
 	opacity: 1;
 }
 
-/*things I believe apply to me! hehe*/
 .tagline {
 	font-size: 4em;
 	font-weight: 600;
@@ -358,7 +311,7 @@ a:focus {
 		width: 100%;
 	}
 
-	.emoji-img {
+	.project-img {
 		width: 100%;
 		margin: 0 auto;
 		padding-bottom: 4em;
