@@ -6,11 +6,12 @@ h3,
 h4,
 h5,
 hr {
+	background: #fffffe;
 	font-family: 'Nunito Sans', sans-serif;
 	color: #1d1d1d;
-	line-height: 1.75;
-	background: #fefaf0;
-	font-weight: 300;
+	line-height: 1.5;
+	font-weight: 200;
+	font-size: 14pt;
 }
 
 element.style {
@@ -59,14 +60,14 @@ element.style {
 	width: 60%;
 }
 
-.hidden-img {
+/* .hidden-img {
 	position: sticky;
 	top: 25%;
 	position: -webkit-sticky;
 	position: -moz-sticky;
 	position: -ms-sticky;
 	position: -o-sticky;
-}
+} */
 
 .my-img {
 	opacity: 0;
@@ -78,22 +79,10 @@ element.style {
 	z-index: -20;
 }
 
-.exit {
-	display: none;
-}
-
 #hover-img {
 	display: none;
 	width: 90%;
 	filter: drop-shadow(0rem 0rem 0.75rem rgb(243, 233, 218));
-}
-
-.tiny-content {
-	letter-spacing: .05em;
-	display: block;
-	font-size: 1.5rem;
-	font-weight: 600;
-	margin-bottom: 1em;
 }
 
 /* styling stuff */
@@ -134,18 +123,10 @@ element.style {
 
 .bold {
 	font-family: 'Nunito Sans', sans-serif;
-	font-weight: 400;
+	font-weight: 300;
 }
 .blue {
 	color: #026cfc;
-}
-
-/*things I believe apply to me! hehe*/
-.tagline {
-	line-height: 1.5;
-	font-size: 3.75em;
-	position: relative;
-	font-weight: 700;
 }
 
 a {
@@ -257,10 +238,11 @@ a:focus {
 	hr {
 		font-family: 'Nunito Sans', sans-serif;
 		color: #1d1d1d;
-		line-height: 1.75;
-		font-weight: 300;
-		font-size: 1.1em;
+		line-height: 1.5;
+		font-weight: 200;
+		font-size: 14pt;
 	}
+
 	.left {
 		width: 100%;
 	}
@@ -278,7 +260,7 @@ a:focus {
 
 	.about-text {
 		margin: 0 auto;
-		width: 80%;
+		width: 90%;
 	}
 
 	.my-img {
@@ -312,6 +294,6 @@ a:focus {
 @media screen and (max-width: 676px) {
 	.modal-content {
 		background: #fefaf0;
-		width: 86%;
+		width: 100%;
 	}
 }

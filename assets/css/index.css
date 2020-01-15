@@ -42,8 +42,9 @@ h5,
 hr {
 	font-family: 'Nunito Sans', sans-serif;
 	color: #1d1d1d;
-	line-height: 1.75;
-	font-weight: 300;
+	line-height: 1.5;
+	font-weight: 200;
+	font-size: 14pt;
 }
 
 /*page container*/
@@ -57,32 +58,31 @@ element.style {
 }
 
 .container {
-	background: #fffefd;
+	background: #fffffe;
 	padding-bottom: 3em;
 }
 
 .intro {
-	background: #fefaf0;
-	height: 100%;
-	padding-top: 8%;
+	background: #fffffe;
+	padding-top: 5%;
+	padding-bottom: 15%;
 }
-
+/* 
 .intro div {
 	opacity: 0;
-}
+} */
 
 #research {
 	/* color: rgb(255, 248, 240); */
 	background: #ffe8f8;
-	padding-top: 6%;
-	padding-bottom: 2%;
-	/* height: 100%; */
+	padding-top: 5%;
+	padding-bottom: 5%;
 	filter: drop-shadow(0 0 0.75rem rgb(253, 221, 243));
 }
 
 .project {
-	padding-top: 6%;
-	/* height: 100%; */
+	padding-top: 5%;
+	padding-bottom: 5%;
 }
 
 .work {
@@ -136,12 +136,13 @@ element.style {
 	width: 100%;
 	margin-right: 0;
 	padding-top: 1em;
-	padding-bottom: 2.0em;
+	padding-bottom: 1em;
 }
 
 .proj {
 	width: 100%;
 	margin-right: 0;
+	padding-top: 3em;
 	padding-bottom: 2em;
 }
 
@@ -166,6 +167,14 @@ element.style {
 	width: 60%;
 }
 
+.pt {
+	font-size: 1.35em;
+}
+
+.des {
+	padding-top: 5px;
+}
+
 .img {
 	margin: 0 auto;
 	display: block;
@@ -182,108 +191,10 @@ element.style {
 	width: 150px;
 }
 
-@media screen and (max-width: 800px) {
-	body,
-	p,
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	hr {
-		font-family: 'Nunito Sans', sans-serif;
-		color: #1d1d1d;
-		line-height: 1.75;
-		font-weight: 300;
-		font-size: 1.1em;
-	}
-	.left {
-		width: 100%;
-	}
-	.right {
-		width: 100%;
-	}
-	.center {
-		width: 100%;
-	}
-	.intro {
-		height: fit-content;
-		padding-bottom: 40px;
-	}
-	.research {
-		height: fit-content;
-		padding-top: 40px;
-		padding-bottom: 40px;
-	}
-	.project {
-		height: fit-content;
-		padding-top: 40px;
-	}
-	.block-content {
-		width: 100%;
-	}
-	.block-content1 {
-		width: 100%;
-	}
-	.block-content2 {
-		width: 100%;
-	}
-	.floaty {
-		float: left;
-		padding-top: 0;
-	}
-
-	.emoji2 {
-		width: 100%;
-	}
-
-	.emoji-img {
-		width: 100%;
-		margin: 0 auto;
-		padding-bottom: 4em;
-	}
-
-	.research-content {
-		margin: 0 auto;
-		width: 100%;
-	}
-	.research-art1 {
-		width: 100%;
-		margin-right: 0;
-		padding-bottom: 3em;
-	}
-	.proj-content {
-		width: 100%;
-		font-size: 1.1em;
-	}
-}
-
 /* headers :) */
-.tiny-content {
-	letter-spacing: .05em;
-	display: block;
-	font-size: 1.5rem;
+.section-header {
+	font-size: 4em;
 	font-weight: 600;
-	margin-bottom: 1em;
-}
-
-/* intro block on the left */
-.block-content {
-	/* width: 80%; */
-	line-height: 1.87;
-}
-
-/* intro block on the right */
-.block-content1 {
-	/* width: 90%; */
-	/* padding-top: 30px; */
-	line-height: 1.87;
-}
-
-/* publications & research */
-.block-content2 {
-	/* color: rgb(255, 248, 240); */
-	line-height: 1.87;
 }
 
 .category {
@@ -294,8 +205,11 @@ element.style {
 	margin-bottom: 0.55em;
 }
 
+.arrow {
+	color: rgb(48, 48, 48);
+}
+
 .downArrow {
-	opacity: 0;
 	width: 10%;
 	font-size: 2.5em;
 	position: relative;
@@ -405,7 +319,7 @@ element.style {
 
 .bold {
 	font-family: 'Nunito Sans', sans-serif;
-	font-weight: 400;
+	font-weight: 300;
 }
 .blue {
 	color: #0277fc;
@@ -417,10 +331,8 @@ element.style {
 
 /*things I believe apply to me! hehe*/
 .tagline {
-	line-height: 1.5;
-	font-size: 4.75em;
-	position: relative;
-	font-weight: 700;
+	font-size: 4em;
+	font-weight: 600;
 }
 
 a {
@@ -436,4 +348,31 @@ a:hover {
 
 a:focus {
 	opacity: 0.5;
+}
+
+@media screen and (max-width: 800px) {
+	.center {
+		width: 100%;
+	}
+	.emoji2 {
+		width: 100%;
+	}
+
+	.emoji-img {
+		width: 100%;
+		margin: 0 auto;
+		padding-bottom: 4em;
+	}
+
+	.research-content {
+		margin: 0 auto;
+		width: 100%;
+	}
+	.research-art1 {
+		width: 100%;
+		margin-right: 0;
+	}
+	.proj-content {
+		width: 100%;
+	}
 }
