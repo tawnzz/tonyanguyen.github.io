@@ -71,16 +71,12 @@ hr {
 #research {
 	background-color: #fdf0ec;
 	padding-top: 4%;
-	padding-bottom: 3%;
+	padding-bottom: 5%;
 	filter: drop-shadow(0 0 0.75rem #fdf0ec);
 }
 
 .projects {
-	padding-top: 4%;
-}
-
-.project {
-	padding-top: 4%;
+	padding-top: 5%;
 }
 
 .row {
@@ -90,7 +86,7 @@ hr {
 
 /* keeps the margins */
 .center {
-	width: 65%;
+	width: 48%;
 	margin: 0 auto;
 }
 
@@ -109,22 +105,22 @@ hr {
 
 .left {
 	margin: 0 auto;
-	width: 70%;
+	width: 100%;
 }
 
-.right {
+/* .right {
 	width: 40%;
-}
+} */
 
 /* research articles */
 .research-art1 {
 	padding-top: 1em;
-	padding-bottom: 1em;
+	padding-bottom: 1.5em;
 }
 
 .project {
 	padding-top: 2em;
-	padding-bottom: 2em;
+	padding-bottom: 3.2em;
 	width: 100%;
 	margin: 0 auto;
 	display: flex;
@@ -132,22 +128,24 @@ hr {
 }
 
 .project-img {
-	width: 30%;
+	position: relative;
+	width: 40%;
 	transition: transform .2s;
 }
 
 .project-img:hover {
-	width: 30%;
+	width: 40%;
 	-ms-transform: scale(1.1); /* IE 9 */
 	-webkit-transform: scale(1.1); /* Safari 3-8 */
 	transform: scale(1.1);
 }
 
 .research-content {
-	padding-left: 20px;
+	padding-left: 44px;
 }
 
 .proj-content {
+	position: relative;
 	width: 60%;
 }
 
@@ -372,6 +370,8 @@ a:focus {
 	.project-img {
 		width: 100%;
 		padding-bottom: 50px;
+		position: relative;
+		left: 0px;
 	}
 
 	.project-img:hover {
@@ -388,6 +388,8 @@ a:focus {
 		margin-right: 0;
 	}
 	.proj-content {
+		position: relative;
+		left: 0px;
 		width: 100%;
 	}
 }
@@ -425,6 +427,8 @@ a:focus {
 	.project-img {
 		width: 100%;
 		padding-bottom: 50px;
+		position: relative;
+		left: 0px;
 	}
 
 	.project-img:hover {
@@ -442,5 +446,7 @@ a:focus {
 	}
 	.proj-content {
 		width: 100%;
+		position: relative;
+		left: 0px;
 	}
 }
