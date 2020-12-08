@@ -7,7 +7,7 @@ h3,
 h4,
 h5,
 .tagline {
-	font-family: 'Nunito', sans-serif;
+	font-family: 'Work-Sans', sans-serif;
 	font-weight: 300;
 	font-size: 1em; 
 	color: rgb(26, 26, 26);
@@ -29,11 +29,11 @@ h5,
 }
 
 .left {
-	width: 30%;
+	width: 40%;
 }
 
 .right {
-	width: 70%;
+	width: 60%;
 }
 
 /* intro description & research */
@@ -45,7 +45,7 @@ h5,
 /* profile photo and all images on the left */
 
 .left-img {
-	width: 68%;
+	width: 70%;
 }
 
 /* research */
@@ -67,8 +67,8 @@ h5,
 /* text decorations */
 
 .section-header {
-	font-size: 1.2em;
-	font-weight: 300;
+	font-size: 1.5em;
+	font-weight: 600;
 }
 
 b {
