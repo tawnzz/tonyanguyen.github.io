@@ -51,7 +51,7 @@ $(document).ready(function() {
 
 		//change page title!
 		$(window).blur(function() {
-			$('title').text('come back :(');
+			$('title').text('Come back!');
 		});
 
 		//change back on focus
