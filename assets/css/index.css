@@ -142,7 +142,7 @@ a:hover {
 	position: fixed;
 	top: 0;
 	left: 0;
-	background-image: linear-gradient(to right, #d5ebff, #f2d2ff);
+	background-image: linear-gradient(to right, #d5ebff, #f0d7fa);
 	transform-origin: top left;
 }
 
@@ -150,7 +150,7 @@ a:hover {
 	position: fixed;
 	top: 0;
 	right: 0;
-	background-image: linear-gradient(to top, #ffd519, #ffea8f, #e6a8ff, #f2d2ff);
+	background-image: linear-gradient(to top, #ffe2d5, #fff1db, #f2d1ff, #f2d2ff);
 	transform-origin: top right;
 }
 
@@ -158,7 +158,7 @@ a:hover {
 	position: fixed;
 	top: 0;
 	left: 0;
-	background-image: linear-gradient(to bottom, #d5ebff, #ebb9ff, #dc82ff, #ce66f7);
+	background-image: linear-gradient(to bottom, #d5ebff, #edd4f7, #efcefc, #f4d6ff);
 	transform-origin: top left;
 }
 
@@ -166,7 +166,7 @@ a:hover {
 	position: fixed;
 	bottom: 0;
 	left: 0;
-	background-image: linear-gradient(to right, #ce66f7, #ffd519);
+	background-image: linear-gradient(to right, #e6c9f1, #fae2d2);
 	transform-origin: top left;
 }
 
