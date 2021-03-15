@@ -16,7 +16,8 @@ h5,
 
 /* container, row, column alignment */
 .container {
-	width: 80%;
+	/* width: 80%; */
+	width: 60%;
 	margin: 0 auto;
 	padding-top: 5%;
 }
@@ -28,13 +29,13 @@ h5,
 	padding-bottom: 3%;
 }
 
-.left {
+/* .left {
 	width: 40%;
 }
 
 .right {
 	width: 60%;
-}
+} */
 
 /* intro description & research */
 
@@ -188,6 +189,29 @@ a:hover {
 
 /* responsive */
 @media only screen and (max-width: 600px) {
+	.container {
+		/* width: 80%; */
+		width: 86%;
+		margin: 0 auto;
+		padding-top: 5%;
+	}
+	.left, .right {
+		width: 100%;
+	}
+
+	.left-img {
+		width: 100%;
+		margin: 0 auto;
+	}
+  }
+
+  @media only screen and (max-width: 1000px) {
+	.container {
+		/* width: 80%; */
+		width: 86%;
+		margin: 0 auto;
+		padding-top: 5%;
+	}
 	.left, .right {
 		width: 100%;
 	}
