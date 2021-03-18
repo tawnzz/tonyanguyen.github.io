@@ -15,12 +15,11 @@ h5,
 }
 
 body {
-	background-image: linear-gradient(-21deg, #f5ebfc 0%, #fff7f4 100%, #fff4f4 100%);
+	background-image: linear-gradient(-21deg, #f5ebfc 0%, #fff9f7 100%, #fff4f4 100%);
 }
 
 /* container, row, column alignment */
 .container {
-	/* width: 80%; */
 	width: 45%;
 	margin: 0 auto;
 	padding-top: 5%;
@@ -151,7 +150,6 @@ a:hover {
 
   @media only screen and (max-width: 1000px) {
 	.container {
-		/* width: 80%; */
 		width: 86%;
 		margin: 0 auto;
 		padding-top: 5%;
