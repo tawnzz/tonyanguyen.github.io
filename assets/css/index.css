@@ -14,16 +14,16 @@ h5,
 	line-height: 1.5;
 }
 
-body {
-	background-image: linear-gradient(-21deg, #f5ebfc 0%, #fff9f7 100%, #fff4f4 100%);
-}
-
 /* container, row, column alignment */
 .container {
-	width: 45%;
+	width: 80%;
 	margin: 0 auto;
 	padding-top: 5%;
-	padding-bottom: 5%;
+	
+}
+
+body {
+	background-image: linear-gradient(-21deg, #ffffff 0%, #fcfcfc 100%, #fafafa 100%);
 }
 
 .row {
@@ -33,6 +33,13 @@ body {
 	padding-bottom: 3%;
 }
 
+.left {
+	width: 30%;
+}
+
+.right {
+	width: 70%;
+}
 
 /* intro description & research */
 
@@ -44,6 +51,8 @@ body {
 
 .left-img {
 	width: 70%;
+	margin-top: 10%; 
+	/* border-radius: 50%; */
 }
 
 /* research */
@@ -76,7 +85,7 @@ b {
 a {
  text-decoration: none;
  font-weight: 300;
- color: #676c81;
+ color: #808080;
 }
 
 a:hover {
@@ -127,33 +136,65 @@ a:hover {
 }
 
 
+/* border */
 
+.border-wrapper .default .border {
+	z-index: 9999;
+	opacity: 0.78;
+	/* background-color: #d5ebff; */
+	/* box-shadow: 0 4px 8px 0 rgba(105, 105, 105, 0.2), 0 6px 20px 0 rgba(138, 138, 138, 0.2); */
+}
+
+.border.top {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-image: linear-gradient(to right, #d5ebff, #f0d7fa);
+	transform-origin: top left;
+}
+
+.border.right {
+	position: fixed;
+	top: 0;
+	right: 0;
+	background-image: linear-gradient(to top, #ffe2d5, #fff1db, #f2d1ff, #f2d2ff);
+	transform-origin: top right;
+}
+
+.border.left {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-image: linear-gradient(to bottom, #d5ebff, #edd4f7, #efcefc, #f4d6ff);
+	transform-origin: top left;
+}
+
+.border.bottom {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background-image: linear-gradient(to right, #e6c9f1, #fae2d2);
+	transform-origin: top left;
+}
+
+.border.horizontal {
+	width: 100%;
+	height: 10px;
+}
+
+.border.vertical {
+	width: 10px;
+	height: 100%;
+}
+
+.border {
+	display: block;
+	will-change: auto;
+}
 
 
 /* responsive */
 @media only screen and (max-width: 600px) {
-	.container {
-		/* width: 80%; */
-		width: 86%;
-		margin: 0 auto;
-		padding-top: 5%;
-	}
-	.left, .right {
-		width: 100%;
-	}
-
-	.left-img {
-		width: 100%;
-		margin: 0 auto;
-	}
-  }
-
-  @media only screen and (max-width: 1000px) {
-	.container {
-		width: 86%;
-		margin: 0 auto;
-		padding-top: 5%;
-	}
 	.left, .right {
 		width: 100%;
 	}
