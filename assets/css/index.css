@@ -23,6 +23,10 @@ h5,
 	
 }
 
+.nowrap {
+	white-space: nowrap ;
+}
+
 body {
 	background-image: linear-gradient(-21deg, #ffffff 0%, #fcfcfc 100%, #fafafa 100%);
 }
