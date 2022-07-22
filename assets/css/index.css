@@ -1,3 +1,37 @@
+@font-face {
+    font-family: 'monument_groteskregular';
+    src: url('/Users/tonyanguyen/tonyanguyen.github.io/assets/css/fonts/monument-grotesk-regular-webfont.woff') format('woff'),
+		 url('/Users/tonyanguyen/tonyanguyen.github.io/assets/css/fonts/monument-grotesk-regular-webfont.woff2') format('woff2');
+		 
+    font-weight: normal;
+    font-style: normal;
+	
+}
+
+@font-face {
+    font-family: 'romana_btbold';
+    src: url('/Users/tonyanguyen/tonyanguyen.github.io/assets/css/fonts/romanab-webfont.woff2') format('woff2'),
+         url('/Users/tonyanguyen/tonyanguyen.github.io/assets/css/fonts/romanab-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'romana_btroman';
+    src: url('/Users/tonyanguyen/tonyanguyen.github.io/assets/css/fonts/romanabt-webfont.woff2') format('woff2'),
+         url('/Users/tonyanguyen/tonyanguyen.github.io/assets/css/fonts/romanabt-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+
+
 /* general styling */
 body,
 p,
@@ -7,16 +41,16 @@ h3,
 h4,
 h5,
 .tagline {
-	font-family: 'Work-Sans', sans-serif;
-	font-weight: 300;
-	font-size: 1em; 
-	color: rgb(26, 26, 26);
-	line-height: 1.5;
+    font-family: monument_groteskregular;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: rgb(21, 11, 11);
+	text-align: justify;
 }
 
 /* container, row, column alignment */
 .container {
-	width: 80%;
+	width: 70%; 
 	margin: 0 auto;
 	padding-top: 5%;
 	padding-bottom: 5%;
@@ -28,7 +62,7 @@ h5,
 }
 
 body {
-	background-image: linear-gradient(-21deg, #ffffff 0%, #fcfcfc 100%, #fafafa 100%);
+	background-image: linear-gradient(-21deg, #ffffff 0%, #fcfcfc 100%, #f5e2e2 100%);
 }
 
 .row {
@@ -39,12 +73,13 @@ body {
 }
 
 .left {
-	width: 30%;
+	width: 50%;
 }
 
 .right {
-	width: 70%;
+	width: 50%;
 }
+
 
 /* intro description & research */
 
@@ -55,10 +90,19 @@ body {
 /* profile photo and all images on the left */
 
 .left-img {
-	width: 70%;
-	margin-top: 10%; 
+	opacity: 90%;
+	position: absolute;
+	left: 23%;
+	top: 0px;
+	z-index: -1;
+	-webkit-filter: grayscale(100%);
+  	filter: grayscale(100%);
+	width: 30%;
+	margin: 0 auto;
+	margin-top: 5%; 
 	/* border-radius: 50%; */
 }
+
 
 /* research */
 
@@ -68,19 +112,21 @@ body {
 
 /* project categories */
 
-.category {
+/* .category {
 	font-weight: 400;
 }
 
 .category-i {
 	font-weight: 400;
-}
+} */
 
 /* text decorations */
 
+
 .section-header {
-	font-size: 1.5em;
-	font-weight: 600;
+    font-family: romana_btbold;
+	/* text-transform: uppercase; */
+	font-size: 2.8em;
 }
 
 b {
@@ -89,13 +135,17 @@ b {
 
 a {
  text-decoration: none;
- font-weight: 300;
- color: #808080;
+ color: #43d517;
 }
 
 a:hover {
-	color: #89b8ff;
+	color: #205e07;
 	transition: .4s ease-out; 
+}
+
+.rs-title {
+	font-weight: 600;
+ 	color: #43d517;
 }
 
 /* projects */
