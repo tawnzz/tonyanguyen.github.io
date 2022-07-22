@@ -1,8 +1,7 @@
 @font-face {
     font-family: 'monument_groteskregular';
-    src: url('/Users/tonyanguyen/tonyanguyen.github.io/assets/css/fonts/monument-grotesk-regular-webfont.woff') format('woff'),
-		 url('/Users/tonyanguyen/tonyanguyen.github.io/assets/css/fonts/monument-grotesk-regular-webfont.woff2') format('woff2');
-		 
+    src: url('fonts/monument-grotesk-regular-webfont.woff') format('woff'),
+		 url('fonts/monument-grotesk-regular-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	
@@ -10,8 +9,8 @@
 
 @font-face {
     font-family: 'romana_btbold';
-    src: url('/Users/tonyanguyen/tonyanguyen.github.io/assets/css/fonts/romanab-webfont.woff2') format('woff2'),
-         url('/Users/tonyanguyen/tonyanguyen.github.io/assets/css/fonts/romanab-webfont.woff') format('woff');
+    src: url('fonts/romanab-webfont.woff2') format('woff2'),
+         url('fonts/romanab-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -20,8 +19,8 @@
 
 @font-face {
     font-family: 'romana_btroman';
-    src: url('/Users/tonyanguyen/tonyanguyen.github.io/assets/css/fonts/romanabt-webfont.woff2') format('woff2'),
-         url('/Users/tonyanguyen/tonyanguyen.github.io/assets/css/fonts/romanabt-webfont.woff') format('woff');
+    src: url('fonts/romanabt-webfont.woff2') format('woff2'),
+         url('fonts/romanabt-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
