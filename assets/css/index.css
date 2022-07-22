@@ -148,6 +148,10 @@ a:hover {
  	color: #43d517;
 }
 
+.small-tag {
+	margin-left: 1.5%;
+}
+
 /* projects */
 
 .project {
@@ -254,8 +258,33 @@ a:hover {
 		width: 100%;
 	}
 
+	.container {
+		width: 90%;
+	}
+
+	.section-header {
+		font-size: 2rem;
+	}
+
+
+	body, p, a {
+    font-size: 1.3rem;
+    line-height: 1.5;
+	text-align: left;
+	}
+
+	.small-tag {
+		margin-left: 0%;
+	}
+
 	.left-img {
 		width: 100%;
+		left: 0;
+		right: 0;
+		padding: 0;
+		position: relative;
+		width: 100%;
+		padding-top: 2%;
 		margin: 0 auto;
 	}
   }
