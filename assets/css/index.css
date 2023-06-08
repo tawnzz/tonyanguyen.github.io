@@ -134,17 +134,17 @@ b {
 
 a {
  text-decoration: none;
- color: #43d517;
+ color: #00ae4e;
 }
 
 a:hover {
-	color: #205e07;
+	color: #fc74ec;
 	transition: .4s ease-out; 
 }
 
 .rs-title {
 	font-weight: 600;
- 	color: #43d517;
+ 	color: #00ae4e;
 }
 
 .small-tag {
