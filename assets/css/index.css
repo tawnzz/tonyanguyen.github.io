@@ -1,11 +1,11 @@
-@font-face {
+/* @font-face {
     font-family: 'monument_groteskregular';
     src: url('fonts/monument-grotesk-regular-webfont.woff') format('woff'),
 		 url('fonts/monument-grotesk-regular-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	
-}
+} */
 
 @font-face {
     font-family: 'romana_btbold';
@@ -139,7 +139,7 @@ body {
 }
 
 b {
-	font-weight: 600;
+	font-weight: 300;
 }
 
 a {
@@ -153,7 +153,7 @@ a:hover {
 }
 
 .rs-title {
-	font-weight: 600;
+	font-weight: 300;
  	color: #00ae4e;
 }
 
