@@ -33,6 +33,7 @@
 
 /* general styling */
 body,
+a,
 p,
 h1,
 h2,
@@ -48,6 +49,7 @@ h5,
     line-height: 1.5;
     color: rgb(21, 11, 11);
 	text-align: justify;
+
     /* font-family: monument_groteskregular;
     font-size: 1.1rem;
     line-height: 1.5;
@@ -167,6 +169,10 @@ a:hover {
 	margin: 0 auto;
 	display: flex;
 	flex-wrap: wrap;
+	font-family: "Lexend", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 300;
+	font-style: normal;
 }
 
 .project-img {
