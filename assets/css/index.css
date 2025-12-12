@@ -44,8 +44,7 @@ h5,
 	font-family: "Lexend", sans-serif;
 	font-optical-sizing: auto;
 	font-weight: 300;
-	font-style: normal;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     line-height: 1.5;
     color: rgb(21, 11, 11);
 	text-align: justify;
@@ -55,6 +54,16 @@ h5,
     line-height: 1.5;
     color: rgb(21, 11, 11);
 	text-align: justify; */
+}
+
+.top {
+	font-weight:400;
+	color: #2d282d;
+}
+
+.bolded {
+	font-weight:400;
+	color: #da63cc;
 }
 
 /* container, row, column alignment */
@@ -281,7 +290,7 @@ a:hover {
 
 
 	body, p, a {
-    font-size: 1.3rem;
+    font-size: 0.9rem;
     line-height: 1.5;
 	text-align: left;
 	}
