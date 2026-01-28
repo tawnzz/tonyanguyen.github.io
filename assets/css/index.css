@@ -106,21 +106,26 @@ body {
 }
 
 /* profile photo and all images on the left */
-
 .left-img {
-	opacity: 90%;
-	position: absolute;
-	left: 23%;
-	top: 0px;
-	z-index: -1;
-	-webkit-filter: grayscale(100%);
-  	filter: grayscale(100%);
-	width: 30%;
-	margin: 0 auto;
-	margin-top: 5%; 
-	/* border-radius: 50%; */
+  opacity: 100%;
+  position: absolute;
+  left: 15%;
+  top: 10%;
+  /* z-index: -1; */
+  width: 27%;
+  margin: 0 auto;
+  margin-top: 5%;
+
+-webkit-filter: grayscale(100%) contrast(110%) brightness(107%);
+  filter: grayscale(100%) contrast(110%) brightness(107%);
+  transition: filter 300ms ease, -webkit-filter 300ms ease;
 }
 
+
+.left-img:hover{
+  -webkit-filter: grayscale(0%) contrast(100%) brightness(100%);
+  filter: grayscale(0%) contrast(100%) brightness(100%);
+}
 
 /* research */
 
@@ -167,7 +172,7 @@ a:hover {
 }
 
 .small-tag {
-	margin-left: 1.5%;
+	margin-left: 0%;
 }
 
 /* projects */
@@ -299,7 +304,7 @@ a:hover {
 		margin-left: 0%;
 	}
 
-	.left-img {
+	/* .left-img {
 		width: 100%;
 		left: 0;
 		right: 0;
@@ -308,6 +313,6 @@ a:hover {
 		width: 100%;
 		padding-top: 2%;
 		margin: 0 auto;
-	}
+	} */
   }
   
