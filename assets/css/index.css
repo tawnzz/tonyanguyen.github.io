@@ -116,8 +116,8 @@ body {
   margin: 0 auto;
   margin-top: 5%;
 
--webkit-filter: grayscale(100%) contrast(110%) brightness(107%);
-  filter: grayscale(100%) contrast(110%) brightness(107%);
+-webkit-filter: grayscale(100%) contrast(135%) brightness(100%);
+  filter: grayscale(100%) contrast(135%) brightness(100%);
   transition: filter 300ms ease, -webkit-filter 300ms ease;
 }
 
