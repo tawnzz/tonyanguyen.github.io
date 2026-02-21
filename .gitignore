@@ -1,0 +1,2 @@
+# Spotify token helper - local HTTPS certs (generated at runtime)
+scripts/localhost-*.pem
