@@ -237,8 +237,12 @@ $(document).ready(function() {
 					var spotifyApiUrl = window.SPOTIFY_API_URL || '';
 					function updateSpotifyNowPlaying() {
 						var el = document.getElementById('current-song');
-						if (!el || !spotifyApiUrl) return;
-						if (el.textContent === '—' || el.textContent === 'nothing right now') {
+						if (!el) return;
+						if (!spotifyApiUrl) {
+							el.textContent = '—';
+							return;
+						}
+						if (el.textContent === '—' || el.textContent === 'nothing right now' || el.textContent.indexOf('unavailable') !== -1) {
 							el.textContent = 'checking...';
 						}
 						$.get(spotifyApiUrl, function(data) {
@@ -252,8 +256,8 @@ $(document).ready(function() {
 							} else {
 								el.textContent = 'nothing right now';
 							}
-						}).fail(function() {
-							if (el) el.textContent = '—';
+						}).fail(function(xhr) {
+							if (el) el.textContent = 'unavailable';
 						});
 					}
 					updateSpotifyNowPlaying();

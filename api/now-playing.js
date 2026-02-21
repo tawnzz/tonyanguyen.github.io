@@ -45,13 +45,19 @@ export default async function handler(req, res) {
 
 		const tokenData = await tokenRes.json();
 		if (tokenData.error) {
-			return res.status(200).json({ isPlaying: false, message: 'Token error' });
+			return res.status(200).json({ isPlaying: false, message: 'Token error: ' + (tokenData.error_description || tokenData.error) });
+		}
+		if (!tokenData.access_token) {
+			return res.status(200).json({ isPlaying: false, message: 'No access token received — refresh token may be expired. Regenerate it with scripts/spotify-get-token.js' });
 		}
 
 		const nowRes = await fetch('https://api.spotify.com/v1/me/player/currently-playing', {
 			headers: { Authorization: 'Bearer ' + tokenData.access_token }
 		});
 
+		if (nowRes.status === 401) {
+			return res.status(200).json({ isPlaying: false, message: 'Spotify auth failed — regenerate your refresh token (it may be expired or revoked)' });
+		}
 		if (nowRes.status === 204 || nowRes.status === 404) {
 			return res.status(200).json({ isPlaying: false, message: 'Nothing playing' });
 		}

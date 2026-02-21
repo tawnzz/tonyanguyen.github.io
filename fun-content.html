@@ -85,5 +85,28 @@
         </div>
 
     </div>
+    <!-- Spotify API – same URL as index.html -->
+    <script>window.SPOTIFY_API_URL = 'https://tawnie.vercel.app/api/now-playing';</script>
+    <script>
+        (function() {
+            var url = window.SPOTIFY_API_URL;
+            if (!url) return;
+            var el = document.getElementById('current-song');
+            if (!el) return;
+            function update() {
+                el.textContent = el.textContent === '—' || el.textContent === 'nothing right now' ? 'checking...' : el.textContent;
+                fetch(url).then(function(r) { return r.json(); })
+                    .then(function(data) {
+                        if (data.isPlaying && data.title) {
+                            var text = data.title + ' — ' + data.artists;
+                            el.innerHTML = data.url ? '<a href="' + data.url + '" target="_blank" rel="noopener">' + text + '</a>' : text;
+                        } else el.textContent = 'nothing right now';
+                    })
+                    .catch(function() { el.textContent = 'unavailable'; });
+            }
+            update();
+            setInterval(update, 30000);
+        })();
+    </script>
 </body>
 </html>
