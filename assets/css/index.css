@@ -43,16 +43,15 @@
 
 
 /* general styling */
+h1, h2, h3, h4, h5 {
+	font-family: romana_btbold, serif;
+}
+
 body,
 a,
 p,
-h1,
-h2,
-h3,
-h4,
-h5,
 .tagline {
-	font-family: "Lexend", sans-serif;
+	font-family: "Open Sans", sans-serif;
 	font-optical-sizing: auto;
 	font-weight: 300;
 	font-size: 0.9rem;
@@ -128,7 +127,7 @@ body {
 }
 
 .fun-mode-banner .banner-text {
-	font-family: "Inknut Antiqua", serif;
+	font-family: "Pixel Script", cursive;
 	font-size: 1rem;
 	font-weight: 700;
 	color: #fff;
@@ -141,35 +140,45 @@ body {
 	100% { transform: translateX(-50%); }
 }
 
-.fun-mode-back {
-	position: fixed;
-	top: 2.25rem;
-	left: 1rem;
-	z-index: 3;
-}
-
-.fun-mode-back a {
-	font-family: "Inknut Antiqua", serif;
-	font-size: 0.9rem;
-	font-weight: 700;
+/* Microsoft-style close button in top right of content container */
+.fun-mode-close {
+	position: absolute;
+	top: 0.5rem;
+	right: 0.5rem;
+	cursor: pointer;
+	width: 1.75rem;
+	height: 1.75rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.25rem;
+	line-height: 1;
+	font-weight: 400;
 	text-decoration: none !important;
-	color: #1a5fb4 !important;
+	color: #5a5a5a !important;
+	background: transparent;
+	border: none;
+	border-radius: 2px;
+	z-index: 10;
+	transition: background 0.15s ease, color 0.15s ease;
 }
 
-.fun-mode-back a:hover {
-	text-decoration: underline !important;
+.fun-mode-close:hover,
+body.fun-mode .fun-mode-close:hover {
+	background: #5a9fc4 !important;
+	color: #fff !important;
 }
 
 body.fun-mode {
 	background: transparent !important;
 	/* Y2K iridescent mesh gradient + sparkles drawn by JS canvas */
-	font-family: "Inknut Antiqua", serif !important;
+	font-family: romana_btroman, serif !important;
 }
 
 body.fun-mode .container {
 	position: relative;
 	z-index: 1;
-	margin-top: 2rem;
+	margin-top: 1.25rem;
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 1200px;
@@ -181,14 +190,15 @@ body.fun-mode .container {
 	display: block;
 }
 
-/* Retro layout: nav (left) + content (middle) */
+/* Retro layout: nav (left) + content (middle) with blue drop shadow */
 body.fun-mode .fun-mode-layout {
+	position: relative;
 	display: flex;
 	gap: 0;
 	border: 2px solid #7eb8d8;
 	border-top: 3px solid #a8d8ea;
 	background: #fdf8f5;
-	box-shadow: 2px 2px 0 #5a9fc4;
+	box-shadow: 0 12px 40px rgba(94, 159, 196, 0.5), 2px 2px 0 #5a9fc4;
 }
 
 /* Left nav bar */
@@ -259,14 +269,13 @@ body.fun-mode .fun-mode-nav-section p {
 }
 
 body.fun-mode .fun-mode-nav-header {
-	font-family: "Inknut Antiqua", serif;
+	font-family: "Pixel Script", cursive;
 	font-size: 0.85rem;
 	font-weight: 700;
 	color: #fff;
 	background: linear-gradient(180deg, #a8d8ea 0%, #7eb8d8 100%);
 	border-bottom: 1px solid #7eb8d8;
 	padding: 0.4rem 0.6rem;
-	text-transform: uppercase;
 	letter-spacing: 0.05em;
 }
 
@@ -298,7 +307,7 @@ body.fun-mode .fun-mode-main {
 }
 
 body.fun-mode .fun-mode-content-header {
-	font-family: "Inknut Antiqua", serif;
+	font-family: "Pixel Script", cursive;
 	font-size: 1rem;
 	font-weight: 700;
 	color: #fff;
@@ -315,6 +324,7 @@ body.fun-mode .fun-mode-content-inner {
 }
 
 body.fun-mode .fun-mode-content-inner .section-header {
+	font-family: "Pixel Script", cursive;
 	margin-top: 1rem;
 	margin-bottom: 0.5rem;
 	font-weight: 700;
@@ -326,6 +336,23 @@ body.fun-mode .fun-mode-content-inner .section-header:first-of-type {
 	margin-top: 0.5rem;
 }
 
+/* Tab panels: show only active */
+body.fun-mode .fun-mode-panel {
+	display: none;
+}
+body.fun-mode .fun-mode-panel.active {
+	display: block;
+}
+
+body.fun-mode .fun-mode-content-inner {
+	min-height: 220px;
+}
+
+body.fun-mode .fun-mode-tab.active {
+	font-weight: 700;
+	color: #5a9fc4 !important;
+}
+
 /* MySpace-inspired palette, simple borders, minimal box styling */
 body.fun-mode .myspace-header {
 	width: 100%;
@@ -333,7 +360,7 @@ body.fun-mode .myspace-header {
 }
 
 body.fun-mode .myspace-name {
-	font-family: "Inknut Antiqua", serif;
+	font-family: romana_btbold, serif;
 	font-size: 1.8em;
 	font-weight: bold;
 	color: #1a3d6b;
@@ -357,7 +384,7 @@ body.fun-mode .myspace-pic {
 }
 
 body.fun-mode .myspace-details {
-	font-family: "Inknut Antiqua", serif;
+	font-family: romana_btroman, serif;
 	font-size: 0.9rem;
 	color: #333;
 	line-height: 1.6;
@@ -374,7 +401,7 @@ body.fun-mode .myspace-login {
 }
 
 body.fun-mode .myspace-view {
-	font-family: "Inknut Antiqua", serif;
+	font-family: romana_btroman, serif;
 	font-size: 0.85rem;
 }
 
@@ -385,7 +412,7 @@ body.fun-mode .myspace-view a {
 body.fun-mode .name-header {
 	order: 1;
 	margin-bottom: var(--space-sm);
-	font-family: "Inknut Antiqua", serif !important;
+	font-family: romana_btbold, serif !important;
 	font-size: 2.4em;
 	color: #c2185b;
 	text-shadow: 2px 2px 0 #f8bbd9;
@@ -451,7 +478,7 @@ body.fun-mode .right .section-header {
 	padding-top: var(--space-lg);
 	margin-top: var(--space-xl);
 	color: #7b1fa2;
-	font-family: "Inknut Antiqua", serif !important;
+	font-family: "Pixel Script", cursive !important;
 }
 
 body.fun-mode .right .section-header:first-of-type {
@@ -463,7 +490,7 @@ body.fun-mode .right .section-header:first-of-type {
 body.fun-mode .year-header {
 	color: #ad1457;
 	font-weight: 700;
-	font-family: "Inknut Antiqua", serif !important;
+	font-family: romana_btbold, serif !important;
 }
 
 body.fun-mode .research-item,
@@ -519,7 +546,7 @@ body.fun-mode .fun-mode-footer {
 	text-align: center;
 	font-size: 0.9rem;
 	color: #7b1fa2;
-	font-family: "Nunito", "Comic Sans MS", cursive !important;
+	font-family: romana_btroman, serif !important;
 }
 
 body.fun-mode .fun-mode-footer hr {
@@ -529,7 +556,7 @@ body.fun-mode .fun-mode-footer hr {
 }
 
 .name-header {
-	font-family: romana_btbold;
+	font-family: romana_btbold, serif;
 	font-size: 2.2em;
 	color: var(--deep-teal);
 	margin-bottom: var(--space-md);
@@ -605,7 +632,7 @@ body.fun-mode .fun-mode-footer hr {
 }
 
 .year-header {
-	font-family: "Lexend", sans-serif;
+	font-family: romana_btbold, serif;
 	font-size: 0.8rem;
 	font-weight: 300;
 	color: var(--deep-teal);
@@ -727,7 +754,7 @@ body.fun-mode .fun-mode-footer hr {
 }
 
 .section-header {
-	font-family: romana_btbold;
+	font-family: romana_btbold, serif;
 	font-size: 2.2em;
 }
 
@@ -897,7 +924,7 @@ a:hover {
 	margin: 0 auto;
 	display: flex;
 	flex-wrap: wrap;
-	font-family: "Lexend", sans-serif;
+	font-family: romana_btroman, serif;
 	font-optical-sizing: auto;
 	font-weight: 300;
 	font-style: normal;
@@ -1012,9 +1039,12 @@ a:hover {
 		min-width: 120px;
 	}
 
-	body.fun-mode .fun-mode-back {
-		top: 1.75rem;
-		left: 0.5rem;
+	body.fun-mode .fun-mode-close {
+		top: 0.4rem;
+		right: 0.4rem;
+		width: 1.5rem;
+		height: 1.5rem;
+		font-size: 1.1rem;
 	}
 
 	.name-header {

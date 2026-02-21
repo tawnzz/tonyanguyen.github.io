@@ -297,6 +297,14 @@ $(document).ready(function() {
 			setTimeout(function() { $el.removeClass('photo-pop'); }, 400);
 		});
 
+		$(document).on('click', '.fun-mode-tab', function(e) {
+			e.preventDefault();
+			var tab = $(this).attr('data-tab');
+			if (!tab) return;
+			$('.fun-mode-panel').removeClass('active').filter('#panel-' + tab).addClass('active');
+			$('.fun-mode-tab').removeClass('active').filter('[data-tab="' + tab + '"]').addClass('active');
+		});
+
 		$(document).on('click', '#fun-mode-toggle, .fun-mode-toggle', function(e) {
 			e.preventDefault();
 			var isOn = !$('body').hasClass('fun-mode');
@@ -312,6 +320,7 @@ $(document).ready(function() {
 				removeY2KBackground();
 				updateFunModeFooter(false);
 				$(document).trigger('funModeRemoved.sfTime');
+				$(document).trigger('funModeRemoved.spotify');
 			}
 		});
 

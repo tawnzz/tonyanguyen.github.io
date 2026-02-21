@@ -21,7 +21,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,400;0,600;0,700;0,900;1,300;1,800&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/pixel-script" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/index.css">
@@ -415,13 +415,13 @@
 
     </div><!-- end .container -->
 
-    <!-- Fallback when fun-content.html can't be loaded (e.g. local file://). Keep in sync with fun-content.html. -->
+    <!-- Fallback when fun-content.html can't be loaded (e.g. file://). Must match fun-content.html structure. -->
     <template id="fun-mode-fallback">
-        <div class="fun-mode-back"><a href="#" class="fun-mode-toggle">← go back</a></div>
         <div class="fun-mode-layout">
+            <a href="#" class="fun-mode-close fun-mode-toggle" aria-label="Close">×</a>
             <nav class="fun-mode-nav">
                 <div class="fun-mode-nav-section">
-                    <div class="fun-mode-nav-header">SITE</div>
+                    <div class="fun-mode-nav-header">tonya</div>
                     <div class="fun-mode-nav-photo fun-mode-photo-cycle">
                         <span class="photo-sparkle sparkle-1">✦</span>
                         <span class="photo-sparkle sparkle-2">✧</span>
@@ -430,23 +430,19 @@
                         <img alt="Tonya Nguyen" src="assets/img/tonya1.png">
                     </div>
                     <p>It's <span id="sf-time">--:--:--</span> in San Francisco, California.</p>
-                    <ul class="fun-mode-nav-links">
-                        <li><a href="#" class="fun-mode-toggle">← Main</a></li>
-                        <li><a href="mailto:tonyanguyen@berkeley.edu">Contact</a></li>
+                    <p>Currently listening to: <span id="current-song">—</span></p>
+                </div>
+                <div class="fun-mode-nav-section">
+                    <div class="fun-mode-nav-header">About</div>
+                    <ul class="fun-mode-nav-links fun-mode-tabs">
+                        <li><a href="#" class="fun-mode-tab active" data-tab="about">about me</a></li>
+                        <li><a href="#" class="fun-mode-tab" data-tab="vibing">vibing with</a></li>
+                        <li><a href="#" class="fun-mode-tab" data-tab="projects">current projects</a></li>
                     </ul>
                 </div>
                 <div class="fun-mode-nav-section">
-                    <div class="fun-mode-nav-header">ABOUT</div>
+                    <div class="fun-mode-nav-header">people i like</div>
                     <ul class="fun-mode-nav-links">
-                        <li><a href="#">Bio</a></li>
-                        <li><a href="#">Vibing With</a></li>
-                        <li><a href="#">Projects</a></li>
-                    </ul>
-                </div>
-                <div class="fun-mode-nav-section">
-                    <div class="fun-mode-nav-header">LINKS</div>
-                    <ul class="fun-mode-nav-links">
-                        <li><a href="https://en.wikipedia.org/wiki/Webring">Webring</a></li>
                         <li><a href="https://withoutdoing.com//">zeke</a></li>
                         <li><a href="http://lizagak.com/">liza</a></li>
                         <li><a href="https://www.applexiao.com/">sijia</a></li>
@@ -455,22 +451,28 @@
                 </div>
             </nav>
             <main class="fun-mode-main">
-                <div class="fun-mode-content-header">Welcome to tonya's world</div>
+                <div class="fun-mode-content-header">Welcome to Tonya's World</div>
                 <div class="fun-mode-content-inner">
-                    <p>hi!! welcome to my little corner of the web ♥</p>
-                    <p>i'm tonya nguyen — an hci researcher and phd student at uc berkeley. i love learning new things (and especially appreciate when i'm not the smartest in the room). i owe many of my friends to this, as well as my wonderful mentors. i think a lot about how technology can solve the world's problems, but also where real-world context, human motivations, and historical forces intersect to shape the systems we've built (and the limitations of that!!!). i'm a student of science &amp; technology studies, hci, sociology, critical theory, and machine learning.</p>
-                    <div class="section-header">currently vibing with</div>
-                    <ul style="list-style: none; padding-left: 0;">
-                        <li>♥ SAILORR's "FROM FLORIDA'S FINEST" album</li>
-                        <li>♥ internal family systems theory</li>
-                        <li>♥ homemade matcha lattes</li>
-                        <li>♥ swimming freestyle</li>
-                    </ul>
-                    <div class="section-header">current projects</div>
-                    <ul style="list-style: none; padding-left: 0;">
-                        <li>user interaction design for interactive user personalization</li>
-                    </ul>
-                    <p>drop me a line at <a href="mailto:tonyanguyen@berkeley.edu" class="gray">tonyanguyen@berkeley.edu</a> or click "go back" above to see my serious academic side!</p>
+                    <div class="fun-mode-panel active" id="panel-about">
+                        <p>hi!! welcome to my little corner of the web ♥</p>
+                        <p>i'm tonya nguyen — an hci researcher and phd student at uc berkeley. i think a lot about how technology can solve the world's problems, but also where real-world context, human motivations, and historical forces intersect to shape the systems we've built (and the limitations of that!!!). i'm a student of science &amp; technology studies, hci, sociology, critical theory, and machine learning.</p>
+                        <p>i love learning new things (and especially appreciate when i'm not the smartest in the room). i owe many of my friends to this, as well as my wonderful mentors.</p>
+                    </div>
+                    <div class="fun-mode-panel" id="panel-vibing">
+                        <div class="section-header">currently vibing with</div>
+                        <ul style="list-style: none; padding-left: 0;">
+                            <li>♥ SAILORR's "FROM FLORIDA'S FINEST" album</li>
+                            <li>♥ internal family systems theory</li>
+                            <li>♥ homemade matcha lattes</li>
+                            <li>♥ swimming freestyle</li>
+                        </ul>
+                    </div>
+                    <div class="fun-mode-panel" id="panel-projects">
+                        <div class="section-header">current projects</div>
+                        <ul style="list-style: none; padding-left: 0;">
+                            <li>user interaction design for interactive user personalization</li>
+                        </ul>
+                    </div>
                 </div>
             </main>
         </div>

@@ -16,14 +16,13 @@
     -->
     <div id="fun-mode-content">
 
-        <div class="fun-mode-back"><a href="#" class="fun-mode-toggle">← go back</a></div>
-
         <!-- Main layout: banner (above) + nav (left) + content (middle) -->
         <div class="fun-mode-layout">
+            <a href="#" class="fun-mode-close fun-mode-toggle" aria-label="Close">×</a>
             <!-- LEFT: Nav bar -->
             <nav class="fun-mode-nav">
                 <div class="fun-mode-nav-section">
-                    <div class="fun-mode-nav-header">tonya</div>
+                    <div class="fun-mode-nav-header">Tonya Nguyen</div>
                     <div class="fun-mode-nav-photo fun-mode-photo-cycle">
                         <span class="photo-sparkle sparkle-1">✦</span>
                         <span class="photo-sparkle sparkle-2">✧</span>
@@ -35,11 +34,11 @@
                     <p>Currently listening to: <span id="current-song">—</span></p>
                 </div>
                 <div class="fun-mode-nav-section">
-                    <div class="fun-mode-nav-header">ABOUT</div>
-                    <ul class="fun-mode-nav-links">
-                        <li><a href="#">about me</a></li>
-                        <li><a href="#">vibing with</a></li>
-                        <li><a href="#">ongoing projects</a></li>
+                    <div class="fun-mode-nav-header">Explore</div>
+                    <ul class="fun-mode-nav-links fun-mode-tabs">
+                        <li><a href="#" class="fun-mode-tab active" data-tab="about">About me & this site</a></li>
+                        <li><a href="#" class="fun-mode-tab" data-tab="vibing">What I'm currently vibing with</a></li>
+                        <li><a href="#" class="fun-mode-tab" data-tab="projects">Current Projects</a></li>
                     </ul>
                 </div>
                 <div class="fun-mode-nav-section">
@@ -57,29 +56,26 @@
             <main class="fun-mode-main">
                 <div class="fun-mode-content-header">Welcome to tonya's world</div>
                 <div class="fun-mode-content-inner">
-            <p>
-                hi!! welcome to my little corner of the web ♥
-            </p>
-            <p>
-                i'm tonya nguyen — an hci researcher and phd student at uc berkeley.  i think a lot about how technology can solve the world's problems, but also where real-world context, human motivations, and historical forces intersect to shape the systems we've built (and the limitations of that!!!). i'm a student of science & technology studies, hci, sociology, critical theory, and machine learning. 
-            </p>
-            <p>
-                i love learning new things (and especially appreciate when i'm not the smartest in the room). i owe many of my friends to this, as well as my wonderful mentors.
-            </p>
-               
-
-
-            <div class="section-header">currently vibing with</div>
-            <ul style="list-style: none; padding-left: 0;">
-                <li>♥ SAILORR's "FROM FLORIDA'S FINEST" album</li>
-                <li>♥ internal family systems theory</li>
-                <li>♥ homemade matcha lattes</li>
-                <li>♥ swimming freestyle</li>
-            </ul>
-            <div class="section-header">current projects</div>
-            <ul style="list-style: none; padding-left: 0;">
-                <li>user interaction design for interactive user personalization</li>
-            </ul>
+                    <div class="fun-mode-panel active" id="panel-about">
+                        <p>hi!! welcome to my little corner of the web ♥</p>
+                        <p>i'm tonya nguyen — an hci researcher and phd student at uc berkeley. i think a lot about how technology can solve the world's problems, but also where real-world context, human motivations, and historical forces intersect to shape the systems we've built (and the limitations of that!!!). i'm a student of science &amp; technology studies, hci, sociology, critical theory, and machine learning.</p>
+                        <p>i love learning new things (and especially appreciate when i'm not the smartest in the room). i owe many of my friends to this, as well as my wonderful mentors.</p>
+                    </div>
+                    <div class="fun-mode-panel" id="panel-vibing">
+                        <div class="section-header">currently vibing with</div>
+                        <ul style="list-style: none; padding-left: 0;">
+                            <li>♥ SAILORR's "FROM FLORIDA'S FINEST" album</li>
+                            <li>♥ internal family systems theory</li>
+                            <li>♥ homemade matcha lattes</li>
+                            <li>♥ swimming freestyle</li>
+                        </ul>
+                    </div>
+                    <div class="fun-mode-panel" id="panel-projects">
+                        <div class="section-header">current projects</div>
+                        <ul style="list-style: none; padding-left: 0;">
+                            <li>user interaction design for interactive user personalization</li>
+                        </ul>
+                    </div>
                 </div>
             </main>
         </div>
@@ -106,6 +102,22 @@
             }
             update();
             setInterval(update, 30000);
+        })();
+        /* Tab switching - also handled by index.js when loaded in main site */
+        (function() {
+            document.addEventListener('click', function(e) {
+                var tab = e.target.closest('.fun-mode-tab');
+                if (!tab) return;
+                e.preventDefault();
+                var id = tab.getAttribute('data-tab');
+                if (!id) return;
+                document.querySelectorAll('.fun-mode-panel').forEach(function(p) {
+                    p.classList.toggle('active', p.id === 'panel-' + id);
+                });
+                document.querySelectorAll('.fun-mode-tab').forEach(function(t) {
+                    t.classList.toggle('active', t.getAttribute('data-tab') === id);
+                });
+            });
         })();
     </script>
 </body>
