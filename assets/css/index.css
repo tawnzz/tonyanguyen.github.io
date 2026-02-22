@@ -41,6 +41,28 @@
 
 }
 
+@font-face {
+    font-family: "Alagard";
+    src: url("https://db.onlinewebfonts.com/t/6faad1789bcbd321a458c14d0735d976.eot");
+    src: url("https://db.onlinewebfonts.com/t/6faad1789bcbd321a458c14d0735d976.eot?#iefix") format("embedded-opentype"),
+         url("https://db.onlinewebfonts.com/t/6faad1789bcbd321a458c14d0735d976.woff2") format("woff2"),
+         url("https://db.onlinewebfonts.com/t/6faad1789bcbd321a458c14d0735d976.woff") format("woff"),
+         url("https://db.onlinewebfonts.com/t/6faad1789bcbd321a458c14d0735d976.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "rainyhearts";
+    src: url("https://db.onlinewebfonts.com/t/069fb64d1f685b25507f0ece8707f4ab.eot");
+    src: url("https://db.onlinewebfonts.com/t/069fb64d1f685b25507f0ece8707f4ab.eot?#iefix") format("embedded-opentype"),
+         url("https://db.onlinewebfonts.com/t/069fb64d1f685b25507f0ece8707f4ab.woff2") format("woff2"),
+         url("https://db.onlinewebfonts.com/t/069fb64d1f685b25507f0ece8707f4ab.woff") format("woff"),
+         url("https://db.onlinewebfonts.com/t/069fb64d1f685b25507f0ece8707f4ab.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 /* general styling */
 h1, h2, h3, h4, h5 {
@@ -105,6 +127,16 @@ body {
 }
 
 /* Fun mode: 90s–2000s Y2K girly homepage aesthetic */
+.fun-mode-clickable-background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 0.7;
+	pointer-events: auto;
+}
+
 .fun-mode-banner {
 	position: fixed;
 	top: 0;
@@ -113,12 +145,14 @@ body {
 	overflow: hidden;
 	z-index: 2;
 	background: linear-gradient(90deg, rgba(236, 64, 122, 0.3) 0%, rgba(248, 187, 217, 0.5) 50%, rgba(236, 64, 122, 0.3) 100%);
-	padding: 0.4rem 0;
+	padding: 0.85rem 0;
 	white-space: nowrap;
 }
 
 .fun-mode-banner-track {
 	display: inline-flex;
+	align-items: center;
+	gap: 1.5em;
 	animation: fun-mode-marquee 25s linear infinite;
 }
 
@@ -126,18 +160,115 @@ body {
 	animation-play-state: paused;
 }
 
+.fun-mode-banner .banner-unit {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.6em;
+}
+
 .fun-mode-banner .banner-text {
 	font-family: "Pixel Script", cursive;
-	font-size: 1rem;
+	font-size: 1.6rem;
 	font-weight: 700;
 	color: #fff;
 	text-shadow: 1px 1px 2px rgba(194, 24, 91, 0.5);
-	padding-right: 0.5em;
 }
+
+.fun-mode-banner .banner-heart {
+	display: inline-block;
+	vertical-align: middle;
+	flex-shrink: 0;
+	width: 2.2em;
+	height: 2.2em;
+}
+
 
 @keyframes fun-mode-marquee {
 	0% { transform: translateX(0); }
 	100% { transform: translateX(-50%); }
+}
+
+/* Heart tunnel overlay - click background to toggle, behind content */
+.fun-mode-heart-tunnel {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 0.5;
+	pointer-events: none;
+	overflow: hidden;
+}
+
+body.fun-mode-hearts-active .fun-mode-heart-tunnel {
+	display: block;
+}
+
+.fun-mode-heart-canvas {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+/* Glitter cursor trail - gale effect (sparkles blow in wind direction) */
+.fun-mode-glitter-trail {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	pointer-events: none;
+	overflow: hidden;
+}
+
+body.fun-mode .fun-mode-glitter-trail {
+	display: block;
+}
+
+.fun-mode-glitter-canvas {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+/* Pixel smiley drops - double-click background to toggle */
+.fun-mode-smiley-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1.5;
+	pointer-events: none;
+	overflow: hidden;
+}
+
+.fun-mode-pixel-smiley {
+	position: absolute;
+	font-size: 22px;
+	line-height: 1;
+	transform: translate(-50%, -50%);
+	image-rendering: pixelated;
+	image-rendering: -moz-crisp-edges;
+	image-rendering: crisp-edges;
+	font-smooth: never;
+	-webkit-font-smoothing: none;
+	filter: drop-shadow(0 1px 3px rgba(0,0,0,0.15));
+	animation: smiley-drop 2.2s ease-in forwards;
+}
+
+@keyframes smiley-drop {
+	0% {
+		transform: translate(-50%, -50%) scale(1);
+		opacity: 1;
+	}
+	100% {
+		transform: translate(-50%, calc(-50% + 300px)) scale(0.9);
+		opacity: 0.6;
+	}
 }
 
 /* Microsoft-style close button in top right of content container */
@@ -171,42 +302,58 @@ body.fun-mode .fun-mode-close:hover {
 
 body.fun-mode {
 	background: transparent !important;
-	/* Y2K iridescent mesh gradient + sparkles drawn by JS canvas */
-	font-family: romana_btroman, serif !important;
+	font-family: "rainyhearts", monospace, sans-serif !important;
+	font-size: 1.1rem;
+	padding-top: 4.5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	--fun-text: #6b3a5a;
+	--fun-link: #7b4a7a;
+	--fun-accent: #5a9fc4;
+}
+
+/* Custom heart cursor in fun mode */
+body.fun-mode,
+body.fun-mode * {
+	cursor: url('../cursors/heart-spinning.gif') 32 32, auto;
 }
 
 body.fun-mode .container {
 	position: relative;
 	z-index: 1;
-	margin-top: 1.25rem;
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 1200px;
+	margin: 0 auto;
 	padding: 0 var(--space-lg);
+	width: 78%;
 	border: none;
 	background: transparent;
 	box-shadow: none;
 	text-align: left;
-	display: block;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
 }
 
 /* Retro layout: nav (left) + content (middle) with blue drop shadow */
 body.fun-mode .fun-mode-layout {
 	position: relative;
 	display: flex;
-	gap: 0;
+	align-items: stretch;
+	width: 100%;
+	flex: 1;
+	min-height: 0;
 	border: 2px solid #7eb8d8;
 	border-top: 3px solid #a8d8ea;
-	background: #fdf8f5;
+	background: #fef5f8;
 	box-shadow: 0 12px 40px rgba(94, 159, 196, 0.5), 2px 2px 0 #5a9fc4;
 }
 
 /* Left nav bar */
 body.fun-mode .fun-mode-nav {
-	flex: 0 0 280px;
-	border-right: 2px solid #7eb8d8;
-	background: #faf5f0;
-	padding: 0;
+	flex: 0 0 300px;
+	border-right: 1px solid #7eb8d8;
+	background: #fdf2f6;
 }
 
 body.fun-mode .fun-mode-nav-section {
@@ -215,9 +362,30 @@ body.fun-mode .fun-mode-nav-section {
 
 body.fun-mode .fun-mode-nav-photo {
 	position: relative;
-	padding: 0.75rem 0.8rem;
-	border-bottom: 1px solid #e8e0d8;
-	cursor: pointer;
+	padding: 0.75rem 1rem;
+	border-bottom: none;
+	cursor: url('../cursors/pd-click-cursor.png') 12 12, pointer;
+	overflow: hidden;
+}
+
+body.fun-mode .fun-mode-photo-divider {
+	display: block;
+	width: 100%;
+	max-width: 220px;
+	height: auto;
+	margin: -4px auto 0 auto;
+	padding: 0;
+	object-fit: cover;
+}
+
+body.fun-mode .fun-mode-photo-banner {
+	display: block;
+	width: 100%;
+	max-width: 220px;
+	height: auto;
+	margin: 0 auto;
+	padding: 0;
+	object-fit: contain;
 }
 
 body.fun-mode .photo-sparkle {
@@ -240,74 +408,177 @@ body.fun-mode .photo-sparkle.sparkle-4 { bottom: 0.3rem; left: 0.4rem; animation
 	50% { opacity: 1; transform: rotate(180deg) scale(1.2); }
 }
 
-body.fun-mode .fun-mode-nav-photo img {
+body.fun-mode .photo-img-wrap {
+	position: relative;
+	display: block;
 	width: 100%;
 	max-width: 220px;
-	height: auto;
-	display: block;
 	margin: 0 auto;
-	border: 3px solid #89CFF0;
-	box-shadow:
-		0 8px 20px rgba(0, 0, 0, 0.25),
-		0 3px 8px rgba(0, 0, 0, 0.15),
-		0 0 16px 3px rgba(248, 187, 217, 0.35);
-	position: relative;
-	transition: transform 0.3s ease;
 }
 
-body.fun-mode .fun-mode-nav-photo.photo-pop img {
-	transform: scale(1.08) rotate(3deg);
+body.fun-mode .photo-img-wrap img {
+	width: 100%;
+	height: auto;
+	display: block;
+	border: 1px solid #89CFF0;
+	position: relative;
+	z-index: 1;
+	transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	will-change: opacity;
+}
+
+body.fun-mode .photo-pixel-canvas {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	opacity: 0;
+	pointer-events: none;
+	border: 1px solid #89CFF0;
+	transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	will-change: opacity;
+}
+
+body.fun-mode .photo-img-wrap.photo-active .photo-pixel-canvas {
+	opacity: 1;
+	z-index: 2;
+}
+
+body.fun-mode .photo-img-wrap.photo-active.photo-swapping .photo-pixel-canvas {
+	opacity: 0;
+}
+
+body.fun-mode .photo-img-wrap.photo-active img {
+	opacity: 0;
+	visibility: hidden;
+}
+
+body.fun-mode .fun-mode-nav-info {
+	display: flex;
+	flex-direction: column;
+}
+
+body.fun-mode .fun-mode-nav-info p {
+	margin: 0;
+	padding: 0;
+	border-bottom: none;
+	font-family: "rainyhearts", monospace, sans-serif;
+	font-size: 1.05rem;
+	color: var(--fun-text);
+	line-height: 1.5;
+}
+
+body.fun-mode .fun-mode-listening-icon {
+	display: inline-block;
+	vertical-align: middle;
+	width: 1.8em;
+	height: 1.8em;
+	margin-left: 0.4em;
 }
 
 body.fun-mode .fun-mode-nav-section p {
 	margin: 0;
-	padding: 0.4rem 0.6rem;
-	font-size: 0.85rem;
-	color: #333;
-	line-height: 1.4;
+	padding: 0.55rem 1rem;
+	font-family: "rainyhearts", monospace, sans-serif;
+	font-size: 1.05rem;
+	color: var(--fun-text);
+	line-height: 1.5;
 	border-bottom: 1px solid #e8e0d8;
 }
 
+body.fun-mode .fun-mode-nav-section p a {
+	font-family: "rainyhearts", monospace, sans-serif !important;
+	text-decoration: none !important;
+	color: var(--baby-pink) !important;
+}
+body.fun-mode .fun-mode-nav-section p a:hover {
+	color: var(--fun-accent) !important;
+}
+
+body.fun-mode .fun-mode-nav-header,
+body.fun-mode .fun-mode-content-header,
+body.fun-mode .fun-mode-content-inner .section-header {
+	margin: 0;
+}
+
+body.fun-mode .fun-mode-content-header,
+body.fun-mode .fun-mode-content-inner .section-header {
+	text-align: center;
+}
+
+body.fun-mode .fun-mode-name-star {
+	display: inline-block;
+	vertical-align: middle;
+	width: 2.0em;
+	height: 2.0em;
+	margin-right: 0.25em;
+}
+
+body.fun-mode .fun-mode-vibing-icon {
+	display: inline-block;
+	vertical-align: middle;
+	width: 1.4em;
+	height: 1.4em;
+	margin-right: 0.3em;
+}
+
+body.fun-mode .fun-mode-explore-icon {
+	display: inline-block;
+	vertical-align: middle;
+	width: 1.3em;
+	height: 1.3em;
+	margin-right: 0.35em;
+}
+
 body.fun-mode .fun-mode-nav-header {
-	font-family: "Pixel Script", cursive;
-	font-size: 0.85rem;
-	font-weight: 700;
+	font-family: "Alagard", "basiic", "rainyhearts", monospace, sans-serif !important;
+	font-size: 1.6rem;
+	font-weight: 600;
 	color: #fff;
 	background: linear-gradient(180deg, #a8d8ea 0%, #7eb8d8 100%);
 	border-bottom: 1px solid #7eb8d8;
-	padding: 0.4rem 0.6rem;
+	padding: 0.5rem 1rem;
 	letter-spacing: 0.05em;
 }
 
 body.fun-mode .fun-mode-nav-links {
 	list-style: none;
 	margin: 0;
-	padding: 0.5rem 0.6rem;
+	display: flex;
+	flex-direction: column;
+	/* gap: 0.5rem; */
+	padding: 0.6rem 1rem;
+	border-bottom: 1px solid #e8e0d8;
 }
 
 body.fun-mode .fun-mode-nav-links li {
-	margin-bottom: 0.25rem;
+	margin: 0;
 }
 
 body.fun-mode .fun-mode-nav-links a {
-	font-size: 0.9rem;
-	color: #8b4513 !important;
-	text-decoration: underline !important;
+	font-family: "rainyhearts", monospace, sans-serif !important;
+	font-size: 1.1rem;
+	color: var(--fun-link) !important;
+	text-decoration: none !important;
 }
 
 body.fun-mode .fun-mode-nav-links a:hover {
-	color: #7eb8d8 !important;
+	color: var(--fun-accent) !important;
 }
 
 /* Middle content area */
 body.fun-mode .fun-mode-main {
 	flex: 1;
 	min-width: 0;
+	min-height: 0;
 	padding: 0;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
 }
 
 body.fun-mode .fun-mode-content-header {
-	font-family: "Pixel Script", cursive;
+	font-family: "Alagard", "basiic", "rainyhearts", monospace, sans-serif !important;
 	font-size: 1rem;
 	font-weight: 700;
 	color: #fff;
@@ -317,19 +588,34 @@ body.fun-mode .fun-mode-content-header {
 }
 
 body.fun-mode .fun-mode-content-inner {
+	flex: 1;
+	min-height: 0;
 	padding: 1rem 1.25rem;
-	font-size: 0.95rem;
+	font-size: 1.25rem;
 	line-height: 1.6;
-	color: #333;
+	color: var(--fun-text);
+	overflow-y: auto;
+}
+
+body.fun-mode .fun-mode-content-inner li.fun-mode-text-smaller {
+	font-size: 0.9em !important;
+	line-height: 1.4;
+}
+
+body.fun-mode .fun-mode-content-inner p,
+body.fun-mode .fun-mode-content-inner li {
+	font-family: "rainyhearts", monospace, sans-serif !important;
+	color: var(--fun-text) !important;
+	font-size: 1.25rem !important;
 }
 
 body.fun-mode .fun-mode-content-inner .section-header {
-	font-family: "Pixel Script", cursive;
+	font-family: "Alagard", "basiic", "rainyhearts", monospace, sans-serif !important;
 	margin-top: 1rem;
 	margin-bottom: 0.5rem;
 	font-weight: 700;
-	color: #7eb8d8;
-	font-size: 0.95rem;
+	color: var(--fun-accent);
+	font-size: 1.65rem;
 }
 
 body.fun-mode .fun-mode-content-inner .section-header:first-of-type {
@@ -338,10 +624,39 @@ body.fun-mode .fun-mode-content-inner .section-header:first-of-type {
 
 /* Tab panels: show only active */
 body.fun-mode .fun-mode-panel {
+	width: 90%;
+	margin: 0 auto;
 	display: none;
 }
 body.fun-mode .fun-mode-panel.active {
 	display: block;
+}
+
+/* Vibing panel: improved spacing between items */
+body.fun-mode #panel-vibing .section-header {
+	margin-bottom: 1.5rem;
+}
+body.fun-mode #panel-vibing ul {
+	list-style: none;
+	padding-left: 0;
+}
+body.fun-mode #panel-vibing .fun-mode-vibing-item {
+	margin-bottom: 2rem;
+	display: block;
+}
+body.fun-mode #panel-vibing .fun-mode-vibing-item:last-child {
+	margin-bottom: 0;
+}
+body.fun-mode #panel-vibing .fun-mode-vibing-title {
+	display: block;
+	font-weight: 700;
+	margin-bottom: 0.5rem;
+	color: var(--fun-accent);
+}
+body.fun-mode #panel-vibing .fun-mode-vibing-desc {
+	margin: 0;
+	padding-left: 0.5rem;
+	line-height: 1.55;
 }
 
 body.fun-mode .fun-mode-content-inner {
@@ -350,180 +665,36 @@ body.fun-mode .fun-mode-content-inner {
 
 body.fun-mode .fun-mode-tab.active {
 	font-weight: 700;
-	color: #5a9fc4 !important;
-}
-
-/* MySpace-inspired palette, simple borders, minimal box styling */
-body.fun-mode .myspace-header {
-	width: 100%;
-	margin-bottom: var(--space-md);
-}
-
-body.fun-mode .myspace-name {
-	font-family: romana_btbold, serif;
-	font-size: 1.8em;
-	font-weight: bold;
-	color: #1a3d6b;
-	margin-bottom: 0.25em;
-}
-
-body.fun-mode .myspace-profile-row {
-	display: flex;
-	gap: 1rem;
-	margin-bottom: 0.5em;
-	align-items: flex-start;
-}
-
-body.fun-mode .myspace-pic {
-	width: 120px;
-	height: 120px;
-	min-width: 120px;
-	object-fit: cover;
-	border: 1px solid #c5d4e3;
-	flex-shrink: 0;
-}
-
-body.fun-mode .myspace-details {
-	font-family: romana_btroman, serif;
-	font-size: 0.9rem;
-	color: #333;
-	line-height: 1.6;
-}
-
-body.fun-mode .myspace-details div {
-	margin-bottom: 0.1em;
-}
-
-body.fun-mode .myspace-login {
-	font-size: 0.85rem;
-	color: #666;
-	margin-top: 0.5em;
-}
-
-body.fun-mode .myspace-view {
-	font-family: romana_btroman, serif;
-	font-size: 0.85rem;
-}
-
-body.fun-mode .myspace-view a {
-	color: #1a5fb4 !important;
-}
-
-body.fun-mode .name-header {
-	order: 1;
-	margin-bottom: var(--space-sm);
-	font-family: romana_btbold, serif !important;
-	font-size: 2.4em;
-	color: #c2185b;
-	text-shadow: 2px 2px 0 #f8bbd9;
-}
-
-body.fun-mode .left-img {
-	order: 2;
-	width: 50%;
-	max-width: 280px;
-	margin-top: 0;
-	border-radius: 50%;
-	object-fit: cover;
-	aspect-ratio: 1;
-	border: 5px solid #ec407a;
-	box-shadow: 0 0 0 3px #f8bbd9, 0 4px 15px rgba(0,0,0,0.15);
-}
-
-body.fun-mode .links {
-	order: 3;
-	text-align: center;
-	margin-top: var(--space-md);
-	font-size: 0.95rem;
-}
-
-body.fun-mode .links .nowrap {
-	white-space: normal;
-}
-
-body.fun-mode .links a {
-	text-decoration: underline !important;
-	color: #ad1457 !important;
-}
-
-body.fun-mode .links a:hover {
-	color: #ec407a !important;
-}
-
-body.fun-mode .small-tag {
-	color: #7b1fa2;
-	font-weight: 600;
-}
-
-body.fun-mode .right {
-	width: 100%;
-	text-align: center;
-}
-
-body.fun-mode .right > p {
-	text-align: center;
+	color: var(--fun-accent) !important;
 }
 
 body.fun-mode a {
-	text-decoration: underline !important;
-	color: #ad1457 !important;
+	font-family: "rainyhearts", monospace, sans-serif !important;
+	font-size: inherit !important;
+	text-decoration: none !important;
+	color: var(--baby-pink) !important;
 }
 
 body.fun-mode a:hover {
-	color: #ec407a !important;
+	color: var(--fun-accent) !important;
 }
 
-body.fun-mode .right .section-header {
-	border-top: 3px dotted #f8bbd9;
-	padding-top: var(--space-lg);
-	margin-top: var(--space-xl);
-	color: #7b1fa2;
-	font-family: "Pixel Script", cursive !important;
+/* Nav links: rainyhearts, no underline (override body.fun-mode a) */
+body.fun-mode .fun-mode-nav .fun-mode-nav-links a,
+body.fun-mode .fun-mode-nav .fun-mode-nav-links a:hover {
+	font-family: "rainyhearts", monospace, sans-serif !important;
+	text-decoration: none !important;
+	color: var(--baby-pink) !important;
 }
-
-body.fun-mode .right .section-header:first-of-type {
-	border-top: none;
-	padding-top: 0;
-	margin-top: 0;
-}
-
-body.fun-mode .year-header {
-	color: #ad1457;
-	font-weight: 700;
-	font-family: romana_btbold, serif !important;
-}
-
-body.fun-mode .research-item,
-body.fun-mode .news-item,
-body.fun-mode .teaching-item,
-body.fun-mode .making-item {
-	text-align: left;
-	background: rgba(248, 187, 217, 0.2);
-	border: 2px solid #f8bbd9;
-	border-radius: 12px;
-}
-
-body.fun-mode .rs-title,
-body.fun-mode .teaching-title,
-body.fun-mode .making-title {
-	color: #c2185b !important;
-}
-
-body.fun-mode .rs-venue,
-body.fun-mode .news-date,
-body.fun-mode .teaching-meta,
-body.fun-mode .making-category {
-	font-weight: 600 !important;
-	text-transform: uppercase !important;
-	letter-spacing: 0.08em !important;
-	color: var(--deep-teal) !important;
+body.fun-mode .fun-mode-nav .fun-mode-nav-links a:hover {
+	color: var(--fun-accent) !important;
 }
 
 body.fun-mode #fun-mode-toggle,
 body.fun-mode .fun-mode-toggle {
 	font-weight: 700;
 	text-decoration: none !important;
-	color: #1a5fb4 !important;
+	color: var(--fun-accent) !important;
 }
 
 body.fun-mode #fun-mode-toggle:hover,
@@ -531,22 +702,13 @@ body.fun-mode .fun-mode-toggle:hover {
 	text-decoration: underline !important;
 }
 
-body.fun-mode .bolded {
-	color: #c2185b !important;
-}
-
-body.fun-mode p,
-body.fun-mode .gray {
-	color: #4a148c !important;
-}
-
 body.fun-mode .fun-mode-footer {
 	margin-top: var(--space-xl);
 	padding-top: var(--space-md);
 	text-align: center;
-	font-size: 0.9rem;
-	color: #7b1fa2;
-	font-family: romana_btroman, serif !important;
+	font-size: 1.1rem;
+	color: var(--fun-text);
+	font-family: "rainyhearts", monospace, sans-serif !important;
 }
 
 body.fun-mode .fun-mode-footer hr {
@@ -755,7 +917,7 @@ body.fun-mode .fun-mode-footer hr {
 
 .section-header {
 	font-family: romana_btbold, serif;
-	font-size: 2.2em;
+	font-size: 2.5em;
 }
 
 .right .section-header {
@@ -1022,6 +1184,8 @@ a:hover {
 @media only screen and (max-width: 768px) {
 	body.fun-mode .fun-mode-layout {
 		flex-direction: column;
+		width: min(95vw, 85vh);
+		height: min(95vw, 85vh);
 	}
 
 	body.fun-mode .fun-mode-nav {

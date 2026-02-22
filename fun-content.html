@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Fun Mode Content</title>
+    <link href="https://fonts.cdnfonts.com/css/pixel-script" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/index.css">
 </head>
 <body>
@@ -18,62 +19,95 @@
 
         <!-- Main layout: banner (above) + nav (left) + content (middle) -->
         <div class="fun-mode-layout">
-            <a href="#" class="fun-mode-close fun-mode-toggle" aria-label="Close">×</a>
+            <a href="#" class="fun-mode-close fun-mode-toggle" aria-label="Close">X</a>
             <!-- LEFT: Nav bar -->
             <nav class="fun-mode-nav">
                 <div class="fun-mode-nav-section">
-                    <div class="fun-mode-nav-header">Tonya Nguyen</div>
+                    <h1 class="fun-mode-nav-header"><img class="fun-mode-name-star" src="assets/img/star-sticker.png" alt=""> Tonya Nguyen</h1>
                     <div class="fun-mode-nav-photo fun-mode-photo-cycle">
                         <span class="photo-sparkle sparkle-1">✦</span>
                         <span class="photo-sparkle sparkle-2">✧</span>
                         <span class="photo-sparkle sparkle-3">✦</span>
                         <span class="photo-sparkle sparkle-4">✧</span>
-                        <img alt="Tonya Nguyen" src="assets/img/tonya1.png">
+                        <img class="fun-mode-photo-divider" src="assets/img/divider-stars.png" alt="" aria-hidden="true">
+                        <div class="photo-img-wrap">
+                            <img alt="Tonya Nguyen" src="assets/img/tonya1.png">
+                            <canvas class="photo-pixel-canvas" aria-hidden="true"></canvas>
+                        </div>
+                        <img class="fun-mode-photo-banner" src="assets/img/banner-stars.png" alt="" aria-hidden="true" style="width: 78%; height: auto;">
                     </div>
-                    <p>It's <span id="sf-time">--:--:--</span> in San Francisco, California.</p>
-                    <p>Currently listening to: <span id="current-song">—</span></p>
+                    <div class="fun-mode-nav-info">
+                        <p>It's <span id="sf-time">--:--:--</span> in San Francisco, California.</p>
+                        <p class="fun-mode-listening"> Currently listening to: <span id="current-song">—</span> <img class="fun-mode-listening-icon" src="assets/img/listening-icon.png" alt=""></p> 
+                    </div>
                 </div>
                 <div class="fun-mode-nav-section">
-                    <div class="fun-mode-nav-header">Explore</div>
+                    <h2 class="fun-mode-nav-header"><img class="fun-mode-explore-icon" src="assets/img/explore-icon.png" alt=""> Explore</h2>
                     <ul class="fun-mode-nav-links fun-mode-tabs">
-                        <li><a href="#" class="fun-mode-tab active" data-tab="about">About me & this site</a></li>
-                        <li><a href="#" class="fun-mode-tab" data-tab="vibing">What I'm currently vibing with</a></li>
-                        <li><a href="#" class="fun-mode-tab" data-tab="projects">Current Projects</a></li>
+                        <li><a href="#" class="fun-mode-tab active" data-tab="about">About ｡:ﾟ૮ ˶ˆ ﻌ ˆ˶ ა ﾟ:｡</a></li>
+                        <li><a href="#" class="fun-mode-tab" data-tab="vibing">currently vibing with</a></li>
+                        <li><a href="#" class="fun-mode-tab" data-tab="projects">ongoing projects</a></li>
+                        <li><a href="#" class="fun-mode-tab" data-tab="public-poll">public poll</a></li>
+                        <li><a href="#" class="fun-mode-tab" data-tab="about-site">about this site</a></li>
                     </ul>
                 </div>
-                <div class="fun-mode-nav-section">
-                    <div class="fun-mode-nav-header">people i like</div>
-                    <ul class="fun-mode-nav-links">
-                        <li><a href="https://withoutdoing.com//">zeke</a></li>
-                        <li><a href="http://lizagak.com/">liza</a></li>
-                        <li><a href="https://www.applexiao.com/">sijia</a></li>
-                        <li><a href="https://www.telegraphforpeople.com/home">telegraph4ppl</a></li>
-                    </ul>
-                </div>
+
             </nav>
 
             <!-- MIDDLE: Main content -->
             <main class="fun-mode-main">
-                <div class="fun-mode-content-header">Welcome to tonya's world</div>
                 <div class="fun-mode-content-inner">
                     <div class="fun-mode-panel active" id="panel-about">
-                        <p>hi!! welcome to my little corner of the web ♥</p>
-                        <p>i'm tonya nguyen — an hci researcher and phd student at uc berkeley. i think a lot about how technology can solve the world's problems, but also where real-world context, human motivations, and historical forces intersect to shape the systems we've built (and the limitations of that!!!). i'm a student of science &amp; technology studies, hci, sociology, critical theory, and machine learning.</p>
-                        <p>i love learning new things (and especially appreciate when i'm not the smartest in the room). i owe many of my friends to this, as well as my wonderful mentors.</p>
+                        <h2 class="section-header">About me ｡:ﾟ૮ ˶ˆ ﻌ ˆ˶ ა ﾟ:｡</h2>
+                        <p style="text-align: center;">♥ Hi hello!! Welcome to my little corner of the web ♥</p>
+                        <p>I'm Tonya (TAHN-yuh | /ˈtɔːnjə/ ) – an HCI researcher and Ph.D. candidate at UC Berkeley. I think a lot about how technology can solve the world's problems, but also how the richness of real-world contexts + legal landscapes, human motivations + emotions, and historical forces intersect to shape the systems we've built (and the challenges with that!). I'm a student of Human Computer Interaction, Science &amp; Technology Studies, Sociology, Critical Theory, and Machine Learning.</p>
+
+                        Some of the questions I'm thinking about right now include:
+                        <ul style="list-style: none; padding-left: 0;">
+                            <li class="fun-mode-text-smaller">♥  How can we balance user privacy and agency in an AI powered world, where data is used to make decisions about us and with us?</li>
+                            <li class="fun-mode-text-smaller">♥  What values should we operationalize in systems, and how can we actually measure and operationalize them in how systems are designed and used?</li>
+                            <li class="fun-mode-text-smaller">♥  How might marginalized perspectives and openness in epistemological pluralism change the way we approach AI evaluation, development, and deployment? How can thinking about power structures <i>and</i>  incentives give us more insight into successes and failures? </li>
+                        </ul>
+
+                        <p>I love learning new things (and especially appreciate when I'm not the smartest/most able person in the room). I owe many of my friends to this, as well as my wonderful mentors. I spent a lot of my days drinking inordinate amounts of caffeine. My favorite mode for movement is on a snowboard or involves a barbell. I love a good cultural analysis, making a playlist, and always, trying something new and learning it from scratch! </p>
                     </div>
                     <div class="fun-mode-panel" id="panel-vibing">
-                        <div class="section-header">currently vibing with</div>
-                        <ul style="list-style: none; padding-left: 0;">
-                            <li>♥ SAILORR's "FROM FLORIDA'S FINEST" album</li>
-                            <li>♥ internal family systems theory</li>
-                            <li>♥ homemade matcha lattes</li>
-                            <li>♥ swimming freestyle</li>
+                        <h2 class="section-header"><img class="fun-mode-vibing-icon" src="assets/img/vibing-book-icon.png" alt="" aria-hidden="true"> Currently Vibing With <img class="fun-mode-vibing-icon" src="assets/img/vibing-boombox-icon.png" alt="" aria-hidden="true"></h2>
+                        <ul class="fun-mode-vibing-list" style="list-style: none; padding-left: 0;">
+                            <li class="fun-mode-vibing-item">
+                                <span class="fun-mode-vibing-title">♥ SAILORR's "FROM FLORIDA'S FINEST" 
+                                <p class="fun-mode-vibing-desc">I really love this <a href="https://open.spotify.com/artist/6ucHomyCWjxmvbyqAAbSci" target="_blank" rel="noopener noreferrer">album</a></span> and have repeated it on loop for the past few months. What I love about SAILORR is that her music is so reminiscent of 2000's R&amp;B but is experimental and unique enough to capture the Gen-Z aesthetic. Also, we are both Vietnamese American --- and what's not to love about diverse representations of SEA people. "POOKIE'S REQUIEM" is about an ex-boyfriend who ends up dating a new girl who is a carbon-copy of his ex, but he also totally steals SAILORR's swag ("got you a mini-me"). I also loooove "W1LL U LI3" – just give it a listen. The songs are bouncy, full of 808s, but still has this soft-bubblegum-hyper-pop sound.</p>
+                            </li>
+                            <li class="fun-mode-vibing-item">
+                                <span class="fun-mode-vibing-title">♥ Meditation</span>
+                                <p class="fun-mode-vibing-desc">I read Dr. Tucker Peck's book <a href="https://www.goodreads.com/book/show/228106645-sanity-and-sainthood" target="_blank" rel="noopener noreferrer">"Sanity and Sainthood: Integrating Meditation and Psychotherapy"</a> and it really help met set expectations for meditation (specifically Vipassana). I have also been doing 'body scans' (observing bodily sensations without reacting) for a while — and I think it's a great way to process emotions in the body. The idea is that emotions and feelings are actually felt somatically: that sinking feeling and tension in your stomach is anxiety, and often emptiness is sadness. Instead of thinking through emotions or rationalizing them, a helpful way to process them is by focusing on how your body feels and sitting with the physical sensations of an emotion. Emotions are impermanent in the body just as sensations are — they arise and pass if you don't add a story to them.</p>
+                            </li>
+                            <li class="fun-mode-vibing-item">
+                                <span class="fun-mode-vibing-title">♥ Homemade Matcha Lattes</span>
+                                <p class="fun-mode-vibing-desc">I've been enjoying matcha from <a href="https://kettl.co/" target="_blank" rel="noopener noreferrer">Kettl</a> and <a href="https://www.rockysmatcha.com/" target="_blank" rel="noopener noreferrer">Rocky's Matcha</a>.</p>
+                            </li>
+                            <li class="fun-mode-vibing-item">
+                                <span class="fun-mode-vibing-title">♥ Swimming Freestyle</span>
+                                <p class="fun-mode-vibing-desc">I spent a huge chunk of my childhood swimming and playing in water, but have never thought about incorporating it into an exercise routine until recently. I've been swimming freestyle for about two months now, and I always feel like I can eat a meal made for 10 people after. It's amazing.</p>
+                            </li>
                         </ul>
                     </div>
                     <div class="fun-mode-panel" id="panel-projects">
-                        <div class="section-header">current projects</div>
+                        <h2 class="section-header">current projects</h2>
                         <ul style="list-style: none; padding-left: 0;">
                             <li>user interaction design for interactive user personalization</li>
+                        </ul>
+                    </div>
+                    <div class="fun-mode-panel" id="panel-public-poll">
+                        <h2 class="section-header">polls</h2>
+                        <ul style="list-style: none; padding-left: 0;">
+                            <li>questions for the visitor</li>
+                        </ul>
+                    </div>
+                    <div class="fun-mode-panel" id="panel-about-site">
+                        <h2 class="section-header">about this site</h2>
+                        <ul style="list-style: none; padding-left: 0;">
+                            <li>questions for the visitor</li>
                         </ul>
                     </div>
                 </div>
@@ -89,16 +123,25 @@
             if (!url) return;
             var el = document.getElementById('current-song');
             if (!el) return;
+            var lastSong = null;
             function update() {
                 el.textContent = el.textContent === '—' || el.textContent === 'nothing right now' ? 'checking...' : el.textContent;
                 fetch(url).then(function(r) { return r.json(); })
                     .then(function(data) {
                         if (data.isPlaying && data.title) {
+                            lastSong = { title: data.title, artists: data.artists, url: data.url };
                             var text = data.title + ' — ' + data.artists;
                             el.innerHTML = data.url ? '<a href="' + data.url + '" target="_blank" rel="noopener">' + text + '</a>' : text;
-                        } else el.textContent = 'nothing right now';
+                        } else if (lastSong) {
+                            var text = lastSong.title + ' — ' + lastSong.artists;
+                            el.innerHTML = lastSong.url ? '<a href="' + lastSong.url + '" target="_blank" rel="noopener">' + text + '</a>' : text;
+                        } else {
+                            el.textContent = 'nothing right now';
+                        }
                     })
-                    .catch(function() { el.textContent = 'unavailable'; });
+                    .catch(function() {
+                        el.textContent = lastSong ? (lastSong.title + ' — ' + lastSong.artists) : 'unavailable';
+                    });
             }
             update();
             setInterval(update, 30000);

@@ -176,7 +176,7 @@ $(document).ready(function() {
 						'<div class="fun-mode-footer">' +
 						'<hr>' +
 						'<span>♥ you are visitor #' + count + ' ♥</span><br>' +
-						'<span>last updated 2025 • don\'t forget to say hi!</span>' +
+						'<span>last updated 2/22/26 • don\'t forget to say hi!</span>' +
 						'</div>'
 					);
 				}
@@ -283,18 +283,112 @@ $(document).ready(function() {
 		}
 
 		var funModePhotos = ['assets/img/tonya1.png', 'assets/img/tonya2.png', 'assets/img/tonya3.png'];
+
+		function drawPixelated(ctx, img, w, h, blockSize) {
+			if (!img || !img.naturalWidth) return;
+			if (blockSize <= 1) {
+				ctx.imageSmoothingEnabled = true;
+				ctx.drawImage(img, 0, 0, w, h);
+				return;
+			}
+			var bw = Math.max(1, Math.ceil(w / blockSize));
+			var bh = Math.max(1, Math.ceil(h / blockSize));
+			var temp = document.createElement('canvas');
+			temp.width = bw;
+			temp.height = bh;
+			var tctx = temp.getContext('2d');
+			tctx.imageSmoothingEnabled = false;
+			tctx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, bw, bh);
+			ctx.imageSmoothingEnabled = false;
+			ctx.drawImage(temp, 0, 0, bw, bh, 0, 0, w, h);
+		}
+
 		$(document).on('click', '.fun-mode-photo-cycle', function() {
 			var $el = $(this);
-			var $img = $el.find('img');
+			var $wrap = $el.find('.photo-img-wrap');
+			var $img = $wrap.find('img');
+			var $canvas = $wrap.find('.photo-pixel-canvas')[0];
 			var photos = funModePhotos;
-			if (photos && photos.length) {
-				var currentSrc = $img.attr('src');
-				var idx = photos.indexOf(currentSrc);
-				idx = idx < 0 ? 0 : (idx + 1) % photos.length;
-				$img.attr('src', photos[idx]);
+			if (!photos || !photos.length || !$img.length || !$canvas) return;
+
+			var currentSrc = $img.attr('src');
+			var idx = photos.indexOf(currentSrc);
+			idx = idx < 0 ? 0 : (idx + 1) % photos.length;
+			var nextSrc = photos[idx];
+
+			function doPhase1() {
+				$wrap.addClass('photo-active');
+				var img = $img[0];
+				var w = img.offsetWidth;
+				var h = img.offsetHeight;
+				$canvas.width = w;
+				$canvas.height = h;
+				var ctx = $canvas.getContext('2d');
+				if (ctx && img.complete) {
+					var blockSize = Math.max(4, Math.min(w, h) / 24);
+					drawPixelated(ctx, img, w, h, blockSize);
+				}
 			}
-			$el.addClass('photo-pop');
-			setTimeout(function() { $el.removeClass('photo-pop'); }, 400);
+
+			function doPhase2() {
+				var nextImg = new Image();
+				nextImg.onload = function() {
+					var w = $img[0].offsetWidth;
+					var h = $img[0].offsetHeight;
+					var ctx = $canvas.getContext('2d');
+					var currentImg = $img[0];
+					var minBlock = Math.max(4, Math.min(w, h) / 50);
+					var maxBlock = Math.min(w, h) / 2.2;
+					var switchBlock = minBlock + (maxBlock - minBlock) * 0.35;
+
+					var startTime = null;
+					var scrambleDuration = 1050;
+
+					function easeInOutQuart(x) {
+						return x < 0.5 ? 8 * x * x * x * x : 1 - Math.pow(-2 * x + 2, 4) / 2;
+					}
+
+					function scrambleFrame(timestamp) {
+						if (!startTime) startTime = timestamp;
+						var elapsed = timestamp - startTime;
+						var t = Math.min(1, elapsed / scrambleDuration);
+						var te = easeInOutQuart(t);
+
+						var blockSize;
+						if (te < 0.35) {
+							var scrambleT = te / 0.35;
+							blockSize = minBlock + (maxBlock - minBlock) * scrambleT;
+							drawPixelated(ctx, currentImg, w, h, blockSize);
+						} else if (te < 0.42) {
+							var unscrambleToSwitchT = (te - 0.35) / 0.07;
+							blockSize = maxBlock + (switchBlock - maxBlock) * unscrambleToSwitchT;
+							drawPixelated(ctx, currentImg, w, h, blockSize);
+						} else if (te < 0.48) {
+							blockSize = switchBlock;
+							drawPixelated(ctx, nextImg, w, h, blockSize);
+						} else {
+							var unscrambleT = (te - 0.48) / 0.52;
+							blockSize = switchBlock + (minBlock - switchBlock) * unscrambleT;
+							drawPixelated(ctx, nextImg, w, h, blockSize);
+						}
+
+						if (t < 1) {
+							requestAnimationFrame(scrambleFrame);
+						}
+					}
+					requestAnimationFrame(scrambleFrame);
+				};
+				nextImg.src = nextSrc;
+			}
+
+			function doPhase3() {
+				$img.attr('src', nextSrc);
+				$wrap.removeClass('photo-active');
+			}
+
+			doPhase1();
+			setTimeout(doPhase2, 520);
+			setTimeout(doPhase3, 1900);
 		});
 
 		$(document).on('click', '.fun-mode-tab', function(e) {
