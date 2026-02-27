@@ -10,7 +10,7 @@
 	--space-sm: 0.5rem;
 	--space-md: 1rem;
 	--space-lg: 1.5rem;
-	--space-xl: 2rem;
+	/* --space-xl: 2rem; */
 }
 
 /* @font-face {
@@ -124,19 +124,12 @@ body {
 	background-color: var(--beige);
 	padding-top: 4rem;
 	transition: background-color 0.4s ease;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 /* Fun mode: 90s–2000s Y2K girly homepage aesthetic */
-.fun-mode-clickable-background {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 0.7;
-	pointer-events: auto;
-}
-
 .fun-mode-banner {
 	position: fixed;
 	top: 0;
@@ -153,7 +146,7 @@ body {
 	display: inline-flex;
 	align-items: center;
 	gap: 1.5em;
-	animation: fun-mode-marquee 25s linear infinite;
+	animation: fun-mode-marquee 330s linear infinite;
 }
 
 .fun-mode-banner:hover .fun-mode-banner-track {
@@ -168,7 +161,7 @@ body {
 
 .fun-mode-banner .banner-text {
 	font-family: "Pixel Script", cursive;
-	font-size: 1.6rem;
+	font-size: 1.2rem;
 	font-weight: 700;
 	color: #fff;
 	text-shadow: 1px 1px 2px rgba(194, 24, 91, 0.5);
@@ -196,7 +189,7 @@ body {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	z-index: 0.5;
+	z-index: 1;
 	pointer-events: none;
 	overflow: hidden;
 }
@@ -314,10 +307,10 @@ body.fun-mode {
 	--fun-accent: #5a9fc4;
 }
 
-/* Custom heart cursor in fun mode */
+/* Custom Kuromi cursor in fun mode (hotspot: adjust x y if off-centered) */
 body.fun-mode,
 body.fun-mode * {
-	cursor: url('../cursors/heart-spinning.gif') 32 32, auto;
+	cursor: url('../cursors/kuromi-cursor.png') 6 6, auto;
 }
 
 body.fun-mode .container {
@@ -325,7 +318,7 @@ body.fun-mode .container {
 	z-index: 1;
 	margin: 0 auto;
 	padding: 0 var(--space-lg);
-	width: 78%;
+	width: 55%;
 	border: none;
 	background: transparent;
 	box-shadow: none;
@@ -343,10 +336,9 @@ body.fun-mode .fun-mode-layout {
 	width: 100%;
 	flex: 1;
 	min-height: 0;
-	border: 2px solid #7eb8d8;
-	border-top: 3px solid #a8d8ea;
-	background: #fef5f8;
-	box-shadow: 0 12px 40px rgba(94, 159, 196, 0.5), 2px 2px 0 #5a9fc4;
+	border: 1px solid #7eb8d8;
+	border-top: 1px solid #a8d8ea;
+	background: #fef5f8; */
 }
 
 /* Left nav bar */
@@ -364,7 +356,7 @@ body.fun-mode .fun-mode-nav-photo {
 	position: relative;
 	padding: 0.75rem 1rem;
 	border-bottom: none;
-	cursor: url('../cursors/pd-click-cursor.png') 12 12, pointer;
+	cursor: url('../cursors/pd-click-cursor-32.png') 16 11, pointer;
 	overflow: hidden;
 }
 
@@ -509,9 +501,9 @@ body.fun-mode .fun-mode-content-inner .section-header {
 body.fun-mode .fun-mode-name-star {
 	display: inline-block;
 	vertical-align: middle;
-	width: 2.0em;
-	height: 2.0em;
-	margin-right: 0.25em;
+	width: 1.25em;
+	height: 1.25em;
+	margin-right: 0.25e5m;
 }
 
 body.fun-mode .fun-mode-vibing-icon {
@@ -532,12 +524,11 @@ body.fun-mode .fun-mode-explore-icon {
 
 body.fun-mode .fun-mode-nav-header {
 	font-family: "Alagard", "basiic", "rainyhearts", monospace, sans-serif !important;
-	font-size: 1.6rem;
+	font-size: 1.25rem;
 	font-weight: 600;
 	color: #fff;
 	background: linear-gradient(180deg, #a8d8ea 0%, #7eb8d8 100%);
-	border-bottom: 1px solid #7eb8d8;
-	padding: 0.5rem 1rem;
+	padding: 0.25rem 1rem;
 	letter-spacing: 0.05em;
 }
 
@@ -917,19 +908,25 @@ body.fun-mode .fun-mode-footer hr {
 
 .section-header {
 	font-family: romana_btbold, serif;
-	font-size: 2.5em;
+	font-size: 1.85em;
 }
 
 .right .section-header {
 	margin-top: var(--space-xl);
 	padding-top: var(--space-lg);
-	border-top: 1px solid var(--deep-teal);
+	border-top: 1px solid rgb(209 209 209);
 }
 
 .right .section-header:first-of-type {
 	margin-top: var(--space-xl);
 	padding-top: var(--space-lg);
 	/* border-top kept for line between bio and research */
+}
+
+.current-projects-item-title {
+	font-weight: 400;
+	font-size: 0.95rem;
+	color: var(--baby-pink);
 }
 
 b {
