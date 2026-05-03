@@ -476,6 +476,78 @@ body {
 	/* border-top: 1px solid rgb(209 209 209); */
 }
 
+/* Bottom-of-page credits (seen after scrolling to the end) */
+.site-bottom-nav {
+	grid-column: 1 / -1;
+	justify-self: stretch;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--s-3);
+	margin-top: var(--s-8);
+	padding: var(--s-5) var(--s-2) var(--s-6);
+	text-align: center;
+	border-top: 1px solid rgba(73, 96, 10, 0.12);
+	box-sizing: border-box;
+}
+
+.site-bottom-nav-colophon {
+	font-family: "Syne", sans-serif;
+	font-size: 0.8125rem;
+	font-weight: 600;
+	letter-spacing: 0.08em;
+	text-transform: lowercase;
+	color: var(--deep-teal);
+	opacity: 0.55;
+}
+
+.site-bottom-nav-fun-btn {
+	font-family: "Syne", sans-serif;
+	font-size: 0.8125rem;
+	font-weight: 600;
+	letter-spacing: 0.08em;
+	text-transform: lowercase;
+	color: var(--deep-teal);
+	background: transparent;
+	border: 1px solid rgba(73, 96, 10, 0.35);
+	border-radius: 999px;
+	padding: 0.45em 1.2em;
+	cursor: pointer;
+	opacity: 0.88;
+	transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease, opacity 0.2s ease;
+	text-decoration: none;
+	display: inline-block;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+.site-bottom-nav-fun-btn:hover {
+	color: var(--baby-pink);
+	border-color: rgba(225, 136, 128, 0.55);
+	background: rgba(216, 199, 234, 0.18);
+	opacity: 1;
+}
+
+.site-bottom-nav-fun-btn:focus-visible {
+	outline: 2px solid var(--baby-pink);
+	outline-offset: 3px;
+}
+
+.site-bottom-nav-code {
+	color: inherit;
+	opacity: 1;
+	font-size: inherit;
+	font-family: inherit;
+	font-weight: inherit;
+	letter-spacing: inherit;
+	text-transform: inherit;
+	font-variant-numeric: tabular-nums;
+}
+
+.site-bottom-nav-by {
+	font-weight: 600;
+}
+
 .current-projects-item-title {
 	font-weight: 400;
 	font-size: 15px;
@@ -586,6 +658,13 @@ a:hover {
 .making-intro {
 	margin-top: 1.5rem;
 	margin-bottom: 1.5rem;
+}
+
+/* misc */
+
+.misc-section {
+	margin-top: 1.5rem;
+	margin-bottom: 0;
 }
 
 .making-list {
@@ -887,5 +966,12 @@ a:hover {
 	.teaching-meta,
 	.making-category {
 		align-self: flex-start;
+	}
+
+	.site-bottom-nav {
+		width: 100%;
+		padding-left: var(--s-2);
+		padding-right: var(--s-2);
+		background-color: var(--beige);
 	}
 }

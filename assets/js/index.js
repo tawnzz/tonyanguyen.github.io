@@ -4,11 +4,26 @@ $(document).ready(function() {
 		var funModeCanvas = null;
 		var funModeBanner = null;
 		var funModeAnimationId = null;
+		var funModeGlitterCanvas = null;
+		var funModeHeartCanvas = null;
 		var mouseX = 0;
 		var mouseY = 0;
 		var sparkles = [];
-		var originalContainerHTML = null;
-		var funContentHTML = null;
+		var glitterTrails = [];
+		var heartTunnels = [];
+		var isMainSiteHome = $('.container.page-layout').length > 0;
+		var isFunModePage = $('body').hasClass('fun-mode') && $('#fun-mode-content').length > 0 && !isMainSiteHome;
+
+		if (isMainSiteHome && localStorage.getItem('funMode') === 'true') {
+			window.location.href = 'fun-content.html';
+			return;
+		}
+
+		var BANNER_QUOTES = [
+			"welcome to tonya's web page",
+			'thanks for stopping by ~ have a lovely day',
+		];
+		var MARQUEE_SEPARATORS = [' ✦ ', ' · ', ' ♡ ', ' ~ '];
 
 		function createY2KBackground() {
 			removeY2KBackground();
@@ -17,12 +32,21 @@ $(document).ready(function() {
 			banner.className = 'fun-mode-banner';
 			var track = document.createElement('div');
 			track.className = 'fun-mode-banner-track';
-			var text = 'welcome to tonya\'s world ✦ ';
+
 			for (var i = 0; i < 24; i++) {
+				var quote = BANNER_QUOTES[i % BANNER_QUOTES.length];
+				var sep = MARQUEE_SEPARATORS[i % MARQUEE_SEPARATORS.length];
+				var text = quote + sep;
+				var unit = document.createElement('span');
+				unit.className = 'banner-unit';
+				var heart = document.createElement('img');
+				heart.setAttribute('aria-hidden', 'true');
 				var span = document.createElement('span');
 				span.className = 'banner-text';
 				span.textContent = text;
-				track.appendChild(span);
+				unit.appendChild(heart);
+				unit.appendChild(span);
+				track.appendChild(unit);
 			}
 			banner.appendChild(track);
 			var canvas = document.createElement('canvas');
@@ -32,6 +56,39 @@ $(document).ready(function() {
 			document.body.insertBefore(banner, document.body.firstChild);
 			funModeBanner = banner;
 			funModeCanvas = canvas;
+
+			// Heart tunnel: click on background to spawn tunnel at click point; multiple tunnels can run at once
+			$(document).on('click.funmodeHearts', function(e) {
+				if (!$('body').hasClass('fun-mode')) return;
+				if ($(e.target).closest('a, button, input, select, textarea, .fun-mode-tab, .fun-mode-photo-cycle, .fun-mode-close').length) return;
+				var HEART_COLORS = [[255,255,255],[255,255,255],[250,250,255],[255,250,255],[255,255,250]];
+				heartTunnels.push({
+					originX: e.clientX,
+					originY: e.clientY,
+					hearts: Array.from({ length: 1 }, function(_, i) {
+						return { z: (i + 0.5) / 1, ci: Math.floor(Math.random() * HEART_COLORS.length) };
+					})
+				});
+				document.body.classList.add('fun-mode-hearts-active');
+			});
+
+			// Heart tunnel overlay (click background to activate)
+			var heartTunnel = document.createElement('div');
+			heartTunnel.className = 'fun-mode-heart-tunnel';
+			var heartCanvas = document.createElement('canvas');
+			heartCanvas.className = 'fun-mode-heart-canvas';
+			heartTunnel.appendChild(heartCanvas);
+			document.body.insertBefore(heartTunnel, document.body.firstChild);
+			funModeHeartCanvas = heartCanvas;
+
+			// Glitter cursor trail
+			var glitterTrail = document.createElement('div');
+			glitterTrail.className = 'fun-mode-glitter-trail';
+			var glitterCanvas = document.createElement('canvas');
+			glitterCanvas.className = 'fun-mode-glitter-canvas';
+			glitterTrail.appendChild(glitterCanvas);
+			document.body.appendChild(glitterTrail);
+			funModeGlitterCanvas = glitterCanvas;
 
 			// Mouse tracking
 			mouseX = window.innerWidth / 2;
@@ -130,6 +187,114 @@ $(document).ready(function() {
 						ctx.fill();
 					}
 				});
+
+				// 4. Glitter cursor trail - metallic flakes at cursor
+				if (funModeGlitterCanvas && document.body.contains(funModeGlitterCanvas)) {
+					var gc = funModeGlitterCanvas;
+					gc.width = w;
+					gc.height = h;
+					var gctx = gc.getContext('2d');
+					if (gctx) {
+						var GLITTER_COLORS = ['#ffd700','#ffe4b5','#c0c0c0','#fff8dc','#ffb6c1','#f0e68c','#ffec8b'];
+						gctx.clearRect(0, 0, w, h);
+						if (Math.random() < 0.5) {
+							glitterTrails.push({
+								x: mouseX + (Math.random() - 0.5) * 16,
+								y: mouseY + (Math.random() - 0.5) * 16,
+								size: 1.5 + Math.random() * 3,
+								opacity: 0.9,
+								life: 1,
+								vx: (Math.random() - 0.5) * 1.5,
+								vy: (Math.random() - 0.5) * 1.5,
+								rot: Math.random() * Math.PI * 2,
+								ci: Math.floor(Math.random() * GLITTER_COLORS.length)
+							});
+						}
+						glitterTrails = glitterTrails.filter(function(g) {
+							g.x += g.vx;
+							g.y += g.vy;
+							g.opacity *= 0.965;
+							g.life = g.opacity;
+							if (g.life < 0.05) return false;
+							gctx.save();
+							gctx.globalAlpha = g.opacity;
+							gctx.translate(g.x, g.y);
+							gctx.rotate(g.rot + g.life * 2);
+							gctx.fillStyle = GLITTER_COLORS[g.ci];
+							gctx.strokeStyle = 'rgba(255,255,255,0.6)';
+							gctx.lineWidth = 0.5;
+							var s = g.size;
+							gctx.beginPath();
+							gctx.moveTo(0, -s);
+							gctx.lineTo(s * 0.4, 0);
+							gctx.lineTo(0, s);
+							gctx.lineTo(-s * 0.4, 0);
+							gctx.closePath();
+							gctx.fill();
+							gctx.stroke();
+							gctx.restore();
+							return true;
+						});
+					}
+				}
+
+				// 5. Heart tunnel (when active) - multiple 3D tunnels at click points
+				if (document.body.classList.contains('fun-mode-hearts-active') && funModeHeartCanvas && document.body.contains(funModeHeartCanvas) && heartTunnels.length > 0) {
+					var hc = funModeHeartCanvas;
+					hc.width = w;
+					hc.height = h;
+					var hctx = hc.getContext('2d');
+					if (hctx) {
+						var HEART_PATH = new Path2D('M60 100 C60 100 5 60 5 30 C5 10 20 0 35 0 C46 0 56 7 60 14 C64 7 74 0 85 0 C100 0 115 10 115 30 C115 60 60 100 60 100Z');
+						var HEART_COLORS = [[255,255,255],[255,255,255],[250,250,255],[255,250,255],[255,255,250]];
+						var HEART_BORDER_BASE = 3.0;
+						var HEART_BORDER_MIN = 1.5;
+						var HEART_GLOW_FACTOR = 2.0;
+						var HEART_GLOW_MAX = 150;
+						var HEART_SPEED = 0.00006;
+
+						hctx.clearRect(0, 0, w, h);
+
+						var diag = Math.hypot(w, h);
+						var HEART_DONE_Z = 0.008;
+						heartTunnels = heartTunnels.filter(function(tunnel) {
+							tunnel.hearts = tunnel.hearts.filter(function(h) {
+								var decel = h.z * 1.2 + 0.15;
+								h.z -= HEART_SPEED * 16 * decel;
+								return h.z > HEART_DONE_Z;
+							});
+							return tunnel.hearts.length > 0;
+						});
+						if (heartTunnels.length === 0) {
+							document.body.classList.remove('fun-mode-hearts-active');
+						}
+
+						heartTunnels.forEach(function(tunnel) {
+							var sorted = tunnel.hearts.slice().sort(function(a, b) { return b.z - a.z; });
+							sorted.forEach(function(h) {
+								var size = (diag * 0.015) / (h.z * h.z * 6 + h.z * 0.3 + 0.0002);
+								var alpha = h.z > 0.85 ? (1 - h.z) / 0.15 : (h.z < 0.06 ? Math.pow(h.z / 0.06, 0.4) : 1.0);
+								var color = HEART_COLORS[h.ci];
+								var r = color[0], g = color[1], b = color[2];
+
+								hctx.save();
+								hctx.translate(tunnel.originX, tunnel.originY);
+								var sc = size / 58;
+								hctx.scale(sc, sc);
+								hctx.translate(-60, -50);
+
+								hctx.shadowColor = 'rgba(' + r + ',' + g + ',' + b + ',' + (alpha * 0.7) + ')';
+								hctx.shadowBlur = Math.min(size * HEART_GLOW_FACTOR, HEART_GLOW_MAX) / sc;
+								hctx.fillStyle = 'rgba(' + r + ',' + g + ',' + b + ',' + (alpha * 0.06) + ')';
+								hctx.fill(HEART_PATH);
+								hctx.strokeStyle = 'rgba(' + r + ',' + g + ',' + b + ',' + alpha + ')';
+								hctx.lineWidth = Math.max(HEART_BORDER_MIN, HEART_BORDER_BASE / sc);
+								hctx.stroke(HEART_PATH);
+								hctx.restore();
+							});
+						});
+					}
+				}
 			}
 
 			function tick() {
@@ -153,7 +318,19 @@ $(document).ready(function() {
 				funModeAnimationId = null;
 			}
 			$(document).off('mousemove.funmode');
+			$(document).off('click.funmodeHearts');
 			$(window).off('resize.funmode');
+			document.body.classList.remove('fun-mode-hearts-active');
+			if (funModeHeartCanvas && funModeHeartCanvas.parentNode) {
+				funModeHeartCanvas.parentNode.remove();
+				funModeHeartCanvas = null;
+			}
+			if (funModeGlitterCanvas && funModeGlitterCanvas.parentNode) {
+				funModeGlitterCanvas.parentNode.remove();
+				funModeGlitterCanvas = null;
+			}
+			glitterTrails = [];
+			heartTunnels = [];
 			if (funModeBanner) {
 				funModeBanner.remove();
 				funModeBanner = null;
@@ -184,102 +361,48 @@ $(document).ready(function() {
 				$('.fun-mode-footer').remove();
 			}
 		}
-		function loadFunContent(callback) {
-			if (funContentHTML) {
-				callback(funContentHTML);
-				return;
-			}
-			var url = new URL('fun-content.html', window.location.href).href;
-			$.get(url, function(html) {
-				var parser = new DOMParser();
-				var doc = parser.parseFromString(html, 'text/html');
-				var el = doc.getElementById('fun-mode-content');
-				funContentHTML = el ? el.innerHTML : html;
-				callback(funContentHTML);
-			}).fail(function() {
-				var fallback = document.getElementById('fun-mode-fallback');
-				if (fallback && fallback.content) {
-					var div = document.createElement('div');
-					div.appendChild(fallback.content.cloneNode(true));
-					funContentHTML = div.innerHTML;
-					callback(funContentHTML);
-				} else if (fallback && fallback.innerHTML) {
-					funContentHTML = fallback.innerHTML;
-					callback(funContentHTML);
-				} else {
-					callback(null);
+		function bindFunPageLiveWidgets() {
+			function updateSfTime() {
+				var el = document.getElementById('sf-time');
+				if (el) {
+					el.textContent = new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', second: '2-digit', hour12: true, timeZone: 'America/Los_Angeles' });
 				}
-			});
-		}
-
-		function switchToFunContent(done) {
-			if (!originalContainerHTML) {
-				originalContainerHTML = $('.container').html();
 			}
-			loadFunContent(function(html) {
-				if (html) {
-					$('.container').html(html);
-					var dateEl = document.getElementById('myspace-date');
-					if (dateEl) {
-						dateEl.textContent = new Date().toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: 'numeric' });
-					}
-					function updateSfTime() {
-						var el = document.getElementById('sf-time');
-						if (el) {
-							el.textContent = new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', second: '2-digit', hour12: true, timeZone: 'America/Los_Angeles' });
-						}
-					}
-					updateSfTime();
-					var sfTimeInterval = setInterval(updateSfTime, 1000);
-					$(document).off('funModeRemoved.sfTime');
-					$(document).on('funModeRemoved.sfTime', function() { clearInterval(sfTimeInterval); });
+			updateSfTime();
+			var sfTimeInterval = setInterval(updateSfTime, 1000);
+			$(document).off('funModeRemoved.sfTime');
+			$(document).on('funModeRemoved.sfTime', function() { clearInterval(sfTimeInterval); });
 
-					var spotifyApiUrl = window.SPOTIFY_API_URL || '';
-					function updateSpotifyNowPlaying() {
-						var el = document.getElementById('current-song');
-						if (!el) return;
-						if (!spotifyApiUrl) {
-							el.textContent = '—';
-							return;
-						}
-						if (el.textContent === '—' || el.textContent === 'nothing right now' || el.textContent.indexOf('unavailable') !== -1) {
-							el.textContent = 'checking...';
-						}
-						$.get(spotifyApiUrl, function(data) {
-							if (data.isPlaying && data.title) {
-								var text = data.title + ' — ' + data.artists;
-								if (data.url) {
-									el.innerHTML = '<a href="' + data.url + '" target="_blank" rel="noopener">' + text + '</a>';
-								} else {
-									el.textContent = text;
-								}
-							} else {
-								el.textContent = 'nothing right now';
-							}
-						}).fail(function(xhr) {
-							if (el) el.textContent = 'unavailable';
-						});
-					}
-					updateSpotifyNowPlaying();
-					var spotifyInterval = setInterval(updateSpotifyNowPlaying, 30000);
-					$(document).on('funModeRemoved.spotify', function() { clearInterval(spotifyInterval); });
+			var spotifyApiUrl = window.SPOTIFY_API_URL || '';
+			function updateSpotifyNowPlaying() {
+				var el = document.getElementById('current-song');
+				if (!el) return;
+				if (!spotifyApiUrl) {
+					el.textContent = '—';
+					return;
 				}
-				if (done) done();
-			});
-		}
-
-		function switchToNormalContent() {
-			if (originalContainerHTML) {
-				$('.container').html(originalContainerHTML);
+				if (el.textContent === '—' || el.textContent === 'nothing right now' || el.textContent.indexOf('unavailable') !== -1) {
+					el.textContent = 'checking...';
+				}
+				$.get(spotifyApiUrl, function(data) {
+					if (data.isPlaying && data.title) {
+						var text = data.title + ' — ' + data.artists;
+						if (data.url) {
+							el.innerHTML = '<a href="' + data.url + '" target="_blank" rel="noopener">' + text + '</a>';
+						} else {
+							el.textContent = text;
+						}
+					} else {
+						el.textContent = 'nothing right now';
+					}
+				}).fail(function() {
+					if (el) el.textContent = 'unavailable';
+				});
 			}
-		}
-
-		if (localStorage.getItem('funMode') === 'true') {
-			$('body').addClass('fun-mode');
-			switchToFunContent(function() {
-				createY2KBackground();
-				updateFunModeFooter(true);
-			});
+			updateSpotifyNowPlaying();
+			var spotifyInterval = setInterval(updateSpotifyNowPlaying, 30000);
+			$(document).off('funModeRemoved.spotify');
+			$(document).on('funModeRemoved.spotify', function() { clearInterval(spotifyInterval); });
 		}
 
 		var funModePhotos = ['assets/img/tonya1.png', 'assets/img/tonya2.png', 'assets/img/tonya3.png'];
@@ -399,70 +522,54 @@ $(document).ready(function() {
 			$('.fun-mode-tab').removeClass('active').filter('[data-tab="' + tab + '"]').addClass('active');
 		});
 
-		$(document).on('click', '#fun-mode-toggle, .fun-mode-toggle', function(e) {
-			e.preventDefault();
-			var isOn = !$('body').hasClass('fun-mode');
-			$('body').toggleClass('fun-mode');
-			localStorage.setItem('funMode', isOn);
-			if (isOn) {
-				switchToFunContent(function() {
-					createY2KBackground();
-					updateFunModeFooter(false);
-				});
-			} else {
-				switchToNormalContent();
-				removeY2KBackground();
-				updateFunModeFooter(false);
-				$(document).trigger('funModeRemoved.sfTime');
-				$(document).trigger('funModeRemoved.spotify');
-			}
-		});
+		if (isFunModePage) {
+			bindFunPageLiveWidgets();
+			createY2KBackground();
+			updateFunModeFooter(true);
+		}
 
 		var $scroll = $('.scroll');
 		var $list = $scroll.find('ul.list');
-		var $clonedList = $list.clone();
-		var listWidth = 10;
-		console.log('scroll!');
-		$list.find('li').each(function(i) {
-			listWidth += $(this, i).outerWidth(true);
-		});
-
-		var endPos = $scroll.width() - listWidth;
-
-		$list.add($clonedList).css({
-			width: listWidth + 'px'
-		});
-
-		$clonedList.addClass('cloned').appendTo($scroll);
-
-		//TimelineMax
-		var infinite = new TimelineMax({ repeat: -1, paused: true });
-		var time = 40;
-
-		infinite
-			.fromTo($list, time, { rotation: 0.01, x: 0 }, { force3D: true, x: -listWidth, ease: Linear.easeNone }, 0)
-			.fromTo(
-				$clonedList,
-				time,
-				{ rotation: 0.01, x: listWidth },
-				{ force3D: true, x: 0, ease: Linear.easeNone },
-				0
-			)
-			.set($list, { force3D: true, rotation: 0.01, x: listWidth })
-			.to($clonedList, time, { force3D: true, rotation: 0.01, x: -listWidth, ease: Linear.easeNone }, time)
-			.to($list, time, { force3D: true, rotation: 0.01, x: 0, ease: Linear.easeNone }, time)
-			.progress(1)
-			.progress(0)
-			.play();
-
-		//Pause/Play
-		$scroll
-			.on('mouseenter', function() {
-				infinite.pause();
-			})
-			.on('mouseleave', function() {
-				infinite.play();
+		if ($scroll.length && $list.length && typeof TimelineMax !== 'undefined') {
+			var $clonedList = $list.clone();
+			var listWidth = 10;
+			$list.find('li').each(function(i) {
+				listWidth += $(this, i).outerWidth(true);
 			});
+
+			$list.add($clonedList).css({
+				width: listWidth + 'px'
+			});
+
+			$clonedList.addClass('cloned').appendTo($scroll);
+
+			var infinite = new TimelineMax({ repeat: -1, paused: true });
+			var time = 40;
+
+			infinite
+				.fromTo($list, time, { rotation: 0.01, x: 0 }, { force3D: true, x: -listWidth, ease: Linear.easeNone }, 0)
+				.fromTo(
+					$clonedList,
+					time,
+					{ rotation: 0.01, x: listWidth },
+					{ force3D: true, x: 0, ease: Linear.easeNone },
+					0
+				)
+				.set($list, { force3D: true, rotation: 0.01, x: listWidth })
+				.to($clonedList, time, { force3D: true, rotation: 0.01, x: -listWidth, ease: Linear.easeNone }, time)
+				.to($list, time, { force3D: true, rotation: 0.01, x: 0, ease: Linear.easeNone }, time)
+				.progress(1)
+				.progress(0)
+				.play();
+
+			$scroll
+				.on('mouseenter', function() {
+					infinite.pause();
+				})
+				.on('mouseleave', function() {
+					infinite.play();
+				});
+		}
 
 		//page title
 		var pageTitle = $('title').text();

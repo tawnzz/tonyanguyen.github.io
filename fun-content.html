@@ -3,27 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Fun Mode Content</title>
+    <title>Tonya Nguyen · Fun mode</title>
     <link href="https://fonts.cdnfonts.com/css/pixel-script" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/fun-mode.css">
 </head>
-<body>
+<body class="fun-mode">
     <!--
-        FUN MODE CONTENT
-        Edit everything inside #fun-mode-content below.
-        This gets loaded into the main site when visitors click "fun mode."
-        Keep the same structure: .left (photo + links) and .right (main content).
-        Include the fun mode toggle link so visitors can switch back!
+        Fun mode page (opened from index "Fun mode" or funMode in localStorage).
+        Edit markup inside #fun-mode-content. Close (X) returns to index.html.
     -->
     <div id="fun-mode-content">
 
         <!-- Main layout: banner (above) + nav (left) + content (middle) -->
         <div class="fun-mode-layout">
-            <a href="#" class="fun-mode-close fun-mode-toggle" aria-label="Close">X</a>
+            <a href="index.html" class="fun-mode-close" aria-label="Back to main site" onclick="localStorage.removeItem('funMode');">X</a>
             <!-- LEFT: Nav bar -->
             <nav class="fun-mode-nav">
                 <div class="fun-mode-nav-section">
-                    <h1 class="fun-mode-nav-header"><img class="fun-mode-name-star" src="assets/img/star-sticker.png" alt=""> Tonya Nguyen</h1>
                     <div class="fun-mode-nav-photo fun-mode-photo-cycle">
                         <span class="photo-sparkle sparkle-1">✦</span>
                         <span class="photo-sparkle sparkle-2">✧</span>
@@ -34,21 +31,22 @@
                             <img alt="Tonya Nguyen" src="assets/img/tonya1.png">
                             <canvas class="photo-pixel-canvas" aria-hidden="true"></canvas>
                         </div>
+                        <h1 style="text-align: center;" class="fun-mode-nav-header">Tonya Nguyen</h1>
                         <img class="fun-mode-photo-banner" src="assets/img/banner-stars.png" alt="" aria-hidden="true" style="width: 78%; height: auto;">
                     </div>
                     <div class="fun-mode-nav-info">
-                        <p>It's <span id="sf-time">--:--:--</span> in San Francisco, California.</p>
-                        <p class="fun-mode-listening"> Currently listening to: <span id="current-song">—</span> <img class="fun-mode-listening-icon" src="assets/img/listening-icon.png" alt=""></p> 
+                        <p style="text-align: center;"><span id="sf-time">--:--:--</span><br>San Francisco, CA</p>
+                        <p class="fun-mode-listening"> Currently listening to: <img class="fun-mode-listening-icon" src="assets/img/listening-icon.png" alt=""> <br> <span id="current-song">—</span></p>
                     </div>
                 </div>
                 <div class="fun-mode-nav-section">
-                    <h2 class="fun-mode-nav-header"><img class="fun-mode-explore-icon" src="assets/img/explore-icon.png" alt=""> Explore</h2>
+                    <h2 class="fun-mode-nav-header">Explore <img class="fun-mode-explore-icon" src="assets/img/explore-icon.png" alt=""> </h2>
                     <ul class="fun-mode-nav-links fun-mode-tabs">
-                        <li><a href="#" class="fun-mode-tab active" data-tab="about">About ｡:ﾟ૮ ˶ˆ ﻌ ˆ˶ ა ﾟ:｡</a></li>
+                        <li><a href="#" class="fun-mode-tab active" data-tab="about"> about me｡:ﾟ૮ ˶ˆ ﻌ ˆ˶ ა ﾟ:｡</a></li>
                         <li><a href="#" class="fun-mode-tab" data-tab="vibing">currently vibing with</a></li>
-                        <li><a href="#" class="fun-mode-tab" data-tab="projects">ongoing projects</a></li>
+                        <!-- <li><a href="#" class="fun-mode-tab" data-tab="projects">ongoing projects</a></li>
                         <li><a href="#" class="fun-mode-tab" data-tab="public-poll">public poll</a></li>
-                        <li><a href="#" class="fun-mode-tab" data-tab="about-site">about this site</a></li>
+                        <li><a href="#" class="fun-mode-tab" data-tab="about-site">about this site</a></li> -->
                     </ul>
                 </div>
 
@@ -58,15 +56,15 @@
             <main class="fun-mode-main">
                 <div class="fun-mode-content-inner">
                     <div class="fun-mode-panel active" id="panel-about">
-                        <h2 class="section-header">About me ｡:ﾟ૮ ˶ˆ ﻌ ˆ˶ ა ﾟ:｡</h2>
+                        <h2 class="section-header"> <img style="width: 30px; height: 30px;" src="assets/cursors/heart-spinning.gif"> ｡:ﾟ૮ ˶ˆ ﻌ ˆ˶ ა ﾟ:｡ <img style="width: 30px; height: 30px;" src="assets/cursors/heart-spinning.gif"></h2>
                         <p style="text-align: center;">♥ Hi hello!! Welcome to my little corner of the web ♥</p>
                         <p>I'm Tonya (TAHN-yuh | /ˈtɔːnjə/ ) – an HCI researcher and Ph.D. candidate at UC Berkeley. I think a lot about how technology can solve the world's problems, but also how the richness of real-world contexts + legal landscapes, human motivations + emotions, and historical forces intersect to shape the systems we've built (and the challenges with that!). I'm a student of Human Computer Interaction, Science &amp; Technology Studies, Sociology, Critical Theory, and Machine Learning.</p>
 
-                        Some of the questions I'm thinking about right now include:
-                        <ul style="list-style: none; padding-left: 0;">
-                            <li class="fun-mode-text-smaller">♥  How can we balance user privacy and agency in an AI powered world, where data is used to make decisions about us and with us?</li>
-                            <li class="fun-mode-text-smaller">♥  What values should we operationalize in systems, and how can we actually measure and operationalize them in how systems are designed and used?</li>
-                            <li class="fun-mode-text-smaller">♥  How might marginalized perspectives and openness in epistemological pluralism change the way we approach AI evaluation, development, and deployment? How can thinking about power structures <i>and</i>  incentives give us more insight into successes and failures? </li>
+                        <p class="fun-questions-label">Some questions I'm thinking about right now</p>
+                        <ul class="fun-questions-list">
+                            <li><span class="fun-q-bullet">♥</span><span>How can we balance user privacy and agency in an AI powered world, where data is used to make decisions about us and with us?</span></li>
+                            <li><span class="fun-q-bullet">♥</span><span>What values should we operationalize in systems, and how can we actually measure and operationalize them in how systems are designed and used?</span></li>
+                            <li><span class="fun-q-bullet">♥</span><span>How might marginalized perspectives and openness in epistemological pluralism change the way we approach AI evaluation, development, and deployment? How can thinking about power structures <i>and</i> incentives give us more insight into successes and failures?</span></li>
                         </ul>
 
                         <p>I love learning new things (and especially appreciate when I'm not the smartest/most able person in the room). I owe many of my friends to this, as well as my wonderful mentors. I spent a lot of my days drinking inordinate amounts of caffeine. My favorite mode for movement is on a snowboard or involves a barbell. I love a good cultural analysis, making a playlist, and always, trying something new and learning it from scratch! </p>
@@ -75,8 +73,8 @@
                         <h2 class="section-header"><img class="fun-mode-vibing-icon" src="assets/img/vibing-book-icon.png" alt="" aria-hidden="true"> Currently Vibing With <img class="fun-mode-vibing-icon" src="assets/img/vibing-boombox-icon.png" alt="" aria-hidden="true"></h2>
                         <ul class="fun-mode-vibing-list" style="list-style: none; padding-left: 0;">
                             <li class="fun-mode-vibing-item">
-                                <span class="fun-mode-vibing-title">♥ SAILORR's "FROM FLORIDA'S FINEST" 
-                                <p class="fun-mode-vibing-desc">I really love this <a href="https://open.spotify.com/artist/6ucHomyCWjxmvbyqAAbSci" target="_blank" rel="noopener noreferrer">album</a></span> and have repeated it on loop for the past few months. What I love about SAILORR is that her music is so reminiscent of 2000's R&amp;B but is experimental and unique enough to capture the Gen-Z aesthetic. Also, we are both Vietnamese American --- and what's not to love about diverse representations of SEA people. "POOKIE'S REQUIEM" is about an ex-boyfriend who ends up dating a new girl who is a carbon-copy of his ex, but he also totally steals SAILORR's swag ("got you a mini-me"). I also loooove "W1LL U LI3" – just give it a listen. The songs are bouncy, full of 808s, but still has this soft-bubblegum-hyper-pop sound.</p>
+                                <span class="fun-mode-vibing-title">♥ SAILORR's "FROM FLORIDA'S FINEST"
+                                <p class="fun-mode-vibing-desc">I really love this <a href="https://open.spotify.com/artist/6ucHomyCWjxmvbyqAAbSci" target="_blank" rel="noopener noreferrer">album</a></span> and have repeated it on loop for the past few months. What I love about SAILORR is that her music is so reminiscent of 2000's R&amp;B but is experimental and unique enough to capture the Gen-Z aesthetic. Also, we are both Vietnamese American --- and what's not to love about diverse representations of SEA people. "POOKIE'S REQUIEM" is about an ex-boyfriend who ends up dating a new girl who is a carbon-copy of his ex, but he also totally steals SAILORR's swag ("got you a mini-me"). I also loooove "W1LL U LI3" – just give it a listen. The songs are bouncy, full of 808s, but still has this soft-bubblegum-hyper-pop sound.</p>
                             </li>
                             <li class="fun-mode-vibing-item">
                                 <span class="fun-mode-vibing-title">♥ Meditation</span>
@@ -115,53 +113,9 @@
         </div>
 
     </div>
-    <!-- Spotify API – same URL as index.html -->
     <script>window.SPOTIFY_API_URL = 'https://tawnie.vercel.app/api/now-playing';</script>
-    <script>
-        (function() {
-            var url = window.SPOTIFY_API_URL;
-            if (!url) return;
-            var el = document.getElementById('current-song');
-            if (!el) return;
-            var lastSong = null;
-            function update() {
-                el.textContent = el.textContent === '—' || el.textContent === 'nothing right now' ? 'checking...' : el.textContent;
-                fetch(url).then(function(r) { return r.json(); })
-                    .then(function(data) {
-                        if (data.isPlaying && data.title) {
-                            lastSong = { title: data.title, artists: data.artists, url: data.url };
-                            var text = data.title + ' — ' + data.artists;
-                            el.innerHTML = data.url ? '<a href="' + data.url + '" target="_blank" rel="noopener">' + text + '</a>' : text;
-                        } else if (lastSong) {
-                            var text = lastSong.title + ' — ' + lastSong.artists;
-                            el.innerHTML = lastSong.url ? '<a href="' + lastSong.url + '" target="_blank" rel="noopener">' + text + '</a>' : text;
-                        } else {
-                            el.textContent = 'nothing right now';
-                        }
-                    })
-                    .catch(function() {
-                        el.textContent = lastSong ? (lastSong.title + ' — ' + lastSong.artists) : 'unavailable';
-                    });
-            }
-            update();
-            setInterval(update, 30000);
-        })();
-        /* Tab switching - also handled by index.js when loaded in main site */
-        (function() {
-            document.addEventListener('click', function(e) {
-                var tab = e.target.closest('.fun-mode-tab');
-                if (!tab) return;
-                e.preventDefault();
-                var id = tab.getAttribute('data-tab');
-                if (!id) return;
-                document.querySelectorAll('.fun-mode-panel').forEach(function(p) {
-                    p.classList.toggle('active', p.id === 'panel-' + id);
-                });
-                document.querySelectorAll('.fun-mode-tab').forEach(function(t) {
-                    t.classList.toggle('active', t.getAttribute('data-tab') === id);
-                });
-            });
-        })();
-    </script>
+    <script src="js/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="assets/js/index.js"></script>
 </body>
 </html>

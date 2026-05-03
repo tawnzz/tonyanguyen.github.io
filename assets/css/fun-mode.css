@@ -7,7 +7,7 @@
 	overflow: hidden;
 	z-index: 2;
 	background: linear-gradient(90deg, rgba(236, 64, 122, 0.3) 0%, rgba(248, 187, 217, 0.5) 50%, rgba(236, 64, 122, 0.3) 100%);
-	padding: 0.85rem 0;
+	padding: 0.25rem;
 	white-space: nowrap;
 }
 
@@ -15,7 +15,7 @@
 	display: inline-flex;
 	align-items: center;
 	gap: 1.5em;
-	animation: fun-mode-marquee 330s linear infinite;
+	animation: fun-mode-marquee 40s linear infinite;
 }
 
 .fun-mode-banner:hover .fun-mode-banner-track {
@@ -158,7 +158,7 @@ body.fun-mode .fun-mode-glitter-trail {
 
 .fun-mode-close:hover,
 body.fun-mode .fun-mode-close:hover {
-	background: #5a9fc4 !important;
+	background: #5a2e0e !important;
 	color: #fff !important;
 }
 
@@ -171,9 +171,9 @@ body.fun-mode {
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
-	--fun-text: #6b3a5a;
-	--fun-link: #7b4a7a;
-	--fun-accent: #5a9fc4;
+	--fun-text: #5a2e0e;
+	--fun-link: #b07848;
+	--fun-accent: #8f4d13;
 }
 
 /* Custom Kuromi cursor in fun mode (hotspot: adjust x y if off-centered) */
@@ -187,7 +187,7 @@ body.fun-mode .container {
 	z-index: 1;
 	margin: 0 auto;
 	padding: 0 var(--space-lg);
-	width: 55%;
+	width: 100%;
 	border: none;
 	background: transparent;
 	box-shadow: none;
@@ -203,22 +203,34 @@ body.fun-mode .fun-mode-layout {
 	display: flex;
 	align-items: stretch;
 	width: 100%;
+	max-width: 900px;
 	flex: 1;
 	min-height: 0;
-	border: 1px solid #7eb8d8;
-	border-top: 1px solid #a8d8ea;
-	background: #fef5f8; */
+	border: 2px solid #c5844c;
+	border-top: 2px solid #c99364;
+	background: #f4f0ea;
+	border-radius: 16px;
+	overflow: hidden;
+	box-shadow: 6px 6px 0 #58270a;
 }
 
 /* Left nav bar */
 body.fun-mode .fun-mode-nav {
 	flex: 0 0 300px;
-	border-right: 1px solid #7eb8d8;
-	background: #fdf2f6;
+	border-right: 1px solid #c4956a;
+	background: #f4f0ea;
+	display: flex;
+	flex-direction: column;
+	gap: 0.6rem;
+	padding: 0.75rem;
+	overflow-y: auto;
 }
 
 body.fun-mode .fun-mode-nav-section {
 	margin-bottom: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.6rem;
 }
 
 body.fun-mode .fun-mode-nav-photo {
@@ -227,6 +239,7 @@ body.fun-mode .fun-mode-nav-photo {
 	border-bottom: none;
 	cursor: url('../cursors/pd-click-cursor-32.png') 16 11, pointer;
 	overflow: hidden;
+	border-radius: 12px;
 }
 
 body.fun-mode .fun-mode-photo-divider {
@@ -273,7 +286,7 @@ body.fun-mode .photo-img-wrap {
 	position: relative;
 	display: block;
 	width: 100%;
-	max-width: 220px;
+	max-width: 285px;
 	margin: 0 auto;
 }
 
@@ -281,7 +294,8 @@ body.fun-mode .photo-img-wrap img {
 	width: 100%;
 	height: auto;
 	display: block;
-	border: 1px solid #89CFF0;
+	border-radius: 4px;
+	border: 1px solid #c4956a;
 	position: relative;
 	z-index: 1;
 	transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -295,7 +309,7 @@ body.fun-mode .photo-pixel-canvas {
 	transform: translateX(-50%);
 	opacity: 0;
 	pointer-events: none;
-	border: 1px solid #89CFF0;
+	border: 1px solid #c4956a;
 	transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 	will-change: opacity;
 }
@@ -317,16 +331,22 @@ body.fun-mode .photo-img-wrap.photo-active img {
 body.fun-mode .fun-mode-nav-info {
 	display: flex;
 	flex-direction: column;
+	gap: 0.5rem;
 }
 
 body.fun-mode .fun-mode-nav-info p {
 	margin: 0;
-	padding: 0;
-	border-bottom: none;
 	font-family: "rainyhearts", monospace, sans-serif;
 	font-size: 1.05rem;
 	color: var(--fun-text);
-	line-height: 1.5;
+	border-radius: 10px;
+	background: #f8f7f6;
+	padding: 0.6rem 0.75rem;
+	text-align: center;
+}
+
+#sf-time {
+	text-align: center;
 }
 
 body.fun-mode .fun-mode-listening-icon {
@@ -337,9 +357,8 @@ body.fun-mode .fun-mode-listening-icon {
 	margin-left: 0.4em;
 }
 
-body.fun-mode .fun-mode-nav-section p {
-	margin: 0;
-	padding: 0.55rem 1rem;
+body.fun-mode .fun-mode-nav-section:last-child p {
+	margin: 0.55rem 1rem;
 	font-family: "rainyhearts", monospace, sans-serif;
 	font-size: 1.05rem;
 	color: var(--fun-text);
@@ -393,21 +412,27 @@ body.fun-mode .fun-mode-explore-icon {
 
 body.fun-mode .fun-mode-nav-header {
 	font-family: "Alagard", "basiic", "rainyhearts", monospace, sans-serif !important;
-	font-size: 1.25rem;
+	font-size: 1.30rem;
 	font-weight: 600;
-	color: #fff;
-	background: linear-gradient(180deg, #a8d8ea 0%, #7eb8d8 100%);
-	padding: 0.25rem 1rem;
+	color: #8f4d13;
 	letter-spacing: 0.05em;
+}
+
+body.fun-mode .fun-mode-nav-section:last-child {
+	padding: 1rem 1rem;
+	gap: 0.5rem;
+	background: #f9d4e2;
+	border-radius: 12px;
+	overflow: hidden;
 }
 
 body.fun-mode .fun-mode-nav-links {
 	list-style: none;
 	margin: 0;
+	padding: 0;
 	display: flex;
 	flex-direction: column;
-	/* gap: 0.5rem; */
-	padding: 0.6rem 1rem;
+	gap: 0.5rem;
 	border-bottom: 1px solid #e8e0d8;
 }
 
@@ -442,8 +467,8 @@ body.fun-mode .fun-mode-content-header {
 	font-size: 1rem;
 	font-weight: 700;
 	color: #fff;
-	background: linear-gradient(180deg, #a8d8ea 0%, #7eb8d8 100%);
-	border-bottom: 1px solid #7eb8d8;
+	background: linear-gradient(180deg, #d4a578 0%, #c4956a 100%);
+	border-bottom: 1px solid #c4956a;
 	padding: 0.5rem 1rem;
 }
 
@@ -455,6 +480,42 @@ body.fun-mode .fun-mode-content-inner {
 	line-height: 1.6;
 	color: var(--fun-text);
 	overflow-y: auto;
+}
+
+body.fun-mode .fun-questions-label {
+	font-family: "rainyhearts", monospace, sans-serif;
+	font-size: 0.85rem;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--fun-text);
+	margin: 0.5rem 0 0.25rem;
+}
+
+body.fun-mode .fun-questions-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+body.fun-mode .fun-questions-list li {
+	display: flex;
+	gap: 0.6em;
+	align-items: flex-start;
+	padding: 0.6rem 0;
+	border-bottom: 1px dashed var(--baby-pink);
+	font-size: 0.95rem;
+	line-height: 1.5;
+	color: var(--fun-text);
+}
+
+body.fun-mode .fun-questions-list li:last-child {
+	border-bottom: none;
+}
+
+body.fun-mode .fun-q-bullet {
+	flex-shrink: 0;
+	color: var(--baby-pink);
 }
 
 body.fun-mode .fun-mode-content-inner li.fun-mode-text-smaller {
@@ -589,7 +650,7 @@ body.fun-mode .fun-mode-footer hr {
 		flex: none;
 		width: 100%;
 		border-right: none;
-		border-bottom: 2px solid #7eb8d8;
+		border-bottom: 2px solid #c4956a;
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0;
