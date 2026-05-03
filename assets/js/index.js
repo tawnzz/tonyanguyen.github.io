@@ -343,22 +343,12 @@ $(document).ready(function() {
 
 		function updateFunModeFooter(isPageLoad) {
 			if ($('body').hasClass('fun-mode')) {
-				if (!$('.fun-mode-footer').length) {
-					var count = parseInt(localStorage.getItem('funModeVisits') || '0', 10);
-					if (isPageLoad) {
-						count += 1;
-						localStorage.setItem('funModeVisits', String(count));
-					}
-					$('.container').append(
-						'<div class="fun-mode-footer">' +
-						'<hr>' +
-						'<span>♥ you are visitor #' + count + ' ♥</span><br>' +
-						'<span>last updated 2/22/26 • don\'t forget to say hi!</span>' +
-						'</div>'
-					);
+				var count = parseInt(localStorage.getItem('funModeVisits') || '0', 10);
+				if (isPageLoad) {
+					count += 1;
+					localStorage.setItem('funModeVisits', String(count));
 				}
-			} else {
-				$('.fun-mode-footer').remove();
+				$('#visitor-count').text(count);
 			}
 		}
 		function bindFunPageLiveWidgets() {
@@ -571,17 +561,5 @@ $(document).ready(function() {
 				});
 		}
 
-		//page title
-		var pageTitle = $('title').text();
-
-		//change page title!
-		$(window).blur(function() {
-			$('title').text('Come back!');
-		});
-
-		//change back on focus
-		$(window).focus(function() {
-			$('title').text(pageTitle);
-		});
 	});
 });

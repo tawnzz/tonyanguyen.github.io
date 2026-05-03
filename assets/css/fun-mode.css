@@ -5,7 +5,7 @@
 	left: 0;
 	right: 0;
 	overflow: hidden;
-	z-index: 2;
+	z-index: 10;
 	background: linear-gradient(90deg, rgba(236, 64, 122, 0.3) 0%, rgba(248, 187, 217, 0.5) 50%, rgba(236, 64, 122, 0.3) 100%);
 	padding: 0.25rem;
 	white-space: nowrap;
@@ -200,10 +200,11 @@ body.fun-mode .container {
 /* Retro layout: nav (left) + content (middle) with blue drop shadow */
 body.fun-mode .fun-mode-layout {
 	position: relative;
+	z-index: 2;
 	display: flex;
 	align-items: stretch;
 	width: 100%;
-	max-width: 900px;
+	max-width: 1050px;
 	flex: 1;
 	min-height: 0;
 	border: 2px solid #c5844c;
@@ -624,8 +625,11 @@ body.fun-mode .fun-mode-toggle:hover {
 }
 
 body.fun-mode .fun-mode-footer {
+	position: relative;
+	z-index: 3;
 	margin-top: var(--space-xl);
 	padding-top: var(--space-md);
+	padding-bottom: var(--space-xl);
 	text-align: center;
 	font-size: 1.1rem;
 	color: var(--fun-text);
