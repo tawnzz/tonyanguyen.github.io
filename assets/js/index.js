@@ -1,4 +1,41 @@
 $(document).ready(function() {
+	$('.email-copy').on('click', function() {
+		var btn = this;
+		var email = btn.querySelector('.email-copy-text').textContent.trim();
+		var hint = btn.querySelector('.email-copy-hint');
+
+		function showCopied() {
+			btn.classList.add('is-copied');
+			if (hint) hint.textContent = 'copied';
+			window.clearTimeout(btn._copyTimer);
+			btn._copyTimer = window.setTimeout(function() {
+				btn.classList.remove('is-copied');
+				if (hint) hint.textContent = 'copy';
+			}, 1600);
+		}
+
+		function fallbackCopy() {
+			var field = document.createElement('textarea');
+			field.value = email;
+			field.setAttribute('readonly', '');
+			field.style.position = 'fixed';
+			field.style.left = '-9999px';
+			document.body.appendChild(field);
+			field.select();
+			try {
+				document.execCommand('copy');
+				showCopied();
+			} catch (err) {}
+			document.body.removeChild(field);
+		}
+
+		if (navigator.clipboard && navigator.clipboard.writeText) {
+			navigator.clipboard.writeText(email).then(showCopied).catch(fallbackCopy);
+		} else {
+			fallbackCopy();
+		}
+	});
+
 	$(function() {
 		// Fun mode toggle (90s Y2K girly homepage vibe)
 		var funModeCanvas = null;

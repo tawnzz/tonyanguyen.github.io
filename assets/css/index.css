@@ -327,6 +327,72 @@ body {
 	color: var(--deep-teal);
 }
 
+.email-copy {
+	position: relative;
+	display: inline-block;
+	-webkit-appearance: none;
+	appearance: none;
+	background: none;
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+	outline: none;
+	padding: 0;
+	margin: 0;
+	font: inherit;
+	line-height: inherit;
+	cursor: pointer;
+	text-align: left;
+}
+
+.email-copy:hover,
+.email-copy:focus-visible {
+	color: #86c0e0;
+	transition: .4s ease-out;
+}
+
+.email-copy.is-copied,
+.email-copy.is-copied:hover,
+.email-copy.is-copied:focus-visible,
+.email-copy.is-copied .email-copy-tooltip {
+	animation: email-copied 1.6s ease-in-out;
+}
+
+@keyframes email-copied {
+	0% { color: #86c0e0; }
+	25% { color: var(--baby-pink); }
+	65% { color: var(--baby-pink); }
+	100% { color: #86c0e0; }
+}
+
+.email-copy-tooltip {
+	display: none;
+	position: absolute;
+	left: calc(100% + 0.4em);
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 2;
+	padding: 0;
+	margin: 0;
+	background: none;
+	border: none;
+	box-shadow: none;
+	line-height: 0;
+	color: var(--deep-teal);
+	pointer-events: none;
+}
+
+.email-copy-tooltip svg {
+	display: block;
+	width: 16px;
+	height: 16px;
+}
+
+.email-copy:hover .email-copy-tooltip,
+.email-copy:focus-visible .email-copy-tooltip {
+	display: block;
+}
+
 .research-list {
 	margin-top: 1.5rem;
 }
