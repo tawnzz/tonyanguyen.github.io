@@ -346,8 +346,14 @@ body {
 }
 
 .email-copy:hover,
-.email-copy:focus-visible {
+.email-copy:focus,
+.email-copy:focus-visible,
+.email-copy:active {
 	color: #86c0e0;
+	border: none;
+	outline: none;
+	box-shadow: none;
+	background: none;
 	transition: .4s ease-out;
 }
 

@@ -1,4 +1,11 @@
 $(document).ready(function() {
+	$('.email-copy').on('keydown', function(event) {
+		if (event.key === 'Enter' || event.key === ' ') {
+			event.preventDefault();
+			$(this).trigger('click');
+		}
+	});
+
 	$('.email-copy').on('click', function() {
 		var btn = this;
 		var email = btn.querySelector('.email-copy-text').textContent.trim();
