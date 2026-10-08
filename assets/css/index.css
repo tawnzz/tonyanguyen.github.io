@@ -329,7 +329,8 @@ body {
 
 .email-copy {
 	position: relative;
-	display: inline-block;
+	display: inline;
+	vertical-align: baseline;
 	-webkit-appearance: none;
 	appearance: none;
 	background: none;
@@ -339,10 +340,14 @@ body {
 	outline: none;
 	padding: 0;
 	margin: 0;
-	font: inherit;
-	line-height: inherit;
+	font-family: "Inter", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 300;
+	font-size: 15px;
+	line-height: var(--prose-line-height);
+	color: var(--deep-teal);
+	text-decoration: none;
 	cursor: pointer;
-	text-align: left;
 }
 
 .email-copy:hover,
